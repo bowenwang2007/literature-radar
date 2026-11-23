@@ -1,0 +1,12 @@
+{
+  "version": "7c.2",
+  "series": [
+    {
+      "journal": "Economics of Education Review",
+      "issns": ["0272-7757", "1873-7382"],
+      "archive": "eee",
+      "series": "ecoedu",
+      "handle_pattern": "RePEc:{archive}:{series}:v:{volume}:y:{year}:i:{issue}:s{pii_without_leading_s}"
+    }
+  ]
+}

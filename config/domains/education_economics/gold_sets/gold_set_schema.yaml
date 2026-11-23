@@ -1,0 +1,36 @@
+schema_version: phase3-foundation-v1
+status: draft
+labels: [include, borderline, exclude, uncertain]
+candidate_positive_labels: [include, borderline]
+excluded_from_core_metrics: [uncertain]
+difficulty_tags:
+  - clear_positive
+  - clear_negative
+  - education_false_friend
+  - hidden_education_topic
+  - no_abstract
+  - opaque_title
+  - labor_education_cross
+  - health_education_cross
+  - urban_education_cross
+  - domain_journal
+  - general_economics_journal
+  - rule_semantic_conflict_future
+  - metadata_sparse
+required_for_template:
+  - item_id
+  - original_title
+  - journal
+  - abstract_available
+  - source_group
+  - source_database_sha256
+  - ontology_version_at_annotation
+  - annotation_version
+required_for_labeled_item:
+  - gold_label
+  - reviewer
+rules:
+  gold_label_source: human_only
+  ai_decision_is_truth: false
+  doi_optional: true
+  paper_id_optional: true

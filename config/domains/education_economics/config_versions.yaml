@@ -1,0 +1,22 @@
+version_registry:
+  profile_id: education_economics
+  current: 0.2.0-phase6d-candidate
+  versions:
+    - bundle_version: 0.1.0-foundation
+      status: draft
+      ontology_version: 0.1.0-draft
+      exclusion_context_version: 0.1.0-draft
+      scoring_version: 0.1.0-uncalibrated
+      prompt_version: 2026-07-19-v1
+      semantic_version: 0.1.0-phase4-draft
+      immutable: true
+      notes: Phase 6C predecessor descriptor retained as the rollback target.
+    - bundle_version: 0.2.0-phase6d-candidate
+      status: candidate
+      ontology_version: 0.2.0-phase6d-candidate
+      exclusion_context_version: 0.2.0-phase6d-candidate
+      scoring_version: 0.2.0-phase6d-test-fixture
+      prompt_version: 2026-07-22-phase6d-v1
+      semantic_version: 0.2.0-phase6d-candidate
+      immutable: true
+      notes: Phase 6D candidate protected by the 64-item offline fixture registry.

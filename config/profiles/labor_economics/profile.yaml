@@ -1,0 +1,95 @@
+profile_id: labor_economics
+display_name: 劳动经济学
+display_name_en: Labor Economics
+description: 劳动市场、就业、工资、人力资本、技能与相关公共政策。
+status: active
+screening_prompt_version: 2026-09-21-labor-v1
+screening_dimensions:
+  centrality_label: 劳动市场中心性
+  centrality_definition: 'the labour market is the core research object: employment, unemployment, wages
+    and earnings, hiring and separation, job search and matching, labour supply, skills, mobility, unions,
+    monopsony, discrimination in labour outcomes, or a labour-market policy.'
+  economics_definition: 'the paper contains substantive economics content: incentives, information, market
+    power, equilibrium or policy effects, distributional consequences, or credible causal identification
+    of a labour-market parameter.'
+subject_signals:
+  jel_codes:
+  - J08
+  - J21
+  - J22
+  - J23
+  - J24
+  - J31
+  - J38
+  - J51
+  - J62
+  - J63
+  - J64
+  - J65
+  topics:
+  - wages, earnings and wage-setting institutions
+  - employment, unemployment and labour supply
+  - job search, matching and mobility
+  - unions, monopsony and employer power
+  - labour-market policy evaluation
+journal_groups:
+- key: labor_economics_core
+  display_name: 劳动经济学核心期刊
+  description: 以劳动市场与人力资本为主要研究领域的期刊。
+  journal_keys:
+  - journal_of_labor_economics
+  - journal_of_human_resources
+  - labour_economics
+  - industrial_and_labor_relations_review
+  - journal_of_human_capital
+  - journal_of_population_economics
+- key: labor_economics_adjacent
+  display_name: 劳动经济学相关期刊
+  description: 常发表劳动市场结果的公共、发展、健康与不平等研究。
+  journal_keys:
+  - american_economic_journal_applied_economics
+  - journal_of_public_economics
+  - journal_of_economic_inequality
+  - work_employment_and_society
+  - journal_of_development_economics
+  - world_development
+  - journal_of_health_economics
+  - health_economics
+  - american_economic_journal_economic_policy
+  - international_tax_and_public_finance
+  - national_tax_journal
+- key: general_economics
+  display_name: 综合与旗舰经济学期刊
+  description: 所有研究方向共用的综合期刊清单；对每个队列内容相同。
+  journal_keys:
+  - general_qje
+  - general_aer
+  - general_jpe
+  - general_ecma
+  - general_restud
+  - general_jeea
+  - general_jel
+  - general_jep
+  - general_are
+  - general_restat
+  - general_aejmacro
+  - general_bpea
+  - general_jeg
+  - general_rand
+  - general_joe
+  - general_jf
+  - general_jfe
+  - general_jme
+  - general_rfs
+  - economic_journal
+  - journal_of_applied_econometrics
+  - journal_of_business_and_economic_statistics
+  - econometric_theory
+  - journal_of_economic_dynamics_and_control
+  - review_of_economic_dynamics
+  - journal_of_international_economics
+  - review_of_world_economics
+- key: custom
+  display_name: 自定义期刊
+  description: 由本人添加的期刊；保存在本地配置中。
+  journal_keys: []

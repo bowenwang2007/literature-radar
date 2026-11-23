@@ -1,0 +1,24 @@
+Judge the following paper for the political-economy reading queue.
+
+Before deciding, answer the queue's mechanism test from the text below:
+(a) who decides — which political actor's choice drives the result;
+(b) what political friction makes the observed policy differ from the
+    welfare-maximising one;
+(c) which economic outcome or instrument follows.
+If any of the three cannot be answered from this text, that is grounds for
+"uncertain" or "needs_abstract" — not for guessing.
+
+Title: {title}
+Journal: {journal}
+Year: {year}
+JEL codes (may be empty): {jel_codes}
+
+English abstract:
+{abstract}
+
+If the English abstract is empty, judge from the title only and use
+"needs_abstract"; never infer "relevant" from a title alone. A title can name a
+policy and still tell you nothing about who chose it or why.
+
+Return the strict JSON object described in the system prompt, and make the
+"reason" name the political actor and the friction explicitly.

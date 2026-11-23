@@ -1,0 +1,119 @@
+version: "2026-09-25-v1"
+
+# What counts as a JEL code
+# -------------------------
+# JEL classification is published by the *source*: the American Economic Review
+# section letters (A..Z), one or two digits, and an optional letter suffix.
+# Codes are only ever copied from a source that published them for that exact
+# paper.  No model, no title heuristic, no completion of a partial code.
+#
+# Measured fact behind this file: the usual bibliographic APIs do not carry JEL
+# codes for these journals.  Crossref exposes no JEL field, OpenAlex has none,
+# and Semantic Scholar has none — only publisher metadata and RePEc do.
+
+# JEL codes the enrichment pass is allowed to look for.  This is the union of
+# the codes the profiles declare a research interest in, so the harvest stays
+# small and every request is explainable.  It is a union, not a per-profile
+# list: JEL codes are a paper fact and are shared by all profiles.
+codes:
+  - A10
+  - C90
+  - C91
+  - C92
+  - C93
+  - D02
+  - D03
+  - D72
+  - D78
+  - D83
+  - D84
+  - D90
+  - D91
+  - E60
+  - E61
+  - E62
+  - F13
+  - F51
+  - F53
+  - G40
+  - G41
+  - H11
+  - H20
+  - H23
+  - H50
+  - H70
+  - I12
+  - I20
+  - I21
+  - I22
+  - I23
+  - I24
+  - I25
+  - I26
+  - I28
+  - J08
+  - J20
+  - J21
+  - J23
+  - J24
+  - J30
+  - J31
+  - J38
+  - J45
+  - J50
+  - J51
+  - J52
+  - J58
+  - J60
+  - J62
+  - J63
+  - J64
+  - J65
+  - J68
+  - J70
+  - J71
+  - L11
+  - L12
+  - L13
+  - L40
+  - L43
+  - N30
+  - N40
+  - O12
+  - O15
+  - O33
+  - O43
+  - O47
+  - P16
+  - P26
+  - P48
+
+# RePEc (IDEAS) carries the publisher-supplied JEL classification for records
+# it indexes, and it is the only open source that does so at any scale.
+#
+# RePEc's own guidance (https://ideas.repec.org/getdata.html) discourages
+# scraping: it puts load on volunteer-run servers and is a poor way to get
+# complete data.  Their API is issued by request (https://ideas.repec.org/api.html).
+#
+# The provider below therefore ships **disabled**.  When it is enabled it:
+#   * fetches only the per-JEL-code classification listings, one request per
+#     page — never one request per paper;
+#   * caches every response on disk with a TTL, so re-runs make no new requests;
+#   * waits `extra_delay_seconds` on top of `rate_limit_per_second`;
+#   * identifies itself with a contact address;
+#   * gives up on a page rather than retrying hard when the server pushes back.
+#
+# To use a different source instead, implement the `JelProvider` protocol in
+# services/jel_enrichment.py and register it in `build_providers`; nothing else
+# in the product needs to change.
+repec_ideas:
+  enabled: false
+  rate_limit_per_second: 0.2
+  extra_delay_seconds: 1.0
+  timeout_seconds: 30.0
+  # One page per code.  IDEAS paginates its listings with a server-side query
+  # string we may not construct, and guessing URLs would silently shrink the
+  # index; a single page is fetched per code and nothing is invented.
+  max_pages_per_code: 1
+  index_ttl_seconds: 86400
+  user_agent: "EduEconRadar/0.5 (personal literature review; JEL metadata; contact: local-operator)"

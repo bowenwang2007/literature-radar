@@ -1,0 +1,6 @@
+Translate the following original paper title faithfully into Chinese.
+
+Original title:
+{original_title}
+
+Return only strict JSON with exactly one non-empty string field: chinese_title.

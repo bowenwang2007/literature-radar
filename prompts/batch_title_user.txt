@@ -1,0 +1,9 @@
+Translate the following English academic paper titles into Simplified Chinese.
+Task reference (internal): {task_id}
+
+Input titles (JSON):
+ITEMS_START
+{items}
+ITEMS_END
+
+Return the strict JSON object described in the system prompt. Every paper_id in the input must appear exactly once.

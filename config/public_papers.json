@@ -1,0 +1,79 @@
+[
+  {
+    "id": "schools",
+    "doi": "10.1257/aer.91.4.795",
+    "journal": "American Economic Review",
+    "authors": [
+      "Esther Duflo"
+    ],
+    "title": "Schooling and Labor Market Consequences of School Construction in Indonesia: Evidence from an Unusual Policy Experiment",
+    "zh": "印度尼西亚学校建设的教育与劳动市场后果",
+    "published": "2001-09",
+    "excerpt": "Between 1973 and 1978, the Indonesian government engaged in one of the largest school construction programs on record.",
+    "translation": "1973 年至 1978 年间，印度尼西亚政府开展了有记录以来规模最大的学校建设计划之一。",
+    "notes": {
+      "education_economics": "可以把它作为学校供给影响受教育年限的识别案例。阅读时留意地区差异与出生队列怎样共同构成比较。",
+      "labor_economics": "工资是主要结果之一。可与其他教育回报研究比较估计所对应的人群。"
+    }
+  },
+  {
+    "id": "classroom",
+    "doi": "10.1093/qje/qjr041",
+    "journal": "The Quarterly Journal of Economics",
+    "authors": [
+      "Raj Chetty",
+      "John N. Friedman",
+      "Nathaniel Hilger",
+      "Emmanuel Saez",
+      "Diane Whitmore Schanzenbach",
+      "Danny Yagan"
+    ],
+    "title": "How Does Your Kindergarten Classroom Affect Your Earnings? Evidence from Project STAR",
+    "zh": "幼儿园课堂如何影响成年收入？来自 STAR 项目的证据",
+    "published": "2011-11-01",
+    "excerpt": "Class size does not have a significant effect on earnings at age 27, but this effect is imprecisely estimated.",
+    "translation": "班级规模对 27 岁收入的影响没有达到统计显著水平，但这一效应的估计并不精确。",
+    "notes": {
+      "education_economics": "适合比较小班教学与课堂环境的长期结果。",
+      "labor_economics": "可从成年收入切入，再检查早期干预的估计精度。"
+    }
+  },
+  {
+    "id": "teachers",
+    "doi": "10.1257/aer.104.9.2633",
+    "journal": "American Economic Review",
+    "authors": [
+      "Raj Chetty",
+      "John N. Friedman",
+      "Jonah E. Rockoff"
+    ],
+    "title": "Measuring the Impacts of Teachers II: Teacher Value-Added and Student Outcomes in Adulthood",
+    "zh": "教师影响的衡量（二）：教师增值与学生成年后的表现",
+    "published": "2014-09",
+    "excerpt": "Are teachers' impacts on students' test scores (\"value-added\") a good measure of their quality?",
+    "translation": "教师对学生考试成绩的影响（“增值”）能否很好地衡量教师质量？",
+    "notes": {
+      "education_economics": "为教师评价与学生长期发展提供了可以相互核对的指标。",
+      "labor_economics": "可加入教育投入与长期工资之间的证据清单。"
+    }
+  },
+  {
+    "id": "trade",
+    "doi": "10.1257/aer.103.6.2121",
+    "journal": "American Economic Review",
+    "authors": [
+      "David H. Autor",
+      "David Dorn",
+      "Gordon H. Hanson"
+    ],
+    "title": "The China Syndrome: Local Labor Market Effects of Import Competition in the United States",
+    "zh": "中国冲击：进口竞争对美国地方劳动力市场的影响",
+    "published": "2013-10",
+    "excerpt": "",
+    "translation": "",
+    "notes": {
+      "education_economics": "题名指向地方劳动市场。它是否分析教育结果，需要进一步查阅原文。",
+      "labor_economics": "题名直接涉及进口竞争与地方劳动市场。仅凭题名无法判断识别策略与效应大小。"
+    }
+  }
+]

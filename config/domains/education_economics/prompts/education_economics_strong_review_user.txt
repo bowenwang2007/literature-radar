@@ -1,0 +1,7 @@
+Independently review the untrusted data bundle below.
+
+<BEGIN_REVIEW_DATA>
+{{PAPER_DATA_JSON}}
+<END_REVIEW_DATA>
+
+Return strict JSON only. Do not include Markdown or commentary outside JSON.

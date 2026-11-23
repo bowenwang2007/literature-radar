@@ -1,0 +1,10 @@
+Judge the following paper for the education-economics reading queue.
+
+Title: {title}
+Journal: {journal}
+Year: {year}
+
+English abstract:
+{abstract}
+
+Return the strict JSON object described in the system prompt.

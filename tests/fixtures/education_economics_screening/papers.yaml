@@ -1,0 +1,383 @@
+- &negative
+  id: n01
+  title: General equilibrium existence in an abstract economy
+  abstract: We prove existence and uniqueness for a general equilibrium model without schools, students, teachers, or education outcomes.
+  journal: Economic Theory
+  has_abstract: true
+  evidence_signals: {ontology: [], exclusions: [abstract_economic_theory], education_exception: false}
+  simulated_fast: {decision: exclude, confidence: 0.96, education_is_core: false, information_sufficiency: high}
+  simulated_strong: {decision: exclude, confidence: 0.97, abstain: false}
+  journal_prior: neutral
+  expected_decision: exclude
+  allowed_decisions: [exclude]
+  expected_priority: low
+  rationale: Pure theory without an education research object.
+  tags: [pure_theory, theory_negative]
+  concept_expectations: {positive: [], negative: [returns_to_education, teacher_quality], boundary: []}
+- <<: *negative
+  id: n02
+  title: Abstract game theory and equilibrium refinements
+  concept_expectations: {positive: [], negative: [returns_to_education, school_choice], boundary: []}
+- <<: *negative
+  id: n03
+  title: Optimal mechanism design without education context
+  evidence_signals: {ontology: [], exclusions: [non_education_mechanism_design], education_exception: false}
+  concept_expectations: {positive: [], negative: [teacher_quality, college_admissions], boundary: []}
+- <<: *negative
+  id: n04
+  title: Stable matching theory for abstract agents
+  evidence_signals: {ontology: [], exclusions: [non_education_matching], education_exception: false}
+  concept_expectations: {positive: [], negative: [school_choice, college_admissions], boundary: []}
+- <<: *negative
+  id: n05
+  title: Contract theory under limited commitment
+  concept_expectations: {positive: [], negative: [school_finance, educational_attainment], boundary: []}
+- <<: *negative
+  id: n06
+  title: Auction theory with multidimensional bidders
+  concept_expectations: {positive: [], negative: [school_finance, student_achievement], boundary: []}
+- <<: *negative
+  id: n07
+  title: Social choice correspondences
+  concept_expectations: {positive: [], negative: [educational_attainment, student_achievement], boundary: []}
+- <<: *negative
+  id: n08
+  title: Decision theory under ambiguity
+  concept_expectations: {positive: [], negative: [early_childhood_education, higher_education], boundary: []}
+- <<: *negative
+  id: n09
+  title: Dynamic oligopoly and vertical differentiation
+  evidence_signals: {ontology: [], exclusions: [theoretical_industrial_organization], education_exception: false}
+  concept_expectations: {positive: [], negative: [early_childhood_education, student_loans], boundary: []}
+- <<: *negative
+  id: n10
+  title: Econometric asymptotics for dependent arrays
+  evidence_signals: {ontology: [], exclusions: [econometric_theory], education_exception: false}
+  concept_expectations: {positive: [], negative: [higher_education, education_production_function], boundary: []}
+- <<: *negative
+  id: n11
+  title: An identification theorem for latent models
+  evidence_signals: {ontology: [], exclusions: [econometric_theory], education_exception: false}
+  concept_expectations: {positive: [], negative: [student_loans, vocational_education], boundary: []}
+- <<: *negative
+  id: n12
+  title: Statistical limit theory for high dimensions
+  evidence_signals: {ontology: [], exclusions: [econometric_theory], education_exception: false}
+  concept_expectations: {positive: [], negative: [education_production_function, vocational_education], boundary: []}
+- <<: *negative
+  id: n13
+  title: Fixed point methods in mathematical economics
+  evidence_signals: {ontology: [], exclusions: [mathematical_economics], education_exception: false}
+- <<: *negative
+  id: n14
+  title: Generalization bounds in statistical learning theory
+  evidence_signals: {ontology: [], exclusions: [machine_learning_theory], education_exception: false}
+- <<: *negative
+  id: n15
+  title: Neural network convergence and representation learning
+  evidence_signals: {ontology: [], exclusions: [machine_learning_theory], education_exception: false}
+- <<: *negative
+  id: n16
+  title: Aggregate production functions and growth
+  evidence_signals: {ontology: [], exclusions: [mathematical_economics], education_exception: false}
+
+- &education_theory
+  id: t01
+  title: School choice mechanism design
+  abstract: We model student assignment across public schools and family welfare under a strategyproof school choice mechanism.
+  journal: Journal of Education Economics
+  has_abstract: true
+  evidence_signals: {ontology: [school_choice], exclusions: [abstract_economic_theory], education_exception: true}
+  simulated_fast: {decision: include, confidence: 0.91, education_is_core: true, information_sufficiency: high}
+  simulated_strong: {decision: include, confidence: 0.93, abstain: false}
+  journal_prior: moderate_positive
+  expected_decision: include
+  allowed_decisions: [include, borderline]
+  expected_priority: high
+  rationale: A theory method applied to an explicit education allocation object.
+  tags: [education_theory, positive]
+  concept_expectations: {positive: [school_choice], negative: [], boundary: []}
+- <<: *education_theory
+  id: t02
+  title: Strategyproof school choice with priorities
+  concept_expectations: {positive: [school_choice], negative: [], boundary: []}
+- <<: *education_theory
+  id: t03
+  title: College admissions matching with affirmative action
+  evidence_signals: {ontology: [college_admissions], exclusions: [non_education_matching], education_exception: true}
+  concept_expectations: {positive: [college_admissions], negative: [], boundary: []}
+- <<: *education_theory
+  id: t04
+  title: University admissions mechanism design
+  evidence_signals: {ontology: [college_admissions], exclusions: [non_education_mechanism_design], education_exception: true}
+  concept_expectations: {positive: [college_admissions], negative: [], boundary: []}
+- <<: *education_theory
+  id: t05
+  title: Student assignment across neighborhood schools
+  evidence_signals: {ontology: [school_choice], exclusions: [non_education_matching], education_exception: true}
+- <<: *education_theory
+  id: t06
+  title: Education signaling and labor market sorting
+  evidence_signals: {ontology: [returns_to_education], exclusions: [abstract_economic_theory], education_exception: true}
+  concept_expectations: {positive: [returns_to_education], negative: [], boundary: []}
+- <<: *education_theory
+  id: t07
+  title: A theoretical schooling investment model
+  evidence_signals: {ontology: [educational_attainment], exclusions: [abstract_economic_theory], education_exception: true}
+  concept_expectations: {positive: [educational_attainment], negative: [], boundary: []}
+- <<: *education_theory
+  id: t08
+  title: Education production function with peer inputs
+  evidence_signals: {ontology: [education_production_function], exclusions: [mathematical_economics], education_exception: true}
+  concept_expectations: {positive: [education_production_function], negative: [], boundary: []}
+- <<: *education_theory
+  id: t09
+  title: School input production functions
+  evidence_signals: {ontology: [education_production_function], exclusions: [mathematical_economics], education_exception: true}
+  concept_expectations: {positive: [education_production_function], negative: [], boundary: []}
+- <<: *education_theory
+  id: t10
+  title: Teacher labor market matching
+  evidence_signals: {ontology: [teacher_quality], exclusions: [non_education_matching], education_exception: true}
+  concept_expectations: {positive: [teacher_quality], negative: [], boundary: []}
+- <<: *education_theory
+  id: t11
+  title: University course allocation mechanism design
+  evidence_signals: {ontology: [higher_education], exclusions: [non_education_mechanism_design], education_exception: true}
+  concept_expectations: {positive: [higher_education], negative: [], boundary: []}
+- <<: *education_theory
+  id: t12
+  title: A theory of school accountability
+  evidence_signals: {ontology: [student_achievement], exclusions: [abstract_economic_theory], education_exception: true}
+  concept_expectations: {positive: [student_achievement], negative: [], boundary: []}
+
+- &empirical
+  id: e01
+  title: Returns to education using compulsory schooling reforms
+  abstract: Administrative schooling and earnings records identify wage returns caused by an additional year of education.
+  journal: Economics of Education Review
+  has_abstract: true
+  evidence_signals: {ontology: [returns_to_education], exclusions: [], education_exception: false}
+  simulated_fast: {decision: include, confidence: 0.95, education_is_core: true, information_sufficiency: high}
+  simulated_strong: null
+  journal_prior: moderate_positive
+  expected_decision: include
+  allowed_decisions: [include]
+  expected_priority: high
+  rationale: Explicit empirical education object and economics mechanism.
+  tags: [education_empirical, positive]
+  concept_expectations: {positive: [returns_to_education], negative: [], boundary: []}
+- <<: *empirical
+  id: e02
+  title: Teacher quality and student test scores
+  evidence_signals: {ontology: [teacher_quality, student_achievement], exclusions: [], education_exception: false}
+  concept_expectations: {positive: [teacher_quality], negative: [], boundary: []}
+- <<: *empirical
+  id: e03
+  title: School finance reforms and achievement
+  evidence_signals: {ontology: [school_finance, student_achievement], exclusions: [], education_exception: false}
+  concept_expectations: {positive: [school_finance], negative: [], boundary: []}
+- <<: *empirical
+  id: e04
+  title: School spending and educational attainment
+  evidence_signals: {ontology: [school_finance, educational_attainment], exclusions: [], education_exception: false}
+  concept_expectations: {positive: [school_finance, educational_attainment], negative: [], boundary: []}
+- <<: *empirical
+  id: e05
+  title: Student loans and college enrollment
+  evidence_signals: {ontology: [student_loans, higher_education], exclusions: [], education_exception: false}
+  concept_expectations: {positive: [student_loans], negative: [], boundary: []}
+- <<: *empirical
+  id: e06
+  title: Student debt repayment and graduation
+  evidence_signals: {ontology: [student_loans, educational_attainment], exclusions: [], education_exception: false}
+  concept_expectations: {positive: [student_loans], negative: [], boundary: []}
+- <<: *empirical
+  id: e07
+  title: College tuition and university attendance
+  evidence_signals: {ontology: [higher_education], exclusions: [], education_exception: false}
+  concept_expectations: {positive: [higher_education], negative: [], boundary: []}
+- <<: *empirical
+  id: e08
+  title: Educational inequality and degree completion
+  evidence_signals: {ontology: [educational_attainment], exclusions: [], education_exception: false}
+  concept_expectations: {positive: [educational_attainment], negative: [], boundary: []}
+- <<: *empirical
+  id: e09
+  title: Early childhood education and later achievement
+  evidence_signals: {ontology: [early_childhood_education, student_achievement], exclusions: [], education_exception: false}
+  concept_expectations: {positive: [early_childhood_education], negative: [], boundary: []}
+- <<: *empirical
+  id: e10
+  title: Preschool education access and school readiness
+  evidence_signals: {ontology: [early_childhood_education], exclusions: [], education_exception: false}
+  concept_expectations: {positive: [early_childhood_education], negative: [], boundary: []}
+- <<: *empirical
+  id: e11
+  title: Vocational education and youth employment
+  evidence_signals: {ontology: [vocational_education], exclusions: [], education_exception: false}
+  concept_expectations: {positive: [vocational_education], negative: [], boundary: []}
+- <<: *empirical
+  id: e12
+  title: Technical vocational schooling and wages
+  evidence_signals: {ontology: [vocational_education, returns_to_education], exclusions: [], education_exception: false}
+  concept_expectations: {positive: [vocational_education], negative: [], boundary: []}
+- <<: *empirical
+  id: e13
+  title: Academic achievement after curriculum reform
+  evidence_signals: {ontology: [student_achievement], exclusions: [], education_exception: false}
+  concept_expectations: {positive: [student_achievement], negative: [], boundary: []}
+- <<: *empirical
+  id: e14
+  title: Teacher effectiveness and classroom outcomes
+  evidence_signals: {ontology: [teacher_quality], exclusions: [], education_exception: false}
+  concept_expectations: {positive: [teacher_quality], negative: [], boundary: []}
+- <<: *empirical
+  id: e15
+  title: Higher education expansion and labor markets
+  evidence_signals: {ontology: [higher_education], exclusions: [], education_exception: false}
+- <<: *empirical
+  id: e16
+  title: Curriculum tracking and student achievement
+  evidence_signals: {ontology: [student_achievement], exclusions: [], education_exception: false}
+
+- &boundary_exclude
+  id: b01
+  title: Human capital accumulation in firms
+  abstract: Workers accumulate task-specific human capital without schools, teachers, students, or education policy.
+  journal: Journal of Labor Economics
+  has_abstract: true
+  evidence_signals: {ontology: [], exclusions: [], education_exception: false, ambiguous: [human capital]}
+  simulated_fast: {decision: exclude, confidence: 0.88, education_is_core: false, information_sufficiency: high}
+  simulated_strong: {decision: exclude, confidence: 0.92, abstain: false}
+  journal_prior: strong_positive
+  expected_decision: exclude
+  allowed_decisions: [exclude]
+  expected_priority: normal
+  rationale: An ambiguous adjacent concept and journal prior cannot replace an education object.
+  tags: [boundary, journal_prior_negative]
+  concept_expectations: {positive: [], negative: [], boundary: [returns_to_education]}
+- <<: *boundary_exclude
+  id: b02
+  title: Learning representations with neural networks
+  evidence_signals: {ontology: [], exclusions: [machine_learning_theory], education_exception: false, ambiguous: [learning]}
+  concept_expectations: {positive: [], negative: [], boundary: [student_achievement]}
+- <<: *boundary_exclude
+  id: b03
+  title: Wealth inequality in general equilibrium
+  evidence_signals: {ontology: [], exclusions: [abstract_economic_theory], education_exception: false, ambiguous: [inequality]}
+  concept_expectations: {positive: [], negative: [], boundary: [educational_attainment]}
+- <<: *boundary_exclude
+  id: b04
+  title: An experiment at Trinity College laboratory
+  evidence_signals: {ontology: [], exclusions: [], education_exception: false, ambiguous: [college affiliation]}
+  concept_expectations: {positive: [], negative: [], boundary: [college_admissions]}
+- <<: *boundary_exclude
+  id: b05
+  title: Assignment mechanisms for warehouse slots
+  evidence_signals: {ontology: [], exclusions: [non_education_matching], education_exception: false, ambiguous: [assignment]}
+  concept_expectations: {positive: [], negative: [], boundary: [school_choice]}
+- <<: *boundary_exclude
+  id: b06
+  title: Consumer loans and repayment
+  concept_expectations: {positive: [], negative: [], boundary: [student_loans]}
+- <<: *boundary_exclude
+  id: b07
+  title: Corporate finance and municipal bonds
+  concept_expectations: {positive: [], negative: [], boundary: [school_finance]}
+- <<: *boundary_exclude
+  id: b08
+  title: Firm production functions
+  concept_expectations: {positive: [], negative: [], boundary: [education_production_function]}
+- <<: *boundary_exclude
+  id: b09
+  title: Employee training inside firms
+  concept_expectations: {positive: [], negative: [], boundary: [vocational_education]}
+- <<: *boundary_exclude
+  id: b10
+  title: Early childhood health biomarkers
+  concept_expectations: {positive: [], negative: [], boundary: [early_childhood_education]}
+- <<: *boundary_exclude
+  id: b11
+  title: Higher order approximations in economics
+  concept_expectations: {positive: [], negative: [], boundary: [higher_education]}
+- <<: *boundary_exclude
+  id: b12
+  title: Service quality and worker productivity
+  concept_expectations: {positive: [], negative: [], boundary: [teacher_quality]}
+
+- &no_abstract_clear
+  id: b13
+  title: School choice and student assignment
+  abstract: ''
+  journal: Education Finance and Policy
+  has_abstract: false
+  evidence_signals: {ontology: [school_choice], exclusions: [non_education_matching], education_exception: true}
+  simulated_fast: {decision: borderline, confidence: 0.55, education_is_core: true, information_sufficiency: low}
+  simulated_strong: null
+  journal_prior: moderate_positive
+  expected_decision: borderline
+  allowed_decisions: [include, borderline]
+  expected_priority: high
+  rationale: Clear education title without abstract must reach human review.
+  tags: [boundary, no_abstract, education_theory]
+  concept_expectations: {positive: [], negative: [], boundary: [school_choice]}
+- <<: *no_abstract_clear
+  id: b14
+  title: Returns to education
+  evidence_signals: {ontology: [returns_to_education], exclusions: [], education_exception: false}
+  concept_expectations: {positive: [], negative: [], boundary: [returns_to_education]}
+- <<: *no_abstract_clear
+  id: b15
+  title: Teacher quality in public schools
+  evidence_signals: {ontology: [teacher_quality], exclusions: [], education_exception: false}
+  concept_expectations: {positive: [], negative: [], boundary: [teacher_quality]}
+- <<: *no_abstract_clear
+  id: b16
+  title: Higher education and student loans
+  evidence_signals: {ontology: [higher_education, student_loans], exclusions: [], education_exception: false}
+  concept_expectations: {positive: [], negative: [], boundary: [higher_education, student_loans]}
+- &no_abstract_vague
+  id: b17
+  title: Investment and outcomes
+  abstract: ''
+  journal: Quarterly Journal of Economics
+  has_abstract: false
+  evidence_signals: {ontology: [], exclusions: [], education_exception: false, ambiguous: [investment]}
+  simulated_fast: {decision: borderline, confidence: 0.40, education_is_core: false, information_sufficiency: insufficient}
+  simulated_strong: null
+  journal_prior: strong_positive
+  expected_decision: borderline
+  allowed_decisions: [borderline, exclude]
+  expected_priority: high
+  rationale: Vague title and journal prior cannot create an include.
+  tags: [boundary, no_abstract, vague_title]
+  concept_expectations: {positive: [], negative: [], boundary: []}
+- <<: *no_abstract_vague
+  id: b18
+  title: An existence theorem
+  evidence_signals: {ontology: [], exclusions: [abstract_economic_theory], education_exception: false}
+  simulated_fast: {decision: exclude, confidence: 0.75, education_is_core: false, information_sufficiency: low}
+  expected_decision: exclude
+  allowed_decisions: [exclude, borderline]
+  tags: [boundary, no_abstract, pure_theory]
+- <<: *no_abstract_vague
+  id: b19
+  title: Matching and welfare
+  evidence_signals: {ontology: [], exclusions: [non_education_matching], education_exception: false}
+- &conflict
+  id: b20
+  title: Education signaling with ambiguous welfare effects
+  abstract: A schooling signaling model yields conflicting rule and semantic indications that require review.
+  journal: Economic Theory
+  has_abstract: true
+  evidence_signals: {ontology: [returns_to_education], exclusions: [abstract_economic_theory], education_exception: true}
+  simulated_fast: {decision: include, confidence: 0.72, education_is_core: true, information_sufficiency: medium}
+  simulated_strong: {decision: exclude, confidence: 0.82, abstain: false}
+  journal_prior: neutral
+  expected_decision: borderline
+  allowed_decisions: [borderline]
+  expected_priority: urgent
+  rationale: Fast/Strong and Evidence/Semantic conflict must be visible to human review.
+  tags: [boundary, conflict, education_theory]
+  concept_expectations: {positive: [], negative: [], boundary: [education_production_function]}

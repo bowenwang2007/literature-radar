@@ -1,0 +1,97 @@
+profile_id: education_economics
+display_name: 教育经济学
+display_name_en: Education Economics
+description: 教育、技能形成、人力资本及其经济后果；默认研究档案。
+status: active
+screening_prompt_version: 2026-07-31-screening-v1
+screening_dimensions:
+  centrality_label: 教育中心性
+  centrality_definition: 'education is the core research object: schooling, skills, human capital formation,
+    education policy, or an economic consequence of education — as the thing being explained, not as a
+    control variable, sampling site or aside.'
+  economics_definition: 'the paper contains substantive economics content: incentives, information, behaviour,
+    education or school choice, teacher behaviour, school organisation, resource allocation, education
+    finance, public policy, human capital, returns to education, labour-market consequences, inequality,
+    or credible causal identification.'
+subject_signals:
+  jel_codes:
+  - I21
+  - I22
+  - I23
+  - I24
+  - I25
+  - I26
+  - I28
+  - J24
+  - H52
+  - O15
+  topics:
+  - returns to education and human capital
+  - education policy and school reform
+  - teacher labour markets and incentives
+  - education finance and resource allocation
+  - inequality and intergenerational mobility through education
+journal_groups:
+- key: education_economics_core
+  display_name: 教育经济学核心期刊
+  description: 以教育经济学为主要研究领域的期刊。
+  journal_keys:
+  - economics_of_education_review
+  - education_economics
+  - education_finance_and_policy
+  - british_educational_research_journal
+  - international_journal_of_educational_development
+  - teaching_and_teacher_education
+- key: education_economics_adjacent
+  display_name: 教育经济学相关期刊
+  description: 经常发表教育相关研究的劳动、公共、发展与健康经济学期刊。
+  journal_keys:
+  - journal_of_human_resources
+  - journal_of_labor_economics
+  - labour_economics
+  - journal_of_public_economics
+  - american_economic_journal_applied_economics
+  - journal_of_human_capital
+  - journal_of_population_economics
+  - world_development
+  - journal_of_development_economics
+  - journal_of_health_economics
+  - american_economic_journal_economic_policy
+  - fiscal_studies
+  - national_tax_journal
+  - economic_development_and_cultural_change
+- key: general_economics
+  display_name: 综合与旗舰经济学期刊
+  description: 所有研究方向共用的综合期刊清单；对每个队列内容相同。
+  journal_keys:
+  - general_qje
+  - general_aer
+  - general_jpe
+  - general_ecma
+  - general_restud
+  - general_jeea
+  - general_jel
+  - general_jep
+  - general_are
+  - general_restat
+  - general_aejmacro
+  - general_bpea
+  - general_jeg
+  - general_rand
+  - general_joe
+  - general_jf
+  - general_jfe
+  - general_jme
+  - general_rfs
+  - economic_journal
+  - journal_of_applied_econometrics
+  - journal_of_business_and_economic_statistics
+  - econometric_theory
+  - journal_of_economic_dynamics_and_control
+  - review_of_economic_dynamics
+  - journal_of_international_economics
+  - review_of_world_economics
+- key: custom
+  display_name: 自定义期刊
+  description: 由本人添加的期刊；保存在本地配置中。
+  journal_keys: []

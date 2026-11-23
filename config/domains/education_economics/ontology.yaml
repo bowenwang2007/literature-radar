@@ -1,0 +1,353 @@
+ontology:
+  profile_id: education_economics
+  version: 0.2.0-phase6d-candidate
+  released_at: null
+  status: candidate
+  evidence_policy: >-
+    Structural seed concepts are disabled drafts. A concept requires traceable evidence and
+    human review before it can be released or used by production screening.
+  concepts:
+    - concept_id: education_economics
+      preferred_term: education economics
+      display_name_zh: 教育经济学
+      description: Structural root for the draft domain ontology.
+      child_concepts:
+        - education_stages
+        - educational_organizations_and_institutions
+        - teachers_and_education_labor_markets
+        - school_inputs_and_finance
+        - education_choice_and_admissions
+        - skill_formation_and_human_capital
+        - returns_to_education_and_labor_outcomes
+        - education_inequality_and_mobility
+        - family_inputs_and_peer_effects
+        - education_policy_and_interventions
+        - learning_and_education_outcomes
+        - adjacent_domains
+        - exclusion_contexts
+      signal_strength: neutral
+      enabled: false
+      status: draft
+      version_added: 0.1.0-draft
+    - concept_id: education_stages
+      preferred_term: education stages
+      display_name_zh: 教育阶段
+      description: Organizational placeholder; no retrieval terms are released.
+      parent_concept: education_economics
+      signal_strength: neutral
+      enabled: false
+      status: draft
+      version_added: 0.1.0-draft
+    - concept_id: educational_organizations_and_institutions
+      preferred_term: educational organizations and institutions
+      display_name_zh: 教育组织与制度
+      description: Organizational placeholder; no retrieval terms are released.
+      parent_concept: education_economics
+      signal_strength: neutral
+      enabled: false
+      status: draft
+      version_added: 0.1.0-draft
+    - concept_id: teachers_and_education_labor_markets
+      preferred_term: teachers and education labor markets
+      display_name_zh: 教师与教育劳动力市场
+      description: Organizational placeholder; no retrieval terms are released.
+      parent_concept: education_economics
+      signal_strength: neutral
+      enabled: false
+      status: draft
+      version_added: 0.1.0-draft
+    - concept_id: school_inputs_and_finance
+      preferred_term: school inputs and finance
+      display_name_zh: 学校投入与财政
+      description: Organizational placeholder; no retrieval terms are released.
+      parent_concept: education_economics
+      signal_strength: neutral
+      enabled: false
+      status: draft
+      version_added: 0.1.0-draft
+    - concept_id: education_choice_and_admissions
+      preferred_term: education choice and admissions
+      display_name_zh: 教育选择与招生
+      description: Organizational placeholder; no retrieval terms are released.
+      parent_concept: education_economics
+      signal_strength: neutral
+      enabled: false
+      status: draft
+      version_added: 0.1.0-draft
+    - concept_id: skill_formation_and_human_capital
+      preferred_term: skill formation and human capital
+      display_name_zh: 技能形成与人力资本
+      description: Organizational placeholder; no retrieval terms are released.
+      parent_concept: education_economics
+      signal_strength: neutral
+      enabled: false
+      status: draft
+      version_added: 0.1.0-draft
+    - concept_id: returns_to_education_and_labor_outcomes
+      preferred_term: returns to education and labor outcomes
+      display_name_zh: 教育回报与劳动力市场结果
+      description: Organizational placeholder; no retrieval terms are released.
+      parent_concept: education_economics
+      signal_strength: neutral
+      enabled: false
+      status: draft
+      version_added: 0.1.0-draft
+    - concept_id: education_inequality_and_mobility
+      preferred_term: education inequality and mobility
+      display_name_zh: 教育不平等与代际流动
+      description: Organizational placeholder; no retrieval terms are released.
+      parent_concept: education_economics
+      signal_strength: neutral
+      enabled: false
+      status: draft
+      version_added: 0.1.0-draft
+    - concept_id: family_inputs_and_peer_effects
+      preferred_term: family inputs and peer effects
+      display_name_zh: 家庭投入与同伴效应
+      description: Organizational placeholder; no retrieval terms are released.
+      parent_concept: education_economics
+      signal_strength: neutral
+      enabled: false
+      status: draft
+      version_added: 0.1.0-draft
+    - concept_id: education_policy_and_interventions
+      preferred_term: education policy and interventions
+      display_name_zh: 教育政策和干预
+      description: Organizational placeholder; no retrieval terms are released.
+      parent_concept: education_economics
+      signal_strength: neutral
+      enabled: false
+      status: draft
+      version_added: 0.1.0-draft
+    - concept_id: learning_and_education_outcomes
+      preferred_term: learning and education outcomes
+      display_name_zh: 学习结果和教育产出
+      description: Organizational placeholder; no retrieval terms are released.
+      parent_concept: education_economics
+      signal_strength: neutral
+      enabled: false
+      status: draft
+      version_added: 0.1.0-draft
+    - concept_id: adjacent_domains
+      preferred_term: adjacent domains
+      display_name_zh: 邻接领域
+      description: Organizational placeholder; adjacent-domain weights are not active.
+      parent_concept: education_economics
+      signal_strength: neutral
+      enabled: false
+      status: draft
+      version_added: 0.1.0-draft
+    - concept_id: exclusion_contexts
+      preferred_term: exclusion contexts
+      display_name_zh: 排除语境
+      description: Organizational placeholder; exclusion contexts are never hard excludes.
+      parent_concept: education_economics
+      signal_strength: neutral
+      enabled: false
+      status: draft
+      version_added: 0.1.0-draft
+    - concept_id: returns_to_education
+      preferred_term: returns to education
+      display_name_zh: 教育回报
+      description: Earnings or labor-market returns explicitly attributed to education or schooling.
+      synonyms: [return to schooling, wage returns to education]
+      phrases: [economic returns to education, causal returns to schooling]
+      parent_concept: returns_to_education_and_labor_outcomes
+      signal_strength: strong
+      negative_contexts: [returns to investment, asset returns]
+      education_exceptions: [schooling, educational attainment]
+      classification: high_precision_anchor
+      matching_mode: normalized_phrase
+      evidence_sources: &phase6d_fixture_evidence
+        - {source_type: offline_fixture_registry, title: Phase 6D education-economics screening fixtures, identifier: phase6d-fixtures-v1, year: 2026}
+      notes: Protected by at least two positive, two negative, and one boundary fixture.
+      enabled: true
+      status: candidate
+      version_added: 0.2.0-phase6d-candidate
+    - concept_id: teacher_quality
+      preferred_term: teacher quality
+      display_name_zh: 教师质量
+      description: Teacher effectiveness, quality, or value-added in an education setting.
+      synonyms: [teacher effectiveness, teacher value added]
+      phrases: [teacher quality, effective teachers]
+      parent_concept: teachers_and_education_labor_markets
+      signal_strength: strong
+      negative_contexts: [data quality, service quality]
+      education_exceptions: [teacher, classroom, school]
+      classification: high_precision_anchor
+      matching_mode: normalized_phrase
+      evidence_sources: *phase6d_fixture_evidence
+      notes: Exact multiword education phrase only; generic quality is excluded.
+      enabled: true
+      status: candidate
+      version_added: 0.2.0-phase6d-candidate
+    - concept_id: school_choice
+      preferred_term: school choice
+      display_name_zh: 学校选择
+      description: Family or student choice among schools and associated allocation rules.
+      synonyms: [choice of school]
+      phrases: [public school choice, school choice mechanism]
+      parent_concept: education_choice_and_admissions
+      signal_strength: strong
+      negative_contexts: [social choice, consumer choice]
+      education_exceptions: [student assignment, school admissions]
+      classification: high_precision_anchor
+      matching_mode: normalized_phrase
+      evidence_sources: *phase6d_fixture_evidence
+      notes: Social choice alone is not a match.
+      enabled: true
+      status: candidate
+      version_added: 0.2.0-phase6d-candidate
+    - concept_id: college_admissions
+      preferred_term: college admissions
+      display_name_zh: 大学招生
+      description: Admission, matching, or selection explicitly involving colleges or universities.
+      synonyms: [university admissions, college admission]
+      phrases: [college admissions matching, university admission mechanism]
+      parent_concept: education_choice_and_admissions
+      signal_strength: strong
+      negative_contexts: [hospital admissions, institution named College]
+      education_exceptions: [student assignment, applicants, university]
+      classification: high_precision_anchor
+      matching_mode: normalized_phrase
+      evidence_sources: *phase6d_fixture_evidence
+      notes: College as an affiliation name alone is excluded by fixtures.
+      enabled: true
+      status: candidate
+      version_added: 0.2.0-phase6d-candidate
+    - concept_id: school_finance
+      preferred_term: school finance
+      display_name_zh: 学校财政
+      description: Funding, expenditure, or fiscal policy explicitly attached to schools.
+      synonyms: [education finance, school funding]
+      phrases: [public school finance, school spending]
+      parent_concept: school_inputs_and_finance
+      signal_strength: strong
+      negative_contexts: [corporate finance, household finance]
+      education_exceptions: [school spending, education funding]
+      classification: high_precision_anchor
+      matching_mode: normalized_phrase
+      evidence_sources: *phase6d_fixture_evidence
+      notes: Finance without an education object is not a match.
+      enabled: true
+      status: candidate
+      version_added: 0.2.0-phase6d-candidate
+    - concept_id: educational_attainment
+      preferred_term: educational attainment
+      display_name_zh: 受教育程度
+      description: Completed schooling or education attainment outcomes.
+      synonyms: [schooling attainment, years of schooling]
+      phrases: [educational attainment, completed education]
+      parent_concept: learning_and_education_outcomes
+      signal_strength: strong
+      negative_contexts: [goal attainment, organizational attainment]
+      education_exceptions: [schooling, degree completion]
+      classification: high_precision_anchor
+      matching_mode: normalized_phrase
+      evidence_sources: *phase6d_fixture_evidence
+      notes: Generic attainment is disabled.
+      enabled: true
+      status: candidate
+      version_added: 0.2.0-phase6d-candidate
+    - concept_id: student_achievement
+      preferred_term: student achievement
+      display_name_zh: 学生成绩
+      description: Academic or learning achievement explicitly measured for students.
+      synonyms: [academic achievement, student performance]
+      phrases: [student test achievement, pupil achievement]
+      parent_concept: learning_and_education_outcomes
+      signal_strength: strong
+      negative_contexts: [firm performance, model performance]
+      education_exceptions: [student, pupil, school]
+      classification: high_precision_anchor
+      matching_mode: contextual_phrase
+      evidence_sources: *phase6d_fixture_evidence
+      notes: Performance without an education actor is not a match.
+      enabled: true
+      status: candidate
+      version_added: 0.2.0-phase6d-candidate
+    - concept_id: early_childhood_education
+      preferred_term: early childhood education
+      display_name_zh: 学前教育
+      description: Preschool, pre-primary, or early childhood education programs.
+      synonyms: [preschool education, pre primary education]
+      phrases: [early childhood program, preschool attendance]
+      parent_concept: education_stages
+      signal_strength: strong
+      negative_contexts: [child health without education, early life biology]
+      education_exceptions: [preschool, classroom, teacher]
+      classification: high_precision_anchor
+      matching_mode: contextual_phrase
+      evidence_sources: *phase6d_fixture_evidence
+      notes: Early childhood alone requires an education context.
+      enabled: true
+      status: candidate
+      version_added: 0.2.0-phase6d-candidate
+    - concept_id: higher_education
+      preferred_term: higher education
+      display_name_zh: 高等教育
+      description: Postsecondary education institutions, participation, policy, or outcomes.
+      synonyms: [postsecondary education, tertiary education]
+      phrases: [higher education policy, university education]
+      parent_concept: education_stages
+      signal_strength: strong
+      negative_contexts: [higher order theory, institution affiliation only]
+      education_exceptions: [university students, college tuition]
+      classification: high_precision_anchor
+      matching_mode: contextual_phrase
+      evidence_sources: *phase6d_fixture_evidence
+      notes: University name alone is not sufficient.
+      enabled: true
+      status: candidate
+      version_added: 0.2.0-phase6d-candidate
+    - concept_id: student_loans
+      preferred_term: student loans
+      display_name_zh: 学生贷款
+      description: Borrowing and repayment programs specifically financing education.
+      synonyms: [education loans, student debt]
+      phrases: [college student loans, student loan repayment]
+      parent_concept: school_inputs_and_finance
+      signal_strength: strong
+      negative_contexts: [consumer loans, business loans]
+      education_exceptions: [tuition, college, enrollment]
+      classification: high_precision_anchor
+      matching_mode: normalized_phrase
+      evidence_sources: *phase6d_fixture_evidence
+      notes: Generic debt and credit are not matches.
+      enabled: true
+      status: candidate
+      version_added: 0.2.0-phase6d-candidate
+    - concept_id: education_production_function
+      preferred_term: education production function
+      display_name_zh: 教育生产函数
+      description: Formal models of how education inputs generate schooling outcomes.
+      synonyms: [educational production function, school production function]
+      phrases: [education production technology, school input production function]
+      parent_concept: school_inputs_and_finance
+      signal_strength: strong
+      negative_contexts: [firm production function, aggregate production function]
+      education_exceptions: [school inputs, student achievement]
+      classification: high_precision_anchor
+      matching_mode: normalized_phrase
+      evidence_sources: *phase6d_fixture_evidence
+      notes: Production function alone is not education evidence.
+      enabled: true
+      status: candidate
+      version_added: 0.2.0-phase6d-candidate
+    - concept_id: vocational_education
+      preferred_term: vocational education
+      display_name_zh: 职业教育
+      description: Vocational schooling, training institutions, and education-to-work programs.
+      synonyms: [vocational schooling, technical education]
+      phrases: [vocational education and training, technical vocational education]
+      parent_concept: education_stages
+      signal_strength: strong
+      negative_contexts: [model training, employee training without schooling]
+      education_exceptions: [vocational school, qualification, students]
+      classification: high_precision_anchor
+      matching_mode: contextual_phrase
+      evidence_sources: *phase6d_fixture_evidence
+      notes: Training alone is an ambiguous signal and remains disabled.
+      enabled: true
+      status: candidate
+      version_added: 0.2.0-phase6d-candidate

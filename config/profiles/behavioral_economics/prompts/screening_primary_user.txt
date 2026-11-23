@@ -1,0 +1,14 @@
+Judge the following paper for the behavioral-economics reading queue.
+
+Title: {title}
+Journal: {journal}
+Year: {year}
+JEL codes (may be empty): {jel_codes}
+
+English abstract:
+{abstract}
+
+If the English abstract is empty, judge from the title only and use
+"needs_abstract"; never infer "relevant" from a title alone.
+
+Return the strict JSON object described in the system prompt.

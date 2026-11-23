@@ -1,0 +1,14 @@
+Review the following first-stage screening result for the behavioral-economics
+reading queue.
+
+Paper title: {title}
+Journal: {journal}
+Year: {year}
+
+English abstract:
+{abstract}
+
+First-stage judgment (JSON):
+{primary}
+
+Return the strict JSON object described in the system prompt.

@@ -1,0 +1,184 @@
+ranking:
+  name: "RePEc Aggregate Economics Journal Ranking (frozen 2026-07-18)"
+  frozen_at: "2026-07-18"
+
+journals:
+  - name: "The Quarterly Journal of Economics"
+    short_name: "QJE"
+    issn: "0033-5533"
+    eissn: "1531-4650"
+    rank: 1
+    rank_source: "RePEc Top Journals - last 10 years, verified project sample"
+    priority: high
+    enabled: true
+
+  - name: "Journal of Political Economy"
+    short_name: "JPE"
+    issn: "0022-3808"
+    eissn: "1537-534X"
+    rank: 2
+    rank_source: "RePEc Top Journals - last 10 years, verified project sample"
+    priority: high
+    enabled: true
+
+  - name: "American Economic Review"
+    short_name: "AER"
+    issn: "0002-8282"
+    eissn: "1944-7981"
+    rank: 3
+    rank_source: "RePEc Top Journals - last 10 years, verified project sample"
+    priority: high
+    enabled: true
+
+  - name: "Econometrica"
+    short_name: "ECMA"
+    issn: "0012-9682"
+    eissn: "1468-0262"
+    rank: 4
+    rank_source: "RePEc Top Journals - last 10 years, verified project sample"
+    priority: high
+    enabled: true
+
+  - name: "The Review of Economic Studies"
+    short_name: "REStud"
+    issn: "0034-6527"
+    eissn: "1467-937X"
+    rank: 5
+    rank_source: "RePEc Top Journals - last 10 years, verified project sample"
+    priority: high
+    enabled: true
+
+  - name: "The RAND Journal of Economics"
+    short_name: "RAND"
+    issn: "0741-6261"
+    eissn: "1756-2171"
+    rank: 70
+    rank_source: "RePEc Top Journals - last 10 years, verified project sample"
+    priority: high
+    enabled: true
+
+  - name: "Journal of Economic Perspectives"
+    short_name: "JEP"
+    issn: "0895-3309"
+    eissn: "1944-7965"
+    rank: 7
+    rank_source: "RePEc Top Journals - last 10 years, verified project sample"
+    priority: high
+    enabled: true
+
+  - name: "The Journal of Finance"
+    short_name: "JF"
+    issn: "0022-1082"
+    eissn: "1540-6261"
+    rank: 8
+    rank_source: "RePEc Top Journals - last 10 years, verified project sample"
+    priority: high
+    enabled: true
+
+  - name: "Journal of Economic Literature"
+    short_name: "JEL"
+    issn: "0022-0515"
+    eissn: "2328-8175"
+    rank: 9
+    rank_source: "RePEc Top Journals - last 10 years, verified project sample"
+    priority: high
+    enabled: true
+
+  - name: "Journal of Financial Economics"
+    short_name: "JFE"
+    issn: "0304-405X"
+    eissn: "1879-2774"
+    rank: 10
+    rank_source: "RePEc Top Journals - last 10 years, verified project sample"
+    priority: high
+    enabled: true
+
+  - name: "American Economic Journal: Macroeconomics"
+    short_name: "AEJMacro"
+    issn: "1945-7707"
+    eissn: "1945-7715"
+    rank: 11
+    rank_source: "RePEc Top Journals - last 10 years, verified project sample"
+    priority: high
+    enabled: true
+
+  - name: "The Review of Financial Studies"
+    short_name: "RFS"
+    issn: "0893-9454"
+    eissn: "1465-7368"
+    rank: 12
+    rank_source: "RePEc Top Journals - last 10 years, verified project sample"
+    priority: high
+    enabled: true
+
+  - name: "Brookings Papers on Economic Activity"
+    short_name: "BPEA"
+    issn: "0007-2303"
+    eissn: "1533-4465"
+    rank: 13
+    rank_source: "RePEc Top Journals - last 10 years, verified project sample"
+    priority: high
+    enabled: true
+
+  - name: "Annual Review of Economics"
+    short_name: "ARE"
+    issn: "1941-1383"
+    eissn: "1941-1391"
+    rank: 14
+    rank_source: "RePEc Top Journals - last 10 years, verified project sample"
+    priority: high
+    enabled: true
+
+  - name: "The Review of Economics and Statistics"
+    short_name: "REStat"
+    issn: "0034-6535"
+    eissn: "1530-9142"
+    rank: 15
+    rank_source: "RePEc Top Journals - last 10 years, verified project sample"
+    priority: high
+    enabled: true
+
+  - name: "Journal of Monetary Economics"
+    short_name: "JME"
+    issn: "0304-3932"
+    eissn: "1873-1295"
+    rank: 16
+    rank_source: "RePEc Top Journals - last 10 years, verified project sample"
+    priority: high
+    enabled: true
+
+  - name: "Journal of Econometrics"
+    short_name: "JoE"
+    issn: "0304-4076"
+    eissn: "1872-6895"
+    rank: 17
+    rank_source: "RePEc Top Journals - last 10 years, verified project sample"
+    priority: high
+    enabled: true
+
+  - name: "Journal of Economic Growth"
+    short_name: "JEG"
+    issn: "1381-4338"
+    eissn: "1573-7020"
+    rank: 30
+    rank_source: "RePEc Top Journals - last 10 years, verified project sample"
+    priority: high
+    enabled: true
+
+  - name: "American Economic Journal: Applied Economics"
+    short_name: "AEJApplied"
+    issn: "1945-7782"
+    eissn: "1945-7790"
+    rank: 19
+    rank_source: "RePEc Top Journals - last 10 years, verified project sample"
+    priority: high
+    enabled: true
+
+  - name: "Journal of the European Economic Association"
+    short_name: "JEEA"
+    issn: "1542-4766"
+    eissn: "1542-4774"
+    rank: 20
+    rank_source: "RePEc Top Journals - last 10 years, verified project sample"
+    priority: high
+    enabled: true

@@ -1,0 +1,55 @@
+journal_priors:
+  profile_id: education_economics
+  version: 0.1.0-draft
+  released_at: null
+  status: draft
+  journals:
+    - journal_id: economics_of_education_review
+      canonical_name: Economics of Education Review
+      group: both
+      verified: false
+      status: candidate
+      notes: ISSNs and prior tier require authoritative verification.
+      version_added: 0.1.0-draft
+    - journal_id: education_finance_and_policy
+      canonical_name: Education Finance and Policy
+      group: both
+      verified: false
+      status: candidate
+      notes: ISSNs and prior tier require authoritative verification.
+      version_added: 0.1.0-draft
+    - journal_id: journal_of_human_resources
+      canonical_name: Journal of Human Resources
+      group: both
+      verified: false
+      status: candidate
+      notes: ISSNs and prior tier require authoritative verification.
+      version_added: 0.1.0-draft
+    - journal_id: journal_of_labor_economics
+      canonical_name: Journal of Labor Economics
+      group: both
+      verified: false
+      status: candidate
+      notes: ISSNs and prior tier require authoritative verification.
+      version_added: 0.1.0-draft
+    - journal_id: labour_economics
+      canonical_name: Labour Economics
+      group: both
+      verified: false
+      status: candidate
+      notes: ISSNs and prior tier require authoritative verification.
+      version_added: 0.1.0-draft
+    - journal_id: journal_of_public_economics
+      canonical_name: Journal of Public Economics
+      group: both
+      verified: false
+      status: candidate
+      notes: ISSNs and prior tier require authoritative verification.
+      version_added: 0.1.0-draft
+    - journal_id: aej_applied_economics
+      canonical_name: "American Economic Journal: Applied Economics"
+      group: both
+      verified: false
+      status: candidate
+      notes: Domain-prior evidence and identifiers require a separate verification record.
+      version_added: 0.1.0-draft

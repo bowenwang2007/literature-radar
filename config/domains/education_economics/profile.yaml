@@ -1,0 +1,25 @@
+profile:
+  profile_id: education_economics
+  display_name: Education Economics
+  version: 0.2.0-phase6d-candidate
+  status: candidate
+  primary_domain: education_economics
+  adjacent_domains:
+    - domain_id: behavioral_economics
+      display_name: Behavioral Economics
+      weight_status: reserved
+    - domain_id: labor_economics
+      display_name: Labor Economics
+      weight_status: reserved
+    - domain_id: public_economics
+      display_name: Public Economics
+      weight_status: reserved
+    - domain_id: political_economy
+      display_name: Political Economy
+      weight_status: reserved
+  ontology_version: 0.2.0-phase6d-candidate
+  exclusion_context_version: 0.2.0-phase6d-candidate
+  journal_prior_version: 0.1.0-draft
+  subject_code_version: 0.1.0-draft
+  scoring_version: 0.2.0-phase6d-test-fixture
+  prompt_version: 2026-07-22-phase6d-v1

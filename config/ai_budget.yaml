@@ -1,0 +1,32 @@
+version: "2026-07-24-safety-ceiling-v1"
+currency: USD
+conservative_microunits_per_input_token: 2
+conservative_microunits_per_output_token: 8
+defaults:
+  max_calls: 500
+  max_input_tokens: 2000000
+  max_output_tokens: 500000
+  max_estimated_cost_microunits: 25000000
+  max_strong_calls: 100
+  max_translation_calls: 400
+stages:
+  title_translation:
+    max_calls: 250
+    max_input_tokens: 500000
+    max_output_tokens: 125000
+    max_estimated_cost_microunits: 6000000
+  fast_semantic:
+    max_calls: 250
+    max_input_tokens: 1000000
+    max_output_tokens: 250000
+    max_estimated_cost_microunits: 10000000
+  strong_semantic:
+    max_calls: 100
+    max_input_tokens: 500000
+    max_output_tokens: 100000
+    max_estimated_cost_microunits: 6000000
+  abstract_translation:
+    max_calls: 150
+    max_input_tokens: 1000000
+    max_output_tokens: 250000
+    max_estimated_cost_microunits: 12000000

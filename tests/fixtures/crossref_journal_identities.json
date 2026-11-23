@@ -1,0 +1,776 @@
+[
+  {
+    "journal_key": "american_economic_journal_applied_economics",
+    "crossref_title": "American Economic Journal Applied Economics",
+    "issn": [
+      "1945-7782",
+      "1945-7790"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "american_economic_journal_economic_policy",
+    "crossref_title": "American Economic Journal Economic Policy",
+    "issn": [
+      "1945-774X",
+      "1945-774X",
+      "1945-7731"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "american_economic_journal_microeconomics",
+    "crossref_title": "American Economic Journal Microeconomics",
+    "issn": [
+      "1945-7669",
+      "1945-7685"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "american_journal_of_political_science",
+    "crossref_title": "American Journal of Political Science",
+    "issn": [
+      "0092-5853",
+      "1540-5907"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "american_political_science_review",
+    "crossref_title": "American Political Science Review",
+    "issn": [
+      "0003-0554",
+      "1537-5943"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "applied_economics",
+    "crossref_title": "Applied Economics",
+    "issn": [
+      "0003-6846",
+      "1466-4283"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "british_educational_research_journal",
+    "crossref_title": "British Educational Research Journal",
+    "issn": [
+      "0141-1926",
+      "1469-3518"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "british_journal_of_political_science",
+    "crossref_title": "British Journal of Political Science",
+    "issn": [
+      "0007-1234",
+      "1469-2112"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "comparative_political_studies",
+    "crossref_title": "Comparative Political Studies",
+    "issn": [
+      "0010-4140",
+      "1552-3829"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "econometric_theory",
+    "crossref_title": "Econometric Theory",
+    "issn": [
+      "0266-4666",
+      "1469-4360"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "economic_development_and_cultural_change",
+    "crossref_title": "Economic Development and Cultural Change",
+    "issn": [
+      "0013-0079",
+      "1539-2988"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "economic_journal",
+    "crossref_title": "The Economic Journal",
+    "issn": [
+      "0013-0133",
+      "1468-0297"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "economic_policy",
+    "crossref_title": "Economic Policy",
+    "issn": [
+      "0266-4658",
+      "1468-0327"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "economics_and_politics",
+    "crossref_title": "Economics and Politics",
+    "issn": [
+      "0954-1985",
+      "1468-0343"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "economics_of_education_review",
+    "crossref_title": "Economics of Education Review",
+    "issn": [
+      "0272-7757"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "education_economics",
+    "crossref_title": "Education Economics",
+    "issn": [
+      "0964-5292",
+      "1469-5782"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "education_finance_and_policy",
+    "crossref_title": "Education Finance and Policy",
+    "issn": [
+      "1557-3060",
+      "1557-3079"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "european_journal_of_political_economy",
+    "crossref_title": "European Journal of Political Economy",
+    "issn": [
+      "0176-2680"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "experimental_economics",
+    "crossref_title": "Experimental Economics",
+    "issn": [
+      "1386-4157",
+      "1573-6938"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "fiscal_studies",
+    "crossref_title": "Fiscal Studies",
+    "issn": [
+      "0143-5671",
+      "1475-5890"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "games_and_economic_behavior",
+    "crossref_title": "Games and Economic Behavior",
+    "issn": [
+      "0899-8256",
+      "1090-2473"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "general_aejmacro",
+    "crossref_title": "American Economic Journal Macroeconomics",
+    "issn": [
+      "1945-7707",
+      "1945-7715"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "general_aer",
+    "crossref_title": "American Economic Review",
+    "issn": [
+      "0002-8282",
+      "1944-7981"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "general_are",
+    "crossref_title": "Annual Review of Economics",
+    "issn": [
+      "1941-1383",
+      "1941-1391"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "general_bpea",
+    "crossref_title": "Brookings Papers on Economic Activity",
+    "issn": [
+      "0007-2303",
+      "1533-4465"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "general_ecma",
+    "crossref_title": "Econometrica",
+    "issn": [
+      "0012-9682",
+      "1468-0262"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "general_jeea",
+    "crossref_title": "Journal of the European Economic Association",
+    "issn": [
+      "1542-4766",
+      "1542-4774"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "general_jeg",
+    "crossref_title": "Journal of Economic Growth",
+    "issn": [
+      "1381-4338",
+      "1573-7020"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "general_jel",
+    "crossref_title": "Journal of Economic Literature",
+    "issn": [
+      "0022-0515",
+      "2328-8175"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "general_jep",
+    "crossref_title": "Journal of Economic Perspectives",
+    "issn": [
+      "0895-3309"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "general_jf",
+    "crossref_title": "The Journal of Finance",
+    "issn": [
+      "0022-1082",
+      "1540-6261"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "general_jfe",
+    "crossref_title": "Journal of Financial Economics",
+    "issn": [
+      "0304-405X"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "general_jme",
+    "crossref_title": "Journal of Monetary Economics",
+    "issn": [
+      "0304-3932"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "general_joe",
+    "crossref_title": "Journal of Econometrics",
+    "issn": [
+      "0304-4076",
+      "1872-6895"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "general_jpe",
+    "crossref_title": "Journal of Political Economy",
+    "issn": [
+      "0022-3808",
+      "1537-534X"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "general_qje",
+    "crossref_title": "The Quarterly Journal of Economics",
+    "issn": [
+      "0033-5533",
+      "1531-4650"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "general_rand",
+    "crossref_title": "The RAND Journal of Economics",
+    "issn": [
+      "0741-6261",
+      "1756-2171"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "general_restat",
+    "crossref_title": "The Review of Economics and Statistics",
+    "issn": [
+      "0034-6535",
+      "1530-9142"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "general_restud",
+    "crossref_title": "The Review of Economic Studies",
+    "issn": [
+      "0034-6527",
+      "1467-937X"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "general_rfs",
+    "crossref_title": "Review of Financial Studies",
+    "issn": [
+      "0893-9454",
+      "1465-7368"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "health_economics",
+    "crossref_title": "Health Economics",
+    "issn": [
+      "1057-9230",
+      "1099-1050"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "health_policy",
+    "crossref_title": "Health Policy",
+    "issn": [
+      "0168-8510"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "industrial_and_labor_relations_review",
+    "crossref_title": "ILR Review",
+    "issn": [
+      "0019-7939",
+      "2162-271X"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "international_journal_of_educational_development",
+    "crossref_title": "International Journal of Educational Development",
+    "issn": [
+      "0738-0593"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "international_journal_of_industrial_organization",
+    "crossref_title": "International Journal of Industrial Organization",
+    "issn": [
+      "0167-7187"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "international_organization",
+    "crossref_title": "International Organization",
+    "issn": [
+      "0020-8183",
+      "1531-5088"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "international_tax_and_public_finance",
+    "crossref_title": "International Tax and Public Finance",
+    "issn": [
+      "0927-5940",
+      "1573-6970"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "journal_of_applied_econometrics",
+    "crossref_title": "Journal of Applied Econometrics",
+    "issn": [
+      "0883-7252",
+      "1099-1255"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "journal_of_behavioral_and_experimental_economics",
+    "crossref_title": "Journal of Behavioral and Experimental Economics",
+    "issn": [
+      "2214-8043"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "journal_of_behavioral_and_experimental_finance",
+    "crossref_title": "Journal of Behavioral and Experimental Finance",
+    "issn": [
+      "2214-6350"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "journal_of_business_and_economic_statistics",
+    "crossref_title": "Journal of Business and Economic Statistics",
+    "issn": [
+      "0735-0015",
+      "1537-2707"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "journal_of_comparative_economics",
+    "crossref_title": "Journal of Comparative Economics",
+    "issn": [
+      "0147-5967",
+      "1095-7227"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "journal_of_competition_law_and_economics",
+    "crossref_title": "Journal of Competition Law & Economics",
+    "issn": [
+      "1744-6414",
+      "1744-6422"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "journal_of_development_economics",
+    "crossref_title": "Journal of Development Economics",
+    "issn": [
+      "0304-3878"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "journal_of_development_studies",
+    "crossref_title": "The Journal of Development Studies",
+    "issn": [
+      "0022-0388",
+      "1743-9140"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "journal_of_economic_behavior_and_organization",
+    "crossref_title": "Journal of Economic Behavior & Organization",
+    "issn": [
+      "0167-2681",
+      "0167-2681"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "journal_of_economic_dynamics_and_control",
+    "crossref_title": "Journal of Economic Dynamics and Control",
+    "issn": [
+      "0165-1889"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "journal_of_economic_inequality",
+    "crossref_title": "The Journal of Economic Inequality",
+    "issn": [
+      "1569-1721",
+      "1573-8701"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "journal_of_health_economics",
+    "crossref_title": "Journal of Health Economics",
+    "issn": [
+      "0167-6296"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "journal_of_human_capital",
+    "crossref_title": "Journal of Human Capital",
+    "issn": [
+      "1932-8575",
+      "1932-8664"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "journal_of_human_resources",
+    "crossref_title": "The Journal of Human Resources",
+    "issn": [
+      "0022-166X",
+      "1548-8004"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "journal_of_industrial_economics",
+    "crossref_title": "Journal of Industrial Economics",
+    "issn": [
+      "0022-1821",
+      "1467-6451"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "journal_of_institutional_economics",
+    "crossref_title": "Journal of Institutional Economics",
+    "issn": [
+      "1744-1374",
+      "1744-1382"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "journal_of_international_economics",
+    "crossref_title": "Journal of International Economics",
+    "issn": [
+      "0022-1996"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "journal_of_labor_economics",
+    "crossref_title": "Journal of Labor Economics",
+    "issn": [
+      "0734-306X",
+      "1537-5307"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "journal_of_law_and_economics",
+    "crossref_title": "The Journal of Law and Economics",
+    "issn": [
+      "0022-2186",
+      "1537-5285"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "journal_of_law_economics_and_organization",
+    "crossref_title": "The Journal of Law Economics and Organization",
+    "issn": [
+      "8756-6222",
+      "1465-7341"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "journal_of_peace_research",
+    "crossref_title": "Journal of Peace Research",
+    "issn": [
+      "0022-3433",
+      "1460-3578"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "journal_of_politics",
+    "crossref_title": "The Journal of Politics",
+    "issn": [
+      "0022-3816",
+      "1468-2508"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "journal_of_population_economics",
+    "crossref_title": "Journal of Population Economics",
+    "issn": [
+      "0933-1433",
+      "1432-1475"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "journal_of_public_economic_theory",
+    "crossref_title": "Journal of Public Economic Theory",
+    "issn": [
+      "1097-3923",
+      "1467-9779"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "journal_of_public_economics",
+    "crossref_title": "Journal of Public Economics",
+    "issn": [
+      "0047-2727"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "journal_of_regulatory_economics",
+    "crossref_title": "Journal of Regulatory Economics",
+    "issn": [
+      "0922-680X",
+      "1573-0468"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "journal_of_risk_and_uncertainty",
+    "crossref_title": "Journal of Risk and Uncertainty",
+    "issn": [
+      "0895-5646",
+      "1573-0476"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "journal_of_the_economic_science_association",
+    "crossref_title": "Journal of the Economic Science Association",
+    "issn": [
+      "2199-6776",
+      "2199-6784"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "labour_economics",
+    "crossref_title": "Labour Economics",
+    "issn": [
+      "0927-5371"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "national_tax_journal",
+    "crossref_title": "National Tax Journal",
+    "issn": [
+      "0028-0283",
+      "1944-7477"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "political_analysis",
+    "crossref_title": "Political Analysis",
+    "issn": [
+      "1047-1987",
+      "1476-4989"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "public_choice",
+    "crossref_title": "Public Choice",
+    "issn": [
+      "0048-5829",
+      "1573-7101"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "public_finance_review",
+    "crossref_title": "Public Finance Review",
+    "issn": [
+      "1091-1421",
+      "1552-7530"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "quantitative_economics",
+    "crossref_title": "Quantitative Economics",
+    "issn": [
+      "1759-7323",
+      "1759-7331"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "review_of_economic_dynamics",
+    "crossref_title": "Review of Economic Dynamics",
+    "issn": [
+      "1094-2025"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "review_of_world_economics",
+    "crossref_title": "Review of World Economics",
+    "issn": [
+      "1610-2878",
+      "1610-2886"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "teaching_and_teacher_education",
+    "crossref_title": "Teaching and Teacher Education",
+    "issn": [
+      "0742-051X"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "work_employment_and_society",
+    "crossref_title": "Work Employment and Society",
+    "issn": [
+      "0950-0170",
+      "1469-8722"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "world_bank_economic_review",
+    "crossref_title": "The World Bank Economic Review",
+    "issn": [
+      "0258-6770",
+      "1564-698X"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "world_development",
+    "crossref_title": "World Development",
+    "issn": [
+      "0305-750X"
+    ],
+    "exact_match": true
+  },
+  {
+    "journal_key": "world_politics",
+    "crossref_title": "World Politics",
+    "issn": [
+      "0043-8871",
+      "1086-3338"
+    ],
+    "exact_match": true
+  }
+]

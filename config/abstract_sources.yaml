@@ -1,0 +1,9 @@
+version: "7c.2"
+sources:
+  manual: {enabled: true, priority: 1, timeout_seconds: 0, max_retries: 0, rate_limit_per_second: 0, requires_api_key: false, quality_threshold: 1.0, allow_title_fallback: false, feature_status: stable}
+  crossref: {enabled: true, priority: 3, timeout_seconds: 20, max_retries: 2, rate_limit_per_second: 5, requires_api_key: false, quality_threshold: 0.9, allow_title_fallback: true, feature_status: stable}
+  repec: {enabled: true, priority: 4, timeout_seconds: 30, max_retries: 1, rate_limit_per_second: 1, requires_api_key: false, quality_threshold: 0.9, allow_title_fallback: false, feature_status: stable}
+  openalex: {enabled: true, priority: 5, timeout_seconds: 20, max_retries: 2, rate_limit_per_second: 5, requires_api_key: false, quality_threshold: 0.9, allow_title_fallback: true, feature_status: stable}
+  semantic_scholar: {enabled: true, priority: 6, timeout_seconds: 20, max_retries: 2, rate_limit_per_second: 1, requires_api_key: false, quality_threshold: 0.9, allow_title_fallback: true, feature_status: stable}
+  doaj: {enabled: true, priority: 7, timeout_seconds: 20, max_retries: 2, rate_limit_per_second: 3, requires_api_key: false, quality_threshold: 0.9, allow_title_fallback: true, feature_status: stable}
+  openaire: {enabled: true, priority: 8, timeout_seconds: 20, max_retries: 2, rate_limit_per_second: 2, requires_api_key: false, quality_threshold: 0.9, allow_title_fallback: false, feature_status: stable}

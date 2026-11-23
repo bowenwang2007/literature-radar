@@ -1,0 +1,98 @@
+profile_id: behavioral_economics
+display_name: 行为经济学
+display_name_en: Behavioral Economics
+description: 真实决策行为——偏好、信念、注意力与有限理性的经济学后果与政策含义。
+status: active
+screening_prompt_version: 2026-09-24-behavioral-v2
+screening_timeout_seconds: 150
+screening_dimensions:
+  centrality_label: 行为机制中心性
+  centrality_definition: 'a behavioural mechanism is the core research object: preferences (risk, time,
+    social, ambiguity, reference dependence), beliefs and expectations (updating, over/under-confidence,
+    mental models), attention and cognition limits (salience, complexity, inattention), judgement heuristics
+    and biases, self-control, or social preferences (trust, reciprocity, fairness, norms) — as the thing
+    being explained, measured or targeted, not as a side remark.'
+  economics_definition: 'the paper carries substantive economic content: markets, incentives, welfare,
+    policy, contracts or mechanism design, an economic outcome driven by the behavioural mechanism, or
+    credible identification of a behavioural parameter.'
+subject_signals:
+  jel_codes:
+  - D90
+  - D91
+  - D03
+  - D83
+  - D84
+  - C90
+  - C91
+  - C92
+  - C93
+  - G40
+  - G41
+  - I12
+  - O12
+  topics:
+  - risk and time preferences
+  - belief updating and expectations
+  - overconfidence and projection bias
+  - attention, salience and inattention
+  - defaults, framing and nudges
+  - social preferences, trust and reciprocity
+  - incentive crowding out and motivation
+  - limited rationality in markets and firms
+  - field and laboratory experiments on economic choice
+journal_groups:
+- key: behavioral_economics_core
+  display_name: 行为与实验经济学核心期刊
+  description: 以行为机制与实验方法为核心对象的期刊。
+  journal_keys:
+  - journal_of_economic_behavior_and_organization
+  - experimental_economics
+  - games_and_economic_behavior
+  - journal_of_risk_and_uncertainty
+  - journal_of_behavioral_and_experimental_economics
+  - journal_of_the_economic_science_association
+  - journal_of_behavioral_and_experimental_finance
+- key: behavioral_economics_adjacent
+  display_name: 行为经济学相关期刊
+  description: 常发表行为机制、激励设计与微观识别的期刊。
+  journal_keys:
+  - american_economic_journal_microeconomics
+  - journal_of_public_economics
+  - journal_of_health_economics
+  - quantitative_economics
+  - american_economic_journal_economic_policy
+- key: general_economics
+  display_name: 综合与旗舰经济学期刊
+  description: 所有研究方向共用的综合期刊清单；对每个队列内容相同。
+  journal_keys:
+  - general_qje
+  - general_aer
+  - general_jpe
+  - general_ecma
+  - general_restud
+  - general_jeea
+  - general_jel
+  - general_jep
+  - general_are
+  - general_restat
+  - general_aejmacro
+  - general_bpea
+  - general_jeg
+  - general_rand
+  - general_joe
+  - general_jf
+  - general_jfe
+  - general_jme
+  - general_rfs
+  - economic_journal
+  - journal_of_applied_econometrics
+  - journal_of_business_and_economic_statistics
+  - econometric_theory
+  - journal_of_economic_dynamics_and_control
+  - review_of_economic_dynamics
+  - journal_of_international_economics
+  - review_of_world_economics
+- key: custom
+  display_name: 自定义期刊
+  description: 由本人添加的期刊；保存在本地配置中。
+  journal_keys: []

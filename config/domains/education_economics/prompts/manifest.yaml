@@ -1,0 +1,25 @@
+prompt_manifest:
+  profile_id: education_economics
+  version: 2026-07-22-phase6d-v1
+  status: test_fixture
+  prompts:
+    - prompt_id: education_economics_fast_semantic
+      version: 2026-07-22-phase6d-v1
+      role: fast
+      system_file: education_economics_fast_semantic_system.txt
+      user_file: education_economics_fast_semantic_user.txt
+      system_sha256: EAB408E6C0FC723BE4CDCB6C29B44B1D6518BFE460735851360C37575C56CF0B
+      user_sha256: 733CA104660730888C26B2C2B4E16185963C2C29D18F5A3CB1EFD0E731CD1EC8
+      status: test_fixture
+      created_at: 2026-07-19
+      notes: Initial Phase 4 injection-resistant fast semantic rubric.
+    - prompt_id: education_economics_strong_review
+      version: 2026-07-22-phase6d-v1
+      role: strong_review
+      system_file: education_economics_strong_review_system.txt
+      user_file: education_economics_strong_review_user.txt
+      system_sha256: F4E04A60EB70EF24FA02369BC33D603D37D2D4A22239D76B0DB4304E0B45A8EC
+      user_sha256: 73E24C2B3EFEF0EB05DA012BB696CCBFEC91A7B002A3F6FF2EF29E3262A1229A
+      status: test_fixture
+      created_at: 2026-07-19
+      notes: Initial Phase 4 neutral independent strong-review rubric.

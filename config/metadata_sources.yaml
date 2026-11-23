@@ -1,0 +1,16 @@
+version: "2026-07-24-v1"
+sources:
+  manual:
+    priority: 100
+  publisher:
+    priority: 90
+  crossref:
+    priority: 70
+  openalex:
+    priority: 50
+  semantic_scholar:
+    priority: 50
+  doaj:
+    priority: 50
+  legacy_unknown:
+    priority: 0

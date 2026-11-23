@@ -1,0 +1,5014 @@
+{
+  "application_git_commit": null,
+  "database_profile": "gold",
+  "foreign_key_check": [],
+  "integrity_check": "ok",
+  "manifest_sha256": "fe8d4b7f42200fcf453f9798e352ae7a163e14bc695d16d18c78b89eb0c9b76c",
+  "manifest_version": "1",
+  "migrations": [
+    {
+      "database_profile": "gold",
+      "filename": "0005_add_gold_set_and_calibration.sql",
+      "inferred": 0,
+      "migration_id": 5,
+      "migration_sha256": "f1137b803ef97920cc30ae50437eb192d73d39deecaca5eab1a137410dd4ecbb",
+      "schema_version_after": "0005_add_gold_set_and_calibration.sql",
+      "schema_version_before": "empty"
+    },
+    {
+      "database_profile": "gold",
+      "filename": "0009_add_gold_governance.sql",
+      "inferred": 0,
+      "migration_id": 9,
+      "migration_sha256": "ddec6adf86cc9957545610d3b77edd16ca3d77edf2859bb53b84d6c91687f3b1",
+      "schema_version_after": "0009_add_gold_governance.sql",
+      "schema_version_before": "0005_add_gold_set_and_calibration.sql"
+    }
+  ],
+  "schema_fingerprint": "a072fa3ec454043648d0fe80abec98fdc6a5b9aeb22443047289c0648f4e7fec",
+  "sqlite_version": "3.50.4",
+  "tables": [
+    {
+      "check_constraints": [],
+      "columns": [
+        {
+          "cid": 0,
+          "default": null,
+          "name": "id",
+          "not_null": false,
+          "primary_key_position": 1,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 1,
+          "default": null,
+          "name": "gold_set_snapshot_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 2,
+          "default": null,
+          "name": "config_bundle_sha256",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 3,
+          "default": null,
+          "name": "model_bundle_version",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 4,
+          "default": null,
+          "name": "prompt_bundle_sha256",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 5,
+          "default": null,
+          "name": "run_type",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 6,
+          "default": null,
+          "name": "random_seed",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 7,
+          "default": null,
+          "name": "split_manifest_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 8,
+          "default": null,
+          "name": "attempted_policies_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 9,
+          "default": null,
+          "name": "selected_policy_json",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 10,
+          "default": null,
+          "name": "result_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 11,
+          "default": null,
+          "name": "created_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "gold_set_snapshot_id",
+          "id": 0,
+          "match": "NONE",
+          "on_delete": "NO ACTION",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "gold_set_snapshots",
+          "to": "id"
+        }
+      ],
+      "indexes": [],
+      "name": "calibration_runs",
+      "primary_key": [
+        "id"
+      ],
+      "sql": "CREATE TABLE calibration_runs ( id INTEGER PRIMARY KEY, gold_set_snapshot_id INTEGER NOT NULL REFERENCES gold_set_snapshots(id), config_bundle_sha256 TEXT NOT NULL, model_bundle_version TEXT NOT NULL, prompt_bundle_sha256 TEXT NOT NULL, run_type TEXT NOT NULL, random_seed INTEGER NOT NULL, split_manifest_json TEXT NOT NULL, attempted_policies_json TEXT NOT NULL, selected_policy_json TEXT, result_json TEXT NOT NULL, created_at TEXT NOT NULL )"
+    },
+    {
+      "check_constraints": [
+        "CHECK (annotation_round IN (1,2))",
+        "CHECK (label IN ('include','borderline','exclude'))",
+        "CHECK ( education_centrality IN ('core','substantial','incidental','none') )",
+        "CHECK ( economics_relevance IN ( 'economic_question','economic_method_only', 'adjacent_social_science','non_economic' ) )",
+        "CHECK ( evidence_sufficiency IN ('sufficient','limited','insufficient') )",
+        "CHECK (reviewer_confidence IN ('high','medium','low'))",
+        "CHECK (disposition IN ('submitted','deferred'))",
+        "CHECK (marked_for_review IN (0,1))",
+        "CHECK (source_revealed=0)",
+        "CHECK (reveal_timestamp IS NULL)",
+        "CHECK (elapsed_seconds >= 0)",
+        "CHECK (active IN (0,1))"
+      ],
+      "columns": [
+        {
+          "cid": 0,
+          "default": null,
+          "name": "id",
+          "not_null": false,
+          "primary_key_position": 1,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 1,
+          "default": null,
+          "name": "corpus_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 2,
+          "default": null,
+          "name": "corpus_paper_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 3,
+          "default": null,
+          "name": "presented_record_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 4,
+          "default": null,
+          "name": "annotation_round",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 5,
+          "default": null,
+          "name": "reviewer_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 6,
+          "default": null,
+          "name": "revision_number",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 7,
+          "default": null,
+          "name": "label",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 8,
+          "default": null,
+          "name": "education_centrality",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 9,
+          "default": null,
+          "name": "economics_relevance",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 10,
+          "default": null,
+          "name": "evidence_sufficiency",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 11,
+          "default": null,
+          "name": "reviewer_confidence",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 12,
+          "default": "'[]'",
+          "name": "reason_codes_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 13,
+          "default": null,
+          "name": "optional_notes",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 14,
+          "default": null,
+          "name": "disposition",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 15,
+          "default": "0",
+          "name": "marked_for_review",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 16,
+          "default": "0",
+          "name": "source_revealed",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 17,
+          "default": null,
+          "name": "reveal_timestamp",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 18,
+          "default": null,
+          "name": "presentation_order",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 19,
+          "default": null,
+          "name": "started_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 20,
+          "default": null,
+          "name": "submitted_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 21,
+          "default": null,
+          "name": "elapsed_seconds",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 22,
+          "default": null,
+          "name": "protocol_version",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 23,
+          "default": null,
+          "name": "protocol_sha256",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 24,
+          "default": null,
+          "name": "supersedes_annotation_id",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 25,
+          "default": "1",
+          "name": "active",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 26,
+          "default": null,
+          "name": "created_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "supersedes_annotation_id",
+          "id": 0,
+          "match": "NONE",
+          "on_delete": "NO ACTION",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "gold_annotation_revisions",
+          "to": "id"
+        },
+        {
+          "from": "corpus_paper_id",
+          "id": 1,
+          "match": "NONE",
+          "on_delete": "RESTRICT",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "gold_corpus_papers",
+          "to": "id"
+        },
+        {
+          "from": "corpus_id",
+          "id": 2,
+          "match": "NONE",
+          "on_delete": "RESTRICT",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "gold_corpora",
+          "to": "id"
+        }
+      ],
+      "indexes": [
+        {
+          "columns": [
+            {
+              "cid": 3,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "presented_record_id",
+              "seqno": 0
+            },
+            {
+              "cid": 5,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "reviewer_id",
+              "seqno": 1
+            },
+            {
+              "cid": 4,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "annotation_round",
+              "seqno": 2
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 3
+            }
+          ],
+          "name": "idx_gold_annotation_one_active",
+          "origin": "c",
+          "partial": true,
+          "sql": "CREATE UNIQUE INDEX idx_gold_annotation_one_active ON gold_annotation_revisions(presented_record_id,reviewer_id,annotation_round) WHERE active=1",
+          "unique": true
+        },
+        {
+          "columns": [
+            {
+              "cid": 3,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "presented_record_id",
+              "seqno": 0
+            },
+            {
+              "cid": 5,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "reviewer_id",
+              "seqno": 1
+            },
+            {
+              "cid": 4,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "annotation_round",
+              "seqno": 2
+            },
+            {
+              "cid": 6,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "revision_number",
+              "seqno": 3
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 4
+            }
+          ],
+          "name": "sqlite_autoindex_gold_annotation_revisions_1",
+          "origin": "u",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        }
+      ],
+      "name": "gold_annotation_revisions",
+      "primary_key": [
+        "id"
+      ],
+      "sql": "CREATE TABLE gold_annotation_revisions ( id INTEGER PRIMARY KEY, corpus_id INTEGER NOT NULL REFERENCES gold_corpora(id) ON DELETE RESTRICT, corpus_paper_id INTEGER NOT NULL REFERENCES gold_corpus_papers(id) ON DELETE RESTRICT, presented_record_id TEXT NOT NULL, annotation_round INTEGER NOT NULL CHECK (annotation_round IN (1,2)), reviewer_id TEXT NOT NULL, revision_number INTEGER NOT NULL, label TEXT CHECK (label IN ('include','borderline','exclude')), education_centrality TEXT CHECK ( education_centrality IN ('core','substantial','incidental','none') ), economics_relevance TEXT CHECK ( economics_relevance IN ( 'economic_question','economic_method_only', 'adjacent_social_science','non_economic' ) ), evidence_sufficiency TEXT CHECK ( evidence_sufficiency IN ('sufficient','limited','insufficient') ), reviewer_confidence TEXT CHECK (reviewer_confidence IN ('high','medium','low')), reason_codes_json TEXT NOT NULL DEFAULT '[]', optional_notes TEXT, disposition TEXT NOT NULL CHECK (disposition IN ('submitted','deferred')), marked_for_review INTEGER NOT NULL DEFAULT 0 CHECK (marked_for_review IN (0,1)), source_revealed INTEGER NOT NULL DEFAULT 0 CHECK (source_revealed=0), reveal_timestamp TEXT CHECK (reveal_timestamp IS NULL), presentation_order INTEGER NOT NULL, started_at TEXT NOT NULL, submitted_at TEXT NOT NULL, elapsed_seconds INTEGER NOT NULL CHECK (elapsed_seconds >= 0), protocol_version TEXT NOT NULL, protocol_sha256 TEXT NOT NULL, supersedes_annotation_id INTEGER REFERENCES gold_annotation_revisions(id), active INTEGER NOT NULL DEFAULT 1 CHECK (active IN (0,1)), created_at TEXT NOT NULL, UNIQUE(presented_record_id,reviewer_id,annotation_round,revision_number) )"
+    },
+    {
+      "check_constraints": [
+        "CHECK ( final_gold_label IN ('include','borderline','exclude') )",
+        "CHECK (active IN (0,1))"
+      ],
+      "columns": [
+        {
+          "cid": 0,
+          "default": null,
+          "name": "id",
+          "not_null": false,
+          "primary_key_position": 1,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 1,
+          "default": null,
+          "name": "corpus_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 2,
+          "default": null,
+          "name": "corpus_paper_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 3,
+          "default": null,
+          "name": "final_gold_label",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 4,
+          "default": null,
+          "name": "basis",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 5,
+          "default": null,
+          "name": "arbitrator_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 6,
+          "default": null,
+          "name": "protocol_version",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 7,
+          "default": null,
+          "name": "protocol_sha256",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 8,
+          "default": null,
+          "name": "supersedes_arbitration_id",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 9,
+          "default": "1",
+          "name": "active",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 10,
+          "default": null,
+          "name": "created_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "supersedes_arbitration_id",
+          "id": 0,
+          "match": "NONE",
+          "on_delete": "NO ACTION",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "gold_arbitration_revisions",
+          "to": "id"
+        },
+        {
+          "from": "corpus_paper_id",
+          "id": 1,
+          "match": "NONE",
+          "on_delete": "RESTRICT",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "gold_corpus_papers",
+          "to": "id"
+        },
+        {
+          "from": "corpus_id",
+          "id": 2,
+          "match": "NONE",
+          "on_delete": "RESTRICT",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "gold_corpora",
+          "to": "id"
+        }
+      ],
+      "indexes": [
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "corpus_id",
+              "seqno": 0
+            },
+            {
+              "cid": 2,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "corpus_paper_id",
+              "seqno": 1
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 2
+            }
+          ],
+          "name": "idx_gold_arbitration_one_active",
+          "origin": "c",
+          "partial": true,
+          "sql": "CREATE UNIQUE INDEX idx_gold_arbitration_one_active ON gold_arbitration_revisions(corpus_id,corpus_paper_id) WHERE active=1",
+          "unique": true
+        }
+      ],
+      "name": "gold_arbitration_revisions",
+      "primary_key": [
+        "id"
+      ],
+      "sql": "CREATE TABLE gold_arbitration_revisions ( id INTEGER PRIMARY KEY, corpus_id INTEGER NOT NULL REFERENCES gold_corpora(id) ON DELETE RESTRICT, corpus_paper_id INTEGER NOT NULL REFERENCES gold_corpus_papers(id) ON DELETE RESTRICT, final_gold_label TEXT NOT NULL CHECK ( final_gold_label IN ('include','borderline','exclude') ), basis TEXT NOT NULL, arbitrator_id TEXT NOT NULL, protocol_version TEXT NOT NULL, protocol_sha256 TEXT NOT NULL, supersedes_arbitration_id INTEGER REFERENCES gold_arbitration_revisions(id), active INTEGER NOT NULL DEFAULT 1 CHECK (active IN (0,1)), created_at TEXT NOT NULL )"
+    },
+    {
+      "check_constraints": [
+        "CHECK (status IN ('building','frozen'))"
+      ],
+      "columns": [
+        {
+          "cid": 0,
+          "default": null,
+          "name": "id",
+          "not_null": false,
+          "primary_key_position": 1,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 1,
+          "default": null,
+          "name": "corpus_version",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 2,
+          "default": null,
+          "name": "status",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 3,
+          "default": null,
+          "name": "source_database_sha256",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 4,
+          "default": null,
+          "name": "source_manifest_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 5,
+          "default": null,
+          "name": "sample_plan_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 6,
+          "default": null,
+          "name": "sample_plan_sha256",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 7,
+          "default": null,
+          "name": "corpus_manifest_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 8,
+          "default": null,
+          "name": "corpus_sha256",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 9,
+          "default": null,
+          "name": "paper_count",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 10,
+          "default": null,
+          "name": "created_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 11,
+          "default": null,
+          "name": "frozen_at",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        }
+      ],
+      "foreign_keys": [],
+      "indexes": [
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "corpus_version",
+              "seqno": 0
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 1
+            }
+          ],
+          "name": "sqlite_autoindex_gold_corpora_1",
+          "origin": "u",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        },
+        {
+          "columns": [
+            {
+              "cid": 8,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "corpus_sha256",
+              "seqno": 0
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 1
+            }
+          ],
+          "name": "sqlite_autoindex_gold_corpora_2",
+          "origin": "u",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        }
+      ],
+      "name": "gold_corpora",
+      "primary_key": [
+        "id"
+      ],
+      "sql": "CREATE TABLE gold_corpora ( id INTEGER PRIMARY KEY, corpus_version TEXT NOT NULL UNIQUE, status TEXT NOT NULL CHECK (status IN ('building','frozen')), source_database_sha256 TEXT NOT NULL, source_manifest_json TEXT NOT NULL, sample_plan_json TEXT NOT NULL, sample_plan_sha256 TEXT NOT NULL, corpus_manifest_json TEXT NOT NULL, corpus_sha256 TEXT NOT NULL UNIQUE, paper_count INTEGER NOT NULL, created_at TEXT NOT NULL, frozen_at TEXT )"
+    },
+    {
+      "check_constraints": [
+        "CHECK ( inclusion_probability > 0 AND inclusion_probability <= 1 )"
+      ],
+      "columns": [
+        {
+          "cid": 0,
+          "default": null,
+          "name": "id",
+          "not_null": false,
+          "primary_key_position": 1,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 1,
+          "default": null,
+          "name": "corpus_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 2,
+          "default": null,
+          "name": "gold_paper_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 3,
+          "default": null,
+          "name": "source_paper_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 4,
+          "default": null,
+          "name": "canonical_doi",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 5,
+          "default": null,
+          "name": "fallback_fingerprint",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 6,
+          "default": null,
+          "name": "original_title",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 7,
+          "default": null,
+          "name": "normalized_title",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 8,
+          "default": null,
+          "name": "abstract",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 9,
+          "default": null,
+          "name": "abstract_length",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 10,
+          "default": null,
+          "name": "abstract_quality_status",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 11,
+          "default": null,
+          "name": "journal",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 12,
+          "default": null,
+          "name": "journal_short_name",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 13,
+          "default": null,
+          "name": "issn",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 14,
+          "default": null,
+          "name": "publication_date",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 15,
+          "default": null,
+          "name": "publication_year",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 16,
+          "default": null,
+          "name": "authors_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 17,
+          "default": null,
+          "name": "metadata_provenance_summary_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 18,
+          "default": null,
+          "name": "source_links_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 19,
+          "default": null,
+          "name": "source_record_timestamp",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 20,
+          "default": null,
+          "name": "sampling_stratum",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 21,
+          "default": null,
+          "name": "stratum_population_size",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 22,
+          "default": null,
+          "name": "inclusion_probability",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "REAL"
+        },
+        {
+          "cid": 23,
+          "default": null,
+          "name": "duplicate_cluster_key",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 24,
+          "default": null,
+          "name": "content_sha256",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 25,
+          "default": null,
+          "name": "created_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "corpus_id",
+          "id": 0,
+          "match": "NONE",
+          "on_delete": "RESTRICT",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "gold_corpora",
+          "to": "id"
+        }
+      ],
+      "indexes": [
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "corpus_id",
+              "seqno": 0
+            },
+            {
+              "cid": 20,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "sampling_stratum",
+              "seqno": 1
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 2
+            }
+          ],
+          "name": "idx_gold_corpus_papers_stratum",
+          "origin": "c",
+          "partial": false,
+          "sql": "CREATE INDEX idx_gold_corpus_papers_stratum ON gold_corpus_papers(corpus_id,sampling_stratum)",
+          "unique": false
+        },
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "corpus_id",
+              "seqno": 0
+            },
+            {
+              "cid": 2,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "gold_paper_id",
+              "seqno": 1
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 2
+            }
+          ],
+          "name": "sqlite_autoindex_gold_corpus_papers_1",
+          "origin": "u",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        },
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "corpus_id",
+              "seqno": 0
+            },
+            {
+              "cid": 3,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "source_paper_id",
+              "seqno": 1
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 2
+            }
+          ],
+          "name": "sqlite_autoindex_gold_corpus_papers_2",
+          "origin": "u",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        }
+      ],
+      "name": "gold_corpus_papers",
+      "primary_key": [
+        "id"
+      ],
+      "sql": "CREATE TABLE gold_corpus_papers ( id INTEGER PRIMARY KEY, corpus_id INTEGER NOT NULL REFERENCES gold_corpora(id) ON DELETE RESTRICT, gold_paper_id TEXT NOT NULL, source_paper_id INTEGER NOT NULL, canonical_doi TEXT, fallback_fingerprint TEXT NOT NULL, original_title TEXT NOT NULL, normalized_title TEXT NOT NULL, abstract TEXT, abstract_length INTEGER NOT NULL, abstract_quality_status TEXT NOT NULL, journal TEXT NOT NULL, journal_short_name TEXT NOT NULL, issn TEXT, publication_date TEXT, publication_year INTEGER, authors_json TEXT NOT NULL, metadata_provenance_summary_json TEXT NOT NULL, source_links_json TEXT NOT NULL, source_record_timestamp TEXT, sampling_stratum TEXT NOT NULL, stratum_population_size INTEGER NOT NULL, inclusion_probability REAL NOT NULL CHECK ( inclusion_probability > 0 AND inclusion_probability <= 1 ), duplicate_cluster_key TEXT NOT NULL, content_sha256 TEXT NOT NULL, created_at TEXT NOT NULL, UNIQUE(corpus_id,gold_paper_id), UNIQUE(corpus_id,source_paper_id) )"
+    },
+    {
+      "check_constraints": [],
+      "columns": [
+        {
+          "cid": 0,
+          "default": null,
+          "name": "cluster_id",
+          "not_null": true,
+          "primary_key_position": 1,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 1,
+          "default": null,
+          "name": "corpus_paper_id",
+          "not_null": true,
+          "primary_key_position": 2,
+          "type": "INTEGER"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "corpus_paper_id",
+          "id": 0,
+          "match": "NONE",
+          "on_delete": "RESTRICT",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "gold_corpus_papers",
+          "to": "id"
+        },
+        {
+          "from": "cluster_id",
+          "id": 1,
+          "match": "NONE",
+          "on_delete": "RESTRICT",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "gold_duplicate_clusters",
+          "to": "id"
+        }
+      ],
+      "indexes": [
+        {
+          "columns": [
+            {
+              "cid": 0,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "cluster_id",
+              "seqno": 0
+            },
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "corpus_paper_id",
+              "seqno": 1
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 2
+            }
+          ],
+          "name": "sqlite_autoindex_gold_duplicate_cluster_members_1",
+          "origin": "pk",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        }
+      ],
+      "name": "gold_duplicate_cluster_members",
+      "primary_key": [
+        "cluster_id",
+        "corpus_paper_id"
+      ],
+      "sql": "CREATE TABLE gold_duplicate_cluster_members ( cluster_id INTEGER NOT NULL REFERENCES gold_duplicate_clusters(id) ON DELETE RESTRICT, corpus_paper_id INTEGER NOT NULL REFERENCES gold_corpus_papers(id) ON DELETE RESTRICT, PRIMARY KEY(cluster_id,corpus_paper_id) )"
+    },
+    {
+      "check_constraints": [
+        "CHECK (status IN ('confirmed','candidate','not_duplicate'))"
+      ],
+      "columns": [
+        {
+          "cid": 0,
+          "default": null,
+          "name": "id",
+          "not_null": false,
+          "primary_key_position": 1,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 1,
+          "default": null,
+          "name": "corpus_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 2,
+          "default": null,
+          "name": "cluster_uid",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 3,
+          "default": null,
+          "name": "status",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 4,
+          "default": null,
+          "name": "basis_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 5,
+          "default": null,
+          "name": "reviewed_by",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 6,
+          "default": null,
+          "name": "reviewed_at",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 7,
+          "default": null,
+          "name": "created_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "corpus_id",
+          "id": 0,
+          "match": "NONE",
+          "on_delete": "RESTRICT",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "gold_corpora",
+          "to": "id"
+        }
+      ],
+      "indexes": [
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "corpus_id",
+              "seqno": 0
+            },
+            {
+              "cid": 2,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "cluster_uid",
+              "seqno": 1
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 2
+            }
+          ],
+          "name": "sqlite_autoindex_gold_duplicate_clusters_1",
+          "origin": "u",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        }
+      ],
+      "name": "gold_duplicate_clusters",
+      "primary_key": [
+        "id"
+      ],
+      "sql": "CREATE TABLE gold_duplicate_clusters ( id INTEGER PRIMARY KEY, corpus_id INTEGER NOT NULL REFERENCES gold_corpora(id) ON DELETE RESTRICT, cluster_uid TEXT NOT NULL, status TEXT NOT NULL CHECK (status IN ('confirmed','candidate','not_duplicate')), basis_json TEXT NOT NULL, reviewed_by TEXT, reviewed_at TEXT, created_at TEXT NOT NULL, UNIQUE(corpus_id,cluster_uid) )"
+    },
+    {
+      "check_constraints": [
+        "CHECK (status='frozen')"
+      ],
+      "columns": [
+        {
+          "cid": 0,
+          "default": null,
+          "name": "id",
+          "not_null": false,
+          "primary_key_position": 1,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 1,
+          "default": null,
+          "name": "corpus_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 2,
+          "default": null,
+          "name": "snapshot_version",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 3,
+          "default": null,
+          "name": "snapshot_path",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 4,
+          "default": null,
+          "name": "snapshot_sha256",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 5,
+          "default": null,
+          "name": "corpus_sha256",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 6,
+          "default": null,
+          "name": "protocol_version",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 7,
+          "default": null,
+          "name": "protocol_sha256",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 8,
+          "default": null,
+          "name": "split_manifest_sha256",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 9,
+          "default": null,
+          "name": "manifest_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 10,
+          "default": "'frozen'",
+          "name": "status",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 11,
+          "default": null,
+          "name": "created_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "corpus_id",
+          "id": 0,
+          "match": "NONE",
+          "on_delete": "RESTRICT",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "gold_corpora",
+          "to": "id"
+        }
+      ],
+      "indexes": [
+        {
+          "columns": [
+            {
+              "cid": 3,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "snapshot_path",
+              "seqno": 0
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 1
+            }
+          ],
+          "name": "sqlite_autoindex_gold_governance_snapshots_1",
+          "origin": "u",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        },
+        {
+          "columns": [
+            {
+              "cid": 4,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "snapshot_sha256",
+              "seqno": 0
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 1
+            }
+          ],
+          "name": "sqlite_autoindex_gold_governance_snapshots_2",
+          "origin": "u",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        },
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "corpus_id",
+              "seqno": 0
+            },
+            {
+              "cid": 2,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "snapshot_version",
+              "seqno": 1
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 2
+            }
+          ],
+          "name": "sqlite_autoindex_gold_governance_snapshots_3",
+          "origin": "u",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        }
+      ],
+      "name": "gold_governance_snapshots",
+      "primary_key": [
+        "id"
+      ],
+      "sql": "CREATE TABLE gold_governance_snapshots ( id INTEGER PRIMARY KEY, corpus_id INTEGER NOT NULL REFERENCES gold_corpora(id) ON DELETE RESTRICT, snapshot_version TEXT NOT NULL, snapshot_path TEXT NOT NULL UNIQUE, snapshot_sha256 TEXT NOT NULL UNIQUE, corpus_sha256 TEXT NOT NULL, protocol_version TEXT NOT NULL, protocol_sha256 TEXT NOT NULL, split_manifest_sha256 TEXT NOT NULL, manifest_json TEXT NOT NULL, status TEXT NOT NULL DEFAULT 'frozen' CHECK (status='frozen'), created_at TEXT NOT NULL, UNIQUE(corpus_id,snapshot_version) )"
+    },
+    {
+      "check_constraints": [],
+      "columns": [
+        {
+          "cid": 0,
+          "default": null,
+          "name": "id",
+          "not_null": false,
+          "primary_key_position": 1,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 1,
+          "default": null,
+          "name": "snapshot_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 2,
+          "default": null,
+          "name": "candidate_bundle_sha256",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 3,
+          "default": null,
+          "name": "split_manifest_sha256",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 4,
+          "default": null,
+          "name": "result_sha256",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 5,
+          "default": null,
+          "name": "evaluated_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "snapshot_id",
+          "id": 0,
+          "match": "NONE",
+          "on_delete": "RESTRICT",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "gold_governance_snapshots",
+          "to": "id"
+        }
+      ],
+      "indexes": [
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "snapshot_id",
+              "seqno": 0
+            },
+            {
+              "cid": 2,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "candidate_bundle_sha256",
+              "seqno": 1
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 2
+            }
+          ],
+          "name": "sqlite_autoindex_gold_holdout_evaluations_1",
+          "origin": "u",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        }
+      ],
+      "name": "gold_holdout_evaluations",
+      "primary_key": [
+        "id"
+      ],
+      "sql": "CREATE TABLE gold_holdout_evaluations ( id INTEGER PRIMARY KEY, snapshot_id INTEGER NOT NULL REFERENCES gold_governance_snapshots(id) ON DELETE RESTRICT, candidate_bundle_sha256 TEXT NOT NULL, split_manifest_sha256 TEXT NOT NULL, result_sha256 TEXT NOT NULL, evaluated_at TEXT NOT NULL, UNIQUE(snapshot_id,candidate_bundle_sha256) )"
+    },
+    {
+      "check_constraints": [
+        "CHECK (status IN ('active','released','stale'))"
+      ],
+      "columns": [
+        {
+          "cid": 0,
+          "default": null,
+          "name": "id",
+          "not_null": false,
+          "primary_key_position": 1,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 1,
+          "default": null,
+          "name": "pilot_run_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 2,
+          "default": null,
+          "name": "owner_token",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 3,
+          "default": null,
+          "name": "fencing_token",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 4,
+          "default": null,
+          "name": "status",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 5,
+          "default": null,
+          "name": "acquired_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 6,
+          "default": null,
+          "name": "heartbeat_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 7,
+          "default": null,
+          "name": "expires_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "pilot_run_id",
+          "id": 0,
+          "match": "NONE",
+          "on_delete": "RESTRICT",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "gold_pilot_runs_v2",
+          "to": "id"
+        }
+      ],
+      "indexes": [
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "pilot_run_id",
+              "seqno": 0
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 1
+            }
+          ],
+          "name": "idx_gold_pilot_one_active_lease",
+          "origin": "c",
+          "partial": true,
+          "sql": "CREATE UNIQUE INDEX idx_gold_pilot_one_active_lease ON gold_pilot_leases(pilot_run_id) WHERE status='active'",
+          "unique": true
+        }
+      ],
+      "name": "gold_pilot_leases",
+      "primary_key": [
+        "id"
+      ],
+      "sql": "CREATE TABLE gold_pilot_leases ( id INTEGER PRIMARY KEY, pilot_run_id INTEGER NOT NULL REFERENCES gold_pilot_runs_v2(id) ON DELETE RESTRICT, owner_token TEXT NOT NULL, fencing_token INTEGER NOT NULL, status TEXT NOT NULL CHECK (status IN ('active','released','stale')), acquired_at TEXT NOT NULL, heartbeat_at TEXT NOT NULL, expires_at TEXT NOT NULL )"
+    },
+    {
+      "check_constraints": [
+        "CHECK (status IN ('succeeded','failed'))",
+        "CHECK (no_abstract IN (0,1))",
+        "CHECK (label_blinded=1)"
+      ],
+      "columns": [
+        {
+          "cid": 0,
+          "default": null,
+          "name": "id",
+          "not_null": false,
+          "primary_key_position": 1,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 1,
+          "default": null,
+          "name": "pilot_run_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 2,
+          "default": null,
+          "name": "corpus_paper_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 3,
+          "default": null,
+          "name": "paper_content_sha256",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 4,
+          "default": null,
+          "name": "request_fingerprint",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 5,
+          "default": null,
+          "name": "model_provider",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 6,
+          "default": null,
+          "name": "model_name",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 7,
+          "default": null,
+          "name": "prompt_version",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 8,
+          "default": null,
+          "name": "prompt_sha256",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 9,
+          "default": null,
+          "name": "input_tokens",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 10,
+          "default": null,
+          "name": "output_tokens",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 11,
+          "default": null,
+          "name": "estimated_cost_microunits",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 12,
+          "default": null,
+          "name": "latency_ms",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 13,
+          "default": null,
+          "name": "status",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 14,
+          "default": null,
+          "name": "raw_response_reference",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 15,
+          "default": null,
+          "name": "parsed_result_json",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 16,
+          "default": null,
+          "name": "failure_type",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 17,
+          "default": null,
+          "name": "no_abstract",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 18,
+          "default": null,
+          "name": "limitations_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 19,
+          "default": "1",
+          "name": "label_blinded",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 20,
+          "default": null,
+          "name": "created_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "corpus_paper_id",
+          "id": 0,
+          "match": "NONE",
+          "on_delete": "RESTRICT",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "gold_corpus_papers",
+          "to": "id"
+        },
+        {
+          "from": "pilot_run_id",
+          "id": 1,
+          "match": "NONE",
+          "on_delete": "RESTRICT",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "gold_pilot_runs_v2",
+          "to": "id"
+        }
+      ],
+      "indexes": [
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "pilot_run_id",
+              "seqno": 0
+            },
+            {
+              "cid": 4,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "request_fingerprint",
+              "seqno": 1
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 2
+            }
+          ],
+          "name": "sqlite_autoindex_gold_pilot_results_v2_1",
+          "origin": "u",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        }
+      ],
+      "name": "gold_pilot_results_v2",
+      "primary_key": [
+        "id"
+      ],
+      "sql": "CREATE TABLE gold_pilot_results_v2 ( id INTEGER PRIMARY KEY, pilot_run_id INTEGER NOT NULL REFERENCES gold_pilot_runs_v2(id) ON DELETE RESTRICT, corpus_paper_id INTEGER NOT NULL REFERENCES gold_corpus_papers(id) ON DELETE RESTRICT, paper_content_sha256 TEXT NOT NULL, request_fingerprint TEXT NOT NULL, model_provider TEXT, model_name TEXT, prompt_version TEXT, prompt_sha256 TEXT, input_tokens INTEGER, output_tokens INTEGER, estimated_cost_microunits INTEGER, latency_ms INTEGER, status TEXT NOT NULL CHECK (status IN ('succeeded','failed')), raw_response_reference TEXT, parsed_result_json TEXT, failure_type TEXT, no_abstract INTEGER NOT NULL CHECK (no_abstract IN (0,1)), limitations_json TEXT NOT NULL, label_blinded INTEGER NOT NULL DEFAULT 1 CHECK (label_blinded=1), created_at TEXT NOT NULL, UNIQUE(pilot_run_id,request_fingerprint) )"
+    },
+    {
+      "check_constraints": [
+        "CHECK (split_name IN ('development','calibration'))",
+        "CHECK ( status IN ('prepared','running','paused','completed','failed') )",
+        "CHECK (label_blinded=1)"
+      ],
+      "columns": [
+        {
+          "cid": 0,
+          "default": null,
+          "name": "id",
+          "not_null": false,
+          "primary_key_position": 1,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 1,
+          "default": null,
+          "name": "run_uid",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 2,
+          "default": null,
+          "name": "snapshot_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 3,
+          "default": null,
+          "name": "candidate_runtime_config_sha256",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 4,
+          "default": null,
+          "name": "split_name",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 5,
+          "default": null,
+          "name": "budget_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 6,
+          "default": null,
+          "name": "status",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 7,
+          "default": "1",
+          "name": "label_blinded",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 8,
+          "default": null,
+          "name": "randomized_seed",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 9,
+          "default": null,
+          "name": "stats_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 10,
+          "default": null,
+          "name": "created_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 11,
+          "default": null,
+          "name": "updated_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "snapshot_id",
+          "id": 0,
+          "match": "NONE",
+          "on_delete": "RESTRICT",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "gold_governance_snapshots",
+          "to": "id"
+        }
+      ],
+      "indexes": [
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "run_uid",
+              "seqno": 0
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 1
+            }
+          ],
+          "name": "sqlite_autoindex_gold_pilot_runs_v2_1",
+          "origin": "u",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        }
+      ],
+      "name": "gold_pilot_runs_v2",
+      "primary_key": [
+        "id"
+      ],
+      "sql": "CREATE TABLE gold_pilot_runs_v2 ( id INTEGER PRIMARY KEY, run_uid TEXT NOT NULL UNIQUE, snapshot_id INTEGER NOT NULL REFERENCES gold_governance_snapshots(id) ON DELETE RESTRICT, candidate_runtime_config_sha256 TEXT NOT NULL, split_name TEXT NOT NULL CHECK (split_name IN ('development','calibration')), budget_json TEXT NOT NULL, status TEXT NOT NULL CHECK ( status IN ('prepared','running','paused','completed','failed') ), label_blinded INTEGER NOT NULL DEFAULT 1 CHECK (label_blinded=1), randomized_seed INTEGER NOT NULL, stats_json TEXT NOT NULL, created_at TEXT NOT NULL, updated_at TEXT NOT NULL )"
+    },
+    {
+      "check_constraints": [
+        "CHECK (annotation_round IN (1,2))",
+        "CHECK (hidden_repeat IN (0,1))"
+      ],
+      "columns": [
+        {
+          "cid": 0,
+          "default": null,
+          "name": "id",
+          "not_null": false,
+          "primary_key_position": 1,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 1,
+          "default": null,
+          "name": "corpus_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 2,
+          "default": null,
+          "name": "corpus_paper_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 3,
+          "default": null,
+          "name": "reviewer_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 4,
+          "default": null,
+          "name": "annotation_round",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 5,
+          "default": null,
+          "name": "presented_record_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 6,
+          "default": null,
+          "name": "presentation_order",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 7,
+          "default": "0",
+          "name": "hidden_repeat",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 8,
+          "default": null,
+          "name": "repeat_of_presented_record_id",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 9,
+          "default": null,
+          "name": "created_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "corpus_paper_id",
+          "id": 0,
+          "match": "NONE",
+          "on_delete": "RESTRICT",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "gold_corpus_papers",
+          "to": "id"
+        },
+        {
+          "from": "corpus_id",
+          "id": 1,
+          "match": "NONE",
+          "on_delete": "RESTRICT",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "gold_corpora",
+          "to": "id"
+        }
+      ],
+      "indexes": [
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "corpus_id",
+              "seqno": 0
+            },
+            {
+              "cid": 3,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "reviewer_id",
+              "seqno": 1
+            },
+            {
+              "cid": 4,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "annotation_round",
+              "seqno": 2
+            },
+            {
+              "cid": 6,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "presentation_order",
+              "seqno": 3
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 4
+            }
+          ],
+          "name": "idx_gold_presented_progress",
+          "origin": "c",
+          "partial": false,
+          "sql": "CREATE INDEX idx_gold_presented_progress ON gold_presented_records(corpus_id,reviewer_id,annotation_round,presentation_order)",
+          "unique": false
+        },
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "corpus_id",
+              "seqno": 0
+            },
+            {
+              "cid": 3,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "reviewer_id",
+              "seqno": 1
+            },
+            {
+              "cid": 4,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "annotation_round",
+              "seqno": 2
+            },
+            {
+              "cid": 5,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "presented_record_id",
+              "seqno": 3
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 4
+            }
+          ],
+          "name": "sqlite_autoindex_gold_presented_records_1",
+          "origin": "u",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        },
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "corpus_id",
+              "seqno": 0
+            },
+            {
+              "cid": 3,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "reviewer_id",
+              "seqno": 1
+            },
+            {
+              "cid": 4,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "annotation_round",
+              "seqno": 2
+            },
+            {
+              "cid": 6,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "presentation_order",
+              "seqno": 3
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 4
+            }
+          ],
+          "name": "sqlite_autoindex_gold_presented_records_2",
+          "origin": "u",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        }
+      ],
+      "name": "gold_presented_records",
+      "primary_key": [
+        "id"
+      ],
+      "sql": "CREATE TABLE gold_presented_records ( id INTEGER PRIMARY KEY, corpus_id INTEGER NOT NULL REFERENCES gold_corpora(id) ON DELETE RESTRICT, corpus_paper_id INTEGER NOT NULL REFERENCES gold_corpus_papers(id) ON DELETE RESTRICT, reviewer_id TEXT NOT NULL, annotation_round INTEGER NOT NULL CHECK (annotation_round IN (1,2)), presented_record_id TEXT NOT NULL, presentation_order INTEGER NOT NULL, hidden_repeat INTEGER NOT NULL DEFAULT 0 CHECK (hidden_repeat IN (0,1)), repeat_of_presented_record_id TEXT, created_at TEXT NOT NULL, UNIQUE(corpus_id,reviewer_id,annotation_round,presented_record_id), UNIQUE(corpus_id,reviewer_id,annotation_round,presentation_order) )"
+    },
+    {
+      "check_constraints": [
+        "CHECK (status IN ('open','resolved'))"
+      ],
+      "columns": [
+        {
+          "cid": 0,
+          "default": null,
+          "name": "id",
+          "not_null": false,
+          "primary_key_position": 1,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 1,
+          "default": null,
+          "name": "corpus_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 2,
+          "default": null,
+          "name": "corpus_paper_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 3,
+          "default": null,
+          "name": "queue_reason",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 4,
+          "default": null,
+          "name": "source_annotation_id",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 5,
+          "default": null,
+          "name": "status",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 6,
+          "default": null,
+          "name": "created_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 7,
+          "default": null,
+          "name": "resolved_at",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "source_annotation_id",
+          "id": 0,
+          "match": "NONE",
+          "on_delete": "NO ACTION",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "gold_annotation_revisions",
+          "to": "id"
+        },
+        {
+          "from": "corpus_paper_id",
+          "id": 1,
+          "match": "NONE",
+          "on_delete": "RESTRICT",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "gold_corpus_papers",
+          "to": "id"
+        },
+        {
+          "from": "corpus_id",
+          "id": 2,
+          "match": "NONE",
+          "on_delete": "RESTRICT",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "gold_corpora",
+          "to": "id"
+        }
+      ],
+      "indexes": [
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "corpus_id",
+              "seqno": 0
+            },
+            {
+              "cid": 5,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "status",
+              "seqno": 1
+            },
+            {
+              "cid": 3,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "queue_reason",
+              "seqno": 2
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 3
+            }
+          ],
+          "name": "idx_gold_review_queue_open",
+          "origin": "c",
+          "partial": false,
+          "sql": "CREATE INDEX idx_gold_review_queue_open ON gold_review_queue(corpus_id,status,queue_reason)",
+          "unique": false
+        },
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "corpus_id",
+              "seqno": 0
+            },
+            {
+              "cid": 2,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "corpus_paper_id",
+              "seqno": 1
+            },
+            {
+              "cid": 3,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "queue_reason",
+              "seqno": 2
+            },
+            {
+              "cid": 5,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "status",
+              "seqno": 3
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 4
+            }
+          ],
+          "name": "sqlite_autoindex_gold_review_queue_1",
+          "origin": "u",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        }
+      ],
+      "name": "gold_review_queue",
+      "primary_key": [
+        "id"
+      ],
+      "sql": "CREATE TABLE gold_review_queue ( id INTEGER PRIMARY KEY, corpus_id INTEGER NOT NULL REFERENCES gold_corpora(id) ON DELETE RESTRICT, corpus_paper_id INTEGER NOT NULL REFERENCES gold_corpus_papers(id) ON DELETE RESTRICT, queue_reason TEXT NOT NULL, source_annotation_id INTEGER REFERENCES gold_annotation_revisions(id), status TEXT NOT NULL CHECK (status IN ('open','resolved')), created_at TEXT NOT NULL, resolved_at TEXT, UNIQUE(corpus_id,corpus_paper_id,queue_reason,status) )"
+    },
+    {
+      "check_constraints": [
+        "CHECK ( adjudicated_label IN ('include','borderline','exclude','uncertain') )"
+      ],
+      "columns": [
+        {
+          "cid": 0,
+          "default": null,
+          "name": "id",
+          "not_null": false,
+          "primary_key_position": 1,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 1,
+          "default": null,
+          "name": "gold_set_item_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 2,
+          "default": null,
+          "name": "adjudicated_label",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 3,
+          "default": null,
+          "name": "adjudication_reason",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 4,
+          "default": null,
+          "name": "adjudicator_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 5,
+          "default": null,
+          "name": "adjudicated_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "gold_set_item_id",
+          "id": 0,
+          "match": "NONE",
+          "on_delete": "CASCADE",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "gold_set_items",
+          "to": "id"
+        }
+      ],
+      "indexes": [
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "gold_set_item_id",
+              "seqno": 0
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 1
+            }
+          ],
+          "name": "sqlite_autoindex_gold_set_adjudications_1",
+          "origin": "u",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        }
+      ],
+      "name": "gold_set_adjudications",
+      "primary_key": [
+        "id"
+      ],
+      "sql": "CREATE TABLE gold_set_adjudications ( id INTEGER PRIMARY KEY, gold_set_item_id INTEGER NOT NULL UNIQUE REFERENCES gold_set_items(id) ON DELETE CASCADE, adjudicated_label TEXT NOT NULL CHECK ( adjudicated_label IN ('include','borderline','exclude','uncertain') ), adjudication_reason TEXT NOT NULL, adjudicator_id TEXT NOT NULL, adjudicated_at TEXT NOT NULL )"
+    },
+    {
+      "check_constraints": [
+        "CHECK (review_round IN (1,2))",
+        "CHECK (label IN ('include','borderline','exclude','uncertain'))",
+        "CHECK (chinese_title_shown IN (0,1))",
+        "CHECK (ai_info_shown=0)",
+        "CHECK (marked_for_later IN (0,1))"
+      ],
+      "columns": [
+        {
+          "cid": 0,
+          "default": null,
+          "name": "id",
+          "not_null": false,
+          "primary_key_position": 1,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 1,
+          "default": null,
+          "name": "gold_set_item_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 2,
+          "default": null,
+          "name": "reviewer_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 3,
+          "default": null,
+          "name": "review_round",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 4,
+          "default": null,
+          "name": "label",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 5,
+          "default": null,
+          "name": "reviewer_note",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 6,
+          "default": "0",
+          "name": "chinese_title_shown",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 7,
+          "default": "0",
+          "name": "ai_info_shown",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 8,
+          "default": "0",
+          "name": "marked_for_later",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 9,
+          "default": null,
+          "name": "started_at",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 10,
+          "default": null,
+          "name": "completed_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "gold_set_item_id",
+          "id": 0,
+          "match": "NONE",
+          "on_delete": "CASCADE",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "gold_set_items",
+          "to": "id"
+        }
+      ],
+      "indexes": [
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "gold_set_item_id",
+              "seqno": 0
+            },
+            {
+              "cid": 3,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "review_round",
+              "seqno": 1
+            },
+            {
+              "cid": 2,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "reviewer_id",
+              "seqno": 2
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 3
+            }
+          ],
+          "name": "idx_gold_annotations_progress",
+          "origin": "c",
+          "partial": false,
+          "sql": "CREATE INDEX idx_gold_annotations_progress ON gold_set_annotations(gold_set_item_id,review_round,reviewer_id)",
+          "unique": false
+        },
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "gold_set_item_id",
+              "seqno": 0
+            },
+            {
+              "cid": 2,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "reviewer_id",
+              "seqno": 1
+            },
+            {
+              "cid": 3,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "review_round",
+              "seqno": 2
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 3
+            }
+          ],
+          "name": "sqlite_autoindex_gold_set_annotations_1",
+          "origin": "u",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        }
+      ],
+      "name": "gold_set_annotations",
+      "primary_key": [
+        "id"
+      ],
+      "sql": "CREATE TABLE gold_set_annotations ( id INTEGER PRIMARY KEY, gold_set_item_id INTEGER NOT NULL REFERENCES gold_set_items(id) ON DELETE CASCADE, reviewer_id TEXT NOT NULL, review_round INTEGER NOT NULL CHECK (review_round IN (1,2)), label TEXT NOT NULL CHECK (label IN ('include','borderline','exclude','uncertain')), reviewer_note TEXT, chinese_title_shown INTEGER NOT NULL DEFAULT 0 CHECK (chinese_title_shown IN (0,1)), ai_info_shown INTEGER NOT NULL DEFAULT 0 CHECK (ai_info_shown=0), marked_for_later INTEGER NOT NULL DEFAULT 0 CHECK (marked_for_later IN (0,1)), started_at TEXT, completed_at TEXT NOT NULL, UNIQUE(gold_set_item_id,reviewer_id,review_round) )"
+    },
+    {
+      "check_constraints": [
+        "CHECK (review_round IN (1,2))"
+      ],
+      "columns": [
+        {
+          "cid": 0,
+          "default": null,
+          "name": "id",
+          "not_null": false,
+          "primary_key_position": 1,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 1,
+          "default": null,
+          "name": "gold_set_item_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 2,
+          "default": null,
+          "name": "reviewer_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 3,
+          "default": null,
+          "name": "review_round",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 4,
+          "default": null,
+          "name": "deferred_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "gold_set_item_id",
+          "id": 0,
+          "match": "NONE",
+          "on_delete": "CASCADE",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "gold_set_items",
+          "to": "id"
+        }
+      ],
+      "indexes": [
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "gold_set_item_id",
+              "seqno": 0
+            },
+            {
+              "cid": 3,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "review_round",
+              "seqno": 1
+            },
+            {
+              "cid": 2,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "reviewer_id",
+              "seqno": 2
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 3
+            }
+          ],
+          "name": "idx_gold_deferrals_progress",
+          "origin": "c",
+          "partial": false,
+          "sql": "CREATE INDEX idx_gold_deferrals_progress ON gold_set_deferrals(gold_set_item_id,review_round,reviewer_id)",
+          "unique": false
+        },
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "gold_set_item_id",
+              "seqno": 0
+            },
+            {
+              "cid": 2,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "reviewer_id",
+              "seqno": 1
+            },
+            {
+              "cid": 3,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "review_round",
+              "seqno": 2
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 3
+            }
+          ],
+          "name": "sqlite_autoindex_gold_set_deferrals_1",
+          "origin": "u",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        }
+      ],
+      "name": "gold_set_deferrals",
+      "primary_key": [
+        "id"
+      ],
+      "sql": "CREATE TABLE gold_set_deferrals ( id INTEGER PRIMARY KEY, gold_set_item_id INTEGER NOT NULL REFERENCES gold_set_items(id) ON DELETE CASCADE, reviewer_id TEXT NOT NULL, review_round INTEGER NOT NULL CHECK (review_round IN (1,2)), deferred_at TEXT NOT NULL, UNIQUE(gold_set_item_id,reviewer_id,review_round) )"
+    },
+    {
+      "check_constraints": [],
+      "columns": [
+        {
+          "cid": 0,
+          "default": null,
+          "name": "id",
+          "not_null": false,
+          "primary_key_position": 1,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 1,
+          "default": null,
+          "name": "gold_set_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 2,
+          "default": null,
+          "name": "source_paper_id",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 3,
+          "default": null,
+          "name": "doi",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 4,
+          "default": null,
+          "name": "original_title",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 5,
+          "default": null,
+          "name": "formal_chinese_title",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 6,
+          "default": null,
+          "name": "original_abstract",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 7,
+          "default": "'[]'",
+          "name": "authors_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 8,
+          "default": null,
+          "name": "journal",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 9,
+          "default": null,
+          "name": "journal_group",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 10,
+          "default": null,
+          "name": "publication_date",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 11,
+          "default": "'[]'",
+          "name": "keywords_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 12,
+          "default": "'[]'",
+          "name": "subject_codes_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 13,
+          "default": "'{}'",
+          "name": "source_metadata_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 14,
+          "default": null,
+          "name": "stratum",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 15,
+          "default": "'[]'",
+          "name": "difficulty_tags_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 16,
+          "default": null,
+          "name": "display_order_seed",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 17,
+          "default": null,
+          "name": "created_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "gold_set_id",
+          "id": 0,
+          "match": "NONE",
+          "on_delete": "CASCADE",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "gold_sets",
+          "to": "id"
+        }
+      ],
+      "indexes": [
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "gold_set_id",
+              "seqno": 0
+            },
+            {
+              "cid": 14,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "stratum",
+              "seqno": 1
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 2
+            }
+          ],
+          "name": "idx_gold_items_stratum",
+          "origin": "c",
+          "partial": false,
+          "sql": "CREATE INDEX idx_gold_items_stratum ON gold_set_items(gold_set_id,stratum)",
+          "unique": false
+        },
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "gold_set_id",
+              "seqno": 0
+            },
+            {
+              "cid": 2,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "source_paper_id",
+              "seqno": 1
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 2
+            }
+          ],
+          "name": "sqlite_autoindex_gold_set_items_1",
+          "origin": "u",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        },
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "gold_set_id",
+              "seqno": 0
+            },
+            {
+              "cid": 3,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "doi",
+              "seqno": 1
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 2
+            }
+          ],
+          "name": "sqlite_autoindex_gold_set_items_2",
+          "origin": "u",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        }
+      ],
+      "name": "gold_set_items",
+      "primary_key": [
+        "id"
+      ],
+      "sql": "CREATE TABLE gold_set_items ( id INTEGER PRIMARY KEY, gold_set_id INTEGER NOT NULL REFERENCES gold_sets(id) ON DELETE CASCADE, source_paper_id INTEGER, doi TEXT, original_title TEXT NOT NULL, formal_chinese_title TEXT, original_abstract TEXT, authors_json TEXT NOT NULL DEFAULT '[]', journal TEXT NOT NULL, journal_group TEXT NOT NULL, publication_date TEXT, keywords_json TEXT NOT NULL DEFAULT '[]', subject_codes_json TEXT NOT NULL DEFAULT '[]', source_metadata_json TEXT NOT NULL DEFAULT '{}', stratum TEXT NOT NULL, difficulty_tags_json TEXT NOT NULL DEFAULT '[]', display_order_seed INTEGER NOT NULL, created_at TEXT NOT NULL, UNIQUE(gold_set_id,source_paper_id), UNIQUE(gold_set_id,doi) )"
+    },
+    {
+      "check_constraints": [
+        "CHECK (immutable=1)"
+      ],
+      "columns": [
+        {
+          "cid": 0,
+          "default": null,
+          "name": "id",
+          "not_null": false,
+          "primary_key_position": 1,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 1,
+          "default": null,
+          "name": "gold_set_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 2,
+          "default": null,
+          "name": "snapshot_version",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 3,
+          "default": null,
+          "name": "annotation_version",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 4,
+          "default": null,
+          "name": "snapshot_path",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 5,
+          "default": null,
+          "name": "snapshot_sha256",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 6,
+          "default": null,
+          "name": "item_count",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 7,
+          "default": null,
+          "name": "label_counts_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 8,
+          "default": null,
+          "name": "source_db_sha256",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 9,
+          "default": "1",
+          "name": "immutable",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 10,
+          "default": null,
+          "name": "created_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "gold_set_id",
+          "id": 0,
+          "match": "NONE",
+          "on_delete": "RESTRICT",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "gold_sets",
+          "to": "id"
+        }
+      ],
+      "indexes": [
+        {
+          "columns": [
+            {
+              "cid": 4,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "snapshot_path",
+              "seqno": 0
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 1
+            }
+          ],
+          "name": "sqlite_autoindex_gold_set_snapshots_1",
+          "origin": "u",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        },
+        {
+          "columns": [
+            {
+              "cid": 5,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "snapshot_sha256",
+              "seqno": 0
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 1
+            }
+          ],
+          "name": "sqlite_autoindex_gold_set_snapshots_2",
+          "origin": "u",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        },
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "gold_set_id",
+              "seqno": 0
+            },
+            {
+              "cid": 2,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "snapshot_version",
+              "seqno": 1
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 2
+            }
+          ],
+          "name": "sqlite_autoindex_gold_set_snapshots_3",
+          "origin": "u",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        }
+      ],
+      "name": "gold_set_snapshots",
+      "primary_key": [
+        "id"
+      ],
+      "sql": "CREATE TABLE gold_set_snapshots ( id INTEGER PRIMARY KEY, gold_set_id INTEGER NOT NULL REFERENCES gold_sets(id) ON DELETE RESTRICT, snapshot_version TEXT NOT NULL, annotation_version TEXT NOT NULL, snapshot_path TEXT NOT NULL UNIQUE, snapshot_sha256 TEXT NOT NULL UNIQUE, item_count INTEGER NOT NULL, label_counts_json TEXT NOT NULL, source_db_sha256 TEXT NOT NULL, immutable INTEGER NOT NULL DEFAULT 1 CHECK (immutable=1), created_at TEXT NOT NULL, UNIQUE(gold_set_id,snapshot_version) )"
+    },
+    {
+      "check_constraints": [
+        "CHECK (review_mode IN ('dual_reviewer','single_reviewer_two_rounds'))",
+        "CHECK (status IN ( 'sampling','annotating_round_1','annotating_round_2','adjudicating','frozen' ))"
+      ],
+      "columns": [
+        {
+          "cid": 0,
+          "default": null,
+          "name": "id",
+          "not_null": false,
+          "primary_key_position": 1,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 1,
+          "default": null,
+          "name": "gold_set_uid",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 2,
+          "default": null,
+          "name": "name",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 3,
+          "default": null,
+          "name": "profile_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 4,
+          "default": null,
+          "name": "source_db_path",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 5,
+          "default": null,
+          "name": "source_db_sha256",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 6,
+          "default": null,
+          "name": "sampling_manifest_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 7,
+          "default": null,
+          "name": "annotation_version",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 8,
+          "default": null,
+          "name": "review_mode",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 9,
+          "default": null,
+          "name": "minimum_round_interval_days",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 10,
+          "default": null,
+          "name": "status",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 11,
+          "default": null,
+          "name": "created_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 12,
+          "default": null,
+          "name": "frozen_at",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 13,
+          "default": null,
+          "name": "snapshot_sha256",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        }
+      ],
+      "foreign_keys": [],
+      "indexes": [
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "gold_set_uid",
+              "seqno": 0
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 1
+            }
+          ],
+          "name": "sqlite_autoindex_gold_sets_1",
+          "origin": "u",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        }
+      ],
+      "name": "gold_sets",
+      "primary_key": [
+        "id"
+      ],
+      "sql": "CREATE TABLE gold_sets ( id INTEGER PRIMARY KEY, gold_set_uid TEXT NOT NULL UNIQUE, name TEXT NOT NULL, profile_id TEXT NOT NULL, source_db_path TEXT NOT NULL, source_db_sha256 TEXT NOT NULL, sampling_manifest_json TEXT NOT NULL, annotation_version TEXT NOT NULL, review_mode TEXT NOT NULL CHECK (review_mode IN ('dual_reviewer','single_reviewer_two_rounds')), minimum_round_interval_days INTEGER, status TEXT NOT NULL CHECK (status IN ( 'sampling','annotating_round_1','annotating_round_2','adjudicating','frozen' )), created_at TEXT NOT NULL, frozen_at TEXT, snapshot_sha256 TEXT )"
+    },
+    {
+      "check_constraints": [],
+      "columns": [
+        {
+          "cid": 0,
+          "default": null,
+          "name": "id",
+          "not_null": false,
+          "primary_key_position": 1,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 1,
+          "default": null,
+          "name": "annotation_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 2,
+          "default": null,
+          "name": "reviewer_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 3,
+          "default": null,
+          "name": "revealed_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "annotation_id",
+          "id": 0,
+          "match": "NONE",
+          "on_delete": "RESTRICT",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "gold_annotation_revisions",
+          "to": "id"
+        }
+      ],
+      "indexes": [
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "annotation_id",
+              "seqno": 0
+            },
+            {
+              "cid": 2,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "reviewer_id",
+              "seqno": 1
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 2
+            }
+          ],
+          "name": "sqlite_autoindex_gold_source_reveals_1",
+          "origin": "u",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        }
+      ],
+      "name": "gold_source_reveals",
+      "primary_key": [
+        "id"
+      ],
+      "sql": "CREATE TABLE gold_source_reveals ( id INTEGER PRIMARY KEY, annotation_id INTEGER NOT NULL REFERENCES gold_annotation_revisions(id) ON DELETE RESTRICT, reviewer_id TEXT NOT NULL, revealed_at TEXT NOT NULL, UNIQUE(annotation_id,reviewer_id) )"
+    },
+    {
+      "check_constraints": [
+        "CHECK (split_name IN ('development','calibration','holdout'))",
+        "CHECK (gold_label IN ('include','borderline','exclude'))"
+      ],
+      "columns": [
+        {
+          "cid": 0,
+          "default": null,
+          "name": "split_manifest_id",
+          "not_null": true,
+          "primary_key_position": 1,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 1,
+          "default": null,
+          "name": "corpus_paper_id",
+          "not_null": true,
+          "primary_key_position": 2,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 2,
+          "default": null,
+          "name": "duplicate_cluster_uid",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 3,
+          "default": null,
+          "name": "split_name",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 4,
+          "default": null,
+          "name": "gold_label",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "corpus_paper_id",
+          "id": 0,
+          "match": "NONE",
+          "on_delete": "RESTRICT",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "gold_corpus_papers",
+          "to": "id"
+        },
+        {
+          "from": "split_manifest_id",
+          "id": 1,
+          "match": "NONE",
+          "on_delete": "RESTRICT",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "gold_split_manifests",
+          "to": "id"
+        }
+      ],
+      "indexes": [
+        {
+          "columns": [
+            {
+              "cid": 0,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "split_manifest_id",
+              "seqno": 0
+            },
+            {
+              "cid": 3,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "split_name",
+              "seqno": 1
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 2
+            }
+          ],
+          "name": "idx_gold_split_name",
+          "origin": "c",
+          "partial": false,
+          "sql": "CREATE INDEX idx_gold_split_name ON gold_split_assignments(split_manifest_id,split_name)",
+          "unique": false
+        },
+        {
+          "columns": [
+            {
+              "cid": 0,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "split_manifest_id",
+              "seqno": 0
+            },
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "corpus_paper_id",
+              "seqno": 1
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 2
+            }
+          ],
+          "name": "sqlite_autoindex_gold_split_assignments_1",
+          "origin": "pk",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        }
+      ],
+      "name": "gold_split_assignments",
+      "primary_key": [
+        "split_manifest_id",
+        "corpus_paper_id"
+      ],
+      "sql": "CREATE TABLE gold_split_assignments ( split_manifest_id INTEGER NOT NULL REFERENCES gold_split_manifests(id) ON DELETE RESTRICT, corpus_paper_id INTEGER NOT NULL REFERENCES gold_corpus_papers(id) ON DELETE RESTRICT, duplicate_cluster_uid TEXT NOT NULL, split_name TEXT NOT NULL CHECK (split_name IN ('development','calibration','holdout')), gold_label TEXT NOT NULL CHECK (gold_label IN ('include','borderline','exclude')), PRIMARY KEY(split_manifest_id,corpus_paper_id) )"
+    },
+    {
+      "check_constraints": [
+        "CHECK (frozen=1)"
+      ],
+      "columns": [
+        {
+          "cid": 0,
+          "default": null,
+          "name": "id",
+          "not_null": false,
+          "primary_key_position": 1,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 1,
+          "default": null,
+          "name": "corpus_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 2,
+          "default": null,
+          "name": "split_version",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 3,
+          "default": null,
+          "name": "random_seed",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 4,
+          "default": null,
+          "name": "strategy_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 5,
+          "default": null,
+          "name": "manifest_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 6,
+          "default": null,
+          "name": "manifest_sha256",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 7,
+          "default": "1",
+          "name": "frozen",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 8,
+          "default": null,
+          "name": "created_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "corpus_id",
+          "id": 0,
+          "match": "NONE",
+          "on_delete": "RESTRICT",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "gold_corpora",
+          "to": "id"
+        }
+      ],
+      "indexes": [
+        {
+          "columns": [
+            {
+              "cid": 6,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "manifest_sha256",
+              "seqno": 0
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 1
+            }
+          ],
+          "name": "sqlite_autoindex_gold_split_manifests_1",
+          "origin": "u",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        },
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "corpus_id",
+              "seqno": 0
+            },
+            {
+              "cid": 2,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "split_version",
+              "seqno": 1
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 2
+            }
+          ],
+          "name": "sqlite_autoindex_gold_split_manifests_2",
+          "origin": "u",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        }
+      ],
+      "name": "gold_split_manifests",
+      "primary_key": [
+        "id"
+      ],
+      "sql": "CREATE TABLE gold_split_manifests ( id INTEGER PRIMARY KEY, corpus_id INTEGER NOT NULL REFERENCES gold_corpora(id) ON DELETE RESTRICT, split_version TEXT NOT NULL, random_seed INTEGER NOT NULL, strategy_json TEXT NOT NULL, manifest_json TEXT NOT NULL, manifest_sha256 TEXT NOT NULL UNIQUE, frozen INTEGER NOT NULL DEFAULT 1 CHECK (frozen=1), created_at TEXT NOT NULL, UNIQUE(corpus_id,split_version) )"
+    },
+    {
+      "check_constraints": [
+        "CHECK (status='candidate')",
+        "CHECK (approved_at IS NULL)"
+      ],
+      "columns": [
+        {
+          "cid": 0,
+          "default": null,
+          "name": "id",
+          "not_null": false,
+          "primary_key_position": 1,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 1,
+          "default": null,
+          "name": "candidate_version",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 2,
+          "default": null,
+          "name": "gold_set_snapshot_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 3,
+          "default": null,
+          "name": "bundle_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 4,
+          "default": null,
+          "name": "bundle_sha256",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 5,
+          "default": "'candidate'",
+          "name": "status",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 6,
+          "default": null,
+          "name": "created_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 7,
+          "default": null,
+          "name": "approved_at",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "gold_set_snapshot_id",
+          "id": 0,
+          "match": "NONE",
+          "on_delete": "NO ACTION",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "gold_set_snapshots",
+          "to": "id"
+        }
+      ],
+      "indexes": [
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "candidate_version",
+              "seqno": 0
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 1
+            }
+          ],
+          "name": "sqlite_autoindex_model_bundle_candidates_1",
+          "origin": "u",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        },
+        {
+          "columns": [
+            {
+              "cid": 4,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "bundle_sha256",
+              "seqno": 0
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 1
+            }
+          ],
+          "name": "sqlite_autoindex_model_bundle_candidates_2",
+          "origin": "u",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        }
+      ],
+      "name": "model_bundle_candidates",
+      "primary_key": [
+        "id"
+      ],
+      "sql": "CREATE TABLE model_bundle_candidates ( id INTEGER PRIMARY KEY, candidate_version TEXT NOT NULL UNIQUE, gold_set_snapshot_id INTEGER NOT NULL REFERENCES gold_set_snapshots(id), bundle_json TEXT NOT NULL, bundle_sha256 TEXT NOT NULL UNIQUE, status TEXT NOT NULL DEFAULT 'candidate' CHECK (status='candidate'), created_at TEXT NOT NULL, approved_at TEXT CHECK (approved_at IS NULL) )"
+    },
+    {
+      "check_constraints": [
+        "CHECK (succeeded IN (0,1))"
+      ],
+      "columns": [
+        {
+          "cid": 0,
+          "default": null,
+          "name": "id",
+          "not_null": false,
+          "primary_key_position": 1,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 1,
+          "default": null,
+          "name": "pilot_run_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 2,
+          "default": null,
+          "name": "snapshot_item_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 3,
+          "default": null,
+          "name": "request_fingerprint",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 4,
+          "default": null,
+          "name": "result_json",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 5,
+          "default": null,
+          "name": "succeeded",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 6,
+          "default": null,
+          "name": "failure_type",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 7,
+          "default": null,
+          "name": "input_tokens",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 8,
+          "default": null,
+          "name": "output_tokens",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 9,
+          "default": null,
+          "name": "estimated_cost",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "REAL"
+        },
+        {
+          "cid": 10,
+          "default": null,
+          "name": "created_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "pilot_run_id",
+          "id": 0,
+          "match": "NONE",
+          "on_delete": "CASCADE",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "pilot_runs",
+          "to": "id"
+        }
+      ],
+      "indexes": [
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "pilot_run_id",
+              "seqno": 0
+            },
+            {
+              "cid": 5,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "succeeded",
+              "seqno": 1
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 2
+            }
+          ],
+          "name": "idx_pilot_results_run",
+          "origin": "c",
+          "partial": false,
+          "sql": "CREATE INDEX idx_pilot_results_run ON pilot_results(pilot_run_id,succeeded)",
+          "unique": false
+        },
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "pilot_run_id",
+              "seqno": 0
+            },
+            {
+              "cid": 3,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "request_fingerprint",
+              "seqno": 1
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 2
+            }
+          ],
+          "name": "sqlite_autoindex_pilot_results_1",
+          "origin": "u",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        }
+      ],
+      "name": "pilot_results",
+      "primary_key": [
+        "id"
+      ],
+      "sql": "CREATE TABLE pilot_results ( id INTEGER PRIMARY KEY, pilot_run_id INTEGER NOT NULL REFERENCES pilot_runs(id) ON DELETE CASCADE, snapshot_item_id TEXT NOT NULL, request_fingerprint TEXT NOT NULL, result_json TEXT, succeeded INTEGER NOT NULL CHECK (succeeded IN (0,1)), failure_type TEXT, input_tokens INTEGER, output_tokens INTEGER, estimated_cost REAL, created_at TEXT NOT NULL, UNIQUE(pilot_run_id,request_fingerprint) )"
+    },
+    {
+      "check_constraints": [
+        "CHECK (status IN ('pending','running','partial','completed','failed'))"
+      ],
+      "columns": [
+        {
+          "cid": 0,
+          "default": null,
+          "name": "id",
+          "not_null": false,
+          "primary_key_position": 1,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 1,
+          "default": null,
+          "name": "run_uid",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 2,
+          "default": null,
+          "name": "gold_set_snapshot_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 3,
+          "default": null,
+          "name": "model_bundle_version",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 4,
+          "default": null,
+          "name": "config_bundle_sha256",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 5,
+          "default": null,
+          "name": "prompt_bundle_sha256",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 6,
+          "default": null,
+          "name": "budget_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 7,
+          "default": null,
+          "name": "stats_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 8,
+          "default": null,
+          "name": "status",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 9,
+          "default": null,
+          "name": "failure_summary",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 10,
+          "default": null,
+          "name": "created_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 11,
+          "default": null,
+          "name": "updated_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "gold_set_snapshot_id",
+          "id": 0,
+          "match": "NONE",
+          "on_delete": "NO ACTION",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "gold_set_snapshots",
+          "to": "id"
+        }
+      ],
+      "indexes": [
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "run_uid",
+              "seqno": 0
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 1
+            }
+          ],
+          "name": "sqlite_autoindex_pilot_runs_1",
+          "origin": "u",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        }
+      ],
+      "name": "pilot_runs",
+      "primary_key": [
+        "id"
+      ],
+      "sql": "CREATE TABLE pilot_runs ( id INTEGER PRIMARY KEY, run_uid TEXT NOT NULL UNIQUE, gold_set_snapshot_id INTEGER NOT NULL REFERENCES gold_set_snapshots(id), model_bundle_version TEXT NOT NULL, config_bundle_sha256 TEXT NOT NULL, prompt_bundle_sha256 TEXT NOT NULL, budget_json TEXT NOT NULL, stats_json TEXT NOT NULL, status TEXT NOT NULL CHECK (status IN ('pending','running','partial','completed','failed')), failure_summary TEXT, created_at TEXT NOT NULL, updated_at TEXT NOT NULL )"
+    },
+    {
+      "check_constraints": [
+        "CHECK (success IN (0,1))",
+        "CHECK (inferred IN (0,1))"
+      ],
+      "columns": [
+        {
+          "cid": 0,
+          "default": null,
+          "name": "migration_id",
+          "not_null": true,
+          "primary_key_position": 2,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 1,
+          "default": null,
+          "name": "filename",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 2,
+          "default": null,
+          "name": "migration_sha256",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 3,
+          "default": null,
+          "name": "applied_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 4,
+          "default": null,
+          "name": "application_version",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 5,
+          "default": null,
+          "name": "schema_version_before",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 6,
+          "default": null,
+          "name": "schema_version_after",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 7,
+          "default": null,
+          "name": "execution_ms",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 8,
+          "default": null,
+          "name": "success",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 9,
+          "default": null,
+          "name": "error_type",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 10,
+          "default": null,
+          "name": "error_message",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 11,
+          "default": "0",
+          "name": "inferred",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 12,
+          "default": null,
+          "name": "inference_method",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 13,
+          "default": null,
+          "name": "schema_fingerprint",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 14,
+          "default": null,
+          "name": "source_manifest",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 15,
+          "default": null,
+          "name": "database_profile",
+          "not_null": true,
+          "primary_key_position": 1,
+          "type": "TEXT"
+        }
+      ],
+      "foreign_keys": [],
+      "indexes": [
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "filename",
+              "seqno": 0
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 1
+            }
+          ],
+          "name": "sqlite_autoindex_schema_migrations_1",
+          "origin": "u",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        },
+        {
+          "columns": [
+            {
+              "cid": 15,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "database_profile",
+              "seqno": 0
+            },
+            {
+              "cid": 0,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "migration_id",
+              "seqno": 1
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 2
+            }
+          ],
+          "name": "sqlite_autoindex_schema_migrations_2",
+          "origin": "pk",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        }
+      ],
+      "name": "schema_migrations",
+      "primary_key": [
+        "database_profile",
+        "migration_id"
+      ],
+      "sql": "CREATE TABLE schema_migrations ( migration_id INTEGER NOT NULL, filename TEXT NOT NULL UNIQUE, migration_sha256 TEXT NOT NULL, applied_at TEXT NOT NULL, application_version TEXT NOT NULL, schema_version_before TEXT NOT NULL, schema_version_after TEXT NOT NULL, execution_ms INTEGER NOT NULL, success INTEGER NOT NULL CHECK (success IN (0,1)), error_type TEXT, error_message TEXT, inferred INTEGER NOT NULL DEFAULT 0 CHECK (inferred IN (0,1)), inference_method TEXT, schema_fingerprint TEXT, source_manifest TEXT, database_profile TEXT NOT NULL, PRIMARY KEY(database_profile,migration_id) )"
+    },
+    {
+      "check_constraints": [
+        "CHECK (entity_type IN ('ontology_concept','subject_code','journal'))",
+        "CHECK ( verification_status IN ('pending','verified','rejected','needs_revision') )"
+      ],
+      "columns": [
+        {
+          "cid": 0,
+          "default": null,
+          "name": "id",
+          "not_null": false,
+          "primary_key_position": 1,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 1,
+          "default": null,
+          "name": "profile_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 2,
+          "default": null,
+          "name": "entity_type",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 3,
+          "default": null,
+          "name": "entity_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 4,
+          "default": null,
+          "name": "source_type",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 5,
+          "default": null,
+          "name": "source_title",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 6,
+          "default": null,
+          "name": "publisher_or_organization",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 7,
+          "default": null,
+          "name": "source_url",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 8,
+          "default": null,
+          "name": "accessed_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 9,
+          "default": null,
+          "name": "verification_status",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 10,
+          "default": null,
+          "name": "reviewer_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 11,
+          "default": null,
+          "name": "reviewer_note",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 12,
+          "default": null,
+          "name": "created_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        }
+      ],
+      "foreign_keys": [],
+      "indexes": [
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "profile_id",
+              "seqno": 0
+            },
+            {
+              "cid": 2,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "entity_type",
+              "seqno": 1
+            },
+            {
+              "cid": 3,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "entity_id",
+              "seqno": 2
+            },
+            {
+              "cid": 4,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "source_type",
+              "seqno": 3
+            },
+            {
+              "cid": 5,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "source_title",
+              "seqno": 4
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 5
+            }
+          ],
+          "name": "sqlite_autoindex_source_verifications_1",
+          "origin": "u",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        }
+      ],
+      "name": "source_verifications",
+      "primary_key": [
+        "id"
+      ],
+      "sql": "CREATE TABLE source_verifications ( id INTEGER PRIMARY KEY, profile_id TEXT NOT NULL, entity_type TEXT NOT NULL CHECK (entity_type IN ('ontology_concept','subject_code','journal')), entity_id TEXT NOT NULL, source_type TEXT NOT NULL, source_title TEXT NOT NULL, publisher_or_organization TEXT, source_url TEXT, accessed_at TEXT NOT NULL, verification_status TEXT NOT NULL CHECK ( verification_status IN ('pending','verified','rejected','needs_revision') ), reviewer_id TEXT NOT NULL, reviewer_note TEXT, created_at TEXT NOT NULL, UNIQUE(profile_id,entity_type,entity_id,source_type,source_title) )"
+    }
+  ],
+  "triggers": [
+    {
+      "name": "prevent_frozen_gold_corpus_delete",
+      "sql": "CREATE TRIGGER prevent_frozen_gold_corpus_delete BEFORE DELETE ON gold_corpora WHEN OLD.status='frozen' BEGIN SELECT RAISE(ABORT,'frozen gold corpus is immutable'); END",
+      "table": "gold_corpora"
+    },
+    {
+      "name": "prevent_frozen_gold_corpus_paper_delete",
+      "sql": "CREATE TRIGGER prevent_frozen_gold_corpus_paper_delete BEFORE DELETE ON gold_corpus_papers WHEN (SELECT status FROM gold_corpora WHERE id=OLD.corpus_id)='frozen' BEGIN SELECT RAISE(ABORT,'frozen gold corpus papers are immutable'); END",
+      "table": "gold_corpus_papers"
+    },
+    {
+      "name": "prevent_frozen_gold_corpus_paper_update",
+      "sql": "CREATE TRIGGER prevent_frozen_gold_corpus_paper_update BEFORE UPDATE ON gold_corpus_papers WHEN (SELECT status FROM gold_corpora WHERE id=OLD.corpus_id)='frozen' BEGIN SELECT RAISE(ABORT,'frozen gold corpus papers are immutable'); END",
+      "table": "gold_corpus_papers"
+    },
+    {
+      "name": "prevent_frozen_gold_corpus_update",
+      "sql": "CREATE TRIGGER prevent_frozen_gold_corpus_update BEFORE UPDATE ON gold_corpora WHEN OLD.status='frozen' BEGIN SELECT RAISE(ABORT,'frozen gold corpus is immutable'); END",
+      "table": "gold_corpora"
+    },
+    {
+      "name": "prevent_gold_governance_snapshot_delete",
+      "sql": "CREATE TRIGGER prevent_gold_governance_snapshot_delete BEFORE DELETE ON gold_governance_snapshots BEGIN SELECT RAISE(ABORT,'gold governance snapshots are immutable'); END",
+      "table": "gold_governance_snapshots"
+    },
+    {
+      "name": "prevent_gold_governance_snapshot_update",
+      "sql": "CREATE TRIGGER prevent_gold_governance_snapshot_update BEFORE UPDATE ON gold_governance_snapshots BEGIN SELECT RAISE(ABORT,'gold governance snapshots are immutable'); END",
+      "table": "gold_governance_snapshots"
+    },
+    {
+      "name": "prevent_gold_snapshot_delete",
+      "sql": "CREATE TRIGGER prevent_gold_snapshot_delete BEFORE DELETE ON gold_set_snapshots BEGIN SELECT RAISE(ABORT,'gold set snapshots are immutable'); END",
+      "table": "gold_set_snapshots"
+    },
+    {
+      "name": "prevent_gold_snapshot_update",
+      "sql": "CREATE TRIGGER prevent_gold_snapshot_update BEFORE UPDATE ON gold_set_snapshots BEGIN SELECT RAISE(ABORT,'gold set snapshots are immutable'); END",
+      "table": "gold_set_snapshots"
+    },
+    {
+      "name": "prevent_gold_split_delete",
+      "sql": "CREATE TRIGGER prevent_gold_split_delete BEFORE DELETE ON gold_split_manifests BEGIN SELECT RAISE(ABORT,'gold split manifests are immutable'); END",
+      "table": "gold_split_manifests"
+    },
+    {
+      "name": "prevent_gold_split_update",
+      "sql": "CREATE TRIGGER prevent_gold_split_update BEFORE UPDATE ON gold_split_manifests BEGIN SELECT RAISE(ABORT,'gold split manifests are immutable'); END",
+      "table": "gold_split_manifests"
+    }
+  ],
+  "views": []
+}

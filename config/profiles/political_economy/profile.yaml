@@ -1,0 +1,133 @@
+profile_id: political_economy
+display_name: 政治经济学
+display_name_en: Political Economy
+description: 政治机制如何决定经济政策与经济结果——权力、制度、集体选择与分配冲突。
+status: active
+screening_prompt_version: 2026-09-25-political-economy-v1
+screening_timeout_seconds: 150
+screening_dimensions:
+  centrality_label: 政治机制中心性
+  centrality_definition: 'the paper''s explanatory mechanism is political: an identifiable political actor
+    (voters, legislators, parties, coalitions, autocrats, bureaucrats, interest groups, unions, firms
+    seeking influence, foreign governments) chooses, and that choice causes the economic outcome or the
+    economic policy being studied.  The paper must be able to answer "who decides, under what constraints,
+    and why" — not merely "policy changed".'
+  economics_definition: 'the paper studies an economic outcome or instrument with welfare content: taxes,
+    transfers, spending, regulation, trade policy, public goods, rents, growth, inequality, employment
+    or prices — and reaches it through a political mechanism rather than treating policy as an exogenous
+    shock.'
+subject_signals:
+  jel_codes:
+  - D72
+  - D73
+  - D74
+  - D78
+  - D02
+  - D71
+  - E61
+  - E62
+  - H11
+  - H20
+  - H23
+  - H50
+  - H70
+  - P16
+  - P26
+  - P48
+  - F13
+  - F51
+  - F53
+  - N40
+  - O43
+  topics:
+  - voting, elections and electoral accountability
+  - legislative bargaining and coalition formation
+  - lobbying, campaign finance and regulatory capture
+  - autocracy, democratisation and regime survival
+  - bureaucratic incentives and state capacity
+  - redistribution, taxation and the political economy of inequality
+  - clientelism, patronage and distributive politics
+  - corruption, rent-seeking and governance quality
+  - political economy of trade, migration and international agreements
+  - institutional persistence and the political origins of economic divergence
+journal_groups:
+- key: political_economy_core
+  display_name: 政治经济学核心期刊
+  description: 以政治机制与经济政策/结果为研究对象的期刊。
+  journal_keys:
+  - public_choice
+  - economics_and_politics
+  - european_journal_of_political_economy
+  - journal_of_comparative_economics
+  - journal_of_institutional_economics
+  - journal_of_law_economics_and_organization
+  - journal_of_law_and_economics
+  - economic_policy
+- key: political_economy_adjacent_polisci
+  display_name: 政治学相邻期刊
+  description: 集体选择、政治行为与制度研究的政治学期刊。
+  journal_keys:
+  - american_political_science_review
+  - american_journal_of_political_science
+  - british_journal_of_political_science
+  - comparative_political_studies
+  - world_politics
+  - journal_of_politics
+  - political_analysis
+  - international_organization
+  - journal_of_peace_research
+- key: political_economy_adjacent_econ
+  display_name: 经济学相邻期刊
+  description: 公共、发展与分配议题的经济学期刊。
+  journal_keys:
+  - journal_of_public_economics
+  - journal_of_development_economics
+  - journal_of_development_studies
+  - world_development
+  - journal_of_economic_inequality
+  - international_tax_and_public_finance
+  - journal_of_public_economic_theory
+  - national_tax_journal
+  - public_finance_review
+  - world_bank_economic_review
+  - journal_of_industrial_economics
+  - international_journal_of_industrial_organization
+  - journal_of_regulatory_economics
+  - journal_of_competition_law_and_economics
+  - health_policy
+  - applied_economics
+- key: general_economics
+  display_name: 综合与旗舰经济学期刊
+  description: 所有研究方向共用的综合期刊清单；对每个队列内容相同。
+  journal_keys:
+  - general_qje
+  - general_aer
+  - general_jpe
+  - general_ecma
+  - general_restud
+  - general_jeea
+  - general_jel
+  - general_jep
+  - general_are
+  - general_restat
+  - general_aejmacro
+  - general_bpea
+  - general_jeg
+  - general_rand
+  - general_joe
+  - general_jf
+  - general_jfe
+  - general_jme
+  - general_rfs
+  - economic_journal
+  - journal_of_applied_econometrics
+  - journal_of_business_and_economic_statistics
+  - econometric_theory
+  - journal_of_economic_dynamics_and_control
+  - review_of_economic_dynamics
+  - journal_of_international_economics
+  - review_of_world_economics
+- key: custom
+  display_name: 自定义期刊
+  description: 由本人添加的期刊；保存在本地配置中。
+  journal_keys: []

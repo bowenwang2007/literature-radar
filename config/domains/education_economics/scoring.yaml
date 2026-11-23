@@ -1,0 +1,56 @@
+scoring:
+  profile_id: education_economics
+  scoring_version: 0.2.0-phase6d-test-fixture
+  status: candidate
+  calibration_status: uncalibrated
+  gold_set_version: null
+  components:
+    - component_id: ontology_score
+      description: Placeholder for versioned ontology evidence.
+      enabled: false
+      weight: null
+      status: placeholder
+    - component_id: subject_code_score
+      description: Placeholder; missing subject codes remain neutral.
+      enabled: false
+      weight: null
+      status: placeholder
+    - component_id: journal_prior_score
+      description: Placeholder for a soft journal prior, never a hard include.
+      enabled: false
+      weight: null
+      status: placeholder
+    - component_id: semantic_score
+      description: Placeholder for a future structured semantic assessment.
+      enabled: false
+      weight: null
+      status: placeholder
+    - component_id: exclusion_penalty
+      description: Placeholder for contextual negative evidence, never a hard exclude.
+      enabled: false
+      weight: null
+      status: placeholder
+    - component_id: metadata_confidence
+      description: Placeholder for evidence completeness; missing metadata is not negative relevance.
+      enabled: false
+      weight: null
+      status: placeholder
+    - component_id: combined_score
+      description: Placeholder for a calibrated combined relevance score.
+      enabled: false
+      weight: null
+      status: placeholder
+    - component_id: missed_risk_score
+      description: Placeholder for false-negative review prioritization.
+      enabled: false
+      weight: null
+      status: placeholder
+  thresholds:
+    include_min: null
+    borderline_min: null
+    exclude_max: null
+  evidence_parameters: null
+  publishable: false
+  notes: >-
+    Offline Phase 6D regression policy only. No production weights, calibrated accuracy claim,
+    or decision thresholds are published.

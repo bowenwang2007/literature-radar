@@ -1,0 +1,8 @@
+请分类以下论文：
+{paper_json}
+
+只输出一个严格、合法的 JSON 对象，不要输出 Markdown、解释文字或额外字段。必须包含 decision、confidence、reason、topics、education_level、country_or_region、method、research_question、main_result、missing_information 全部字段，并符合系统消息规定的类型。
+
+特别注意：
+- confidence 必须是 0 到 1 之间的数字，例如 "confidence": 0.85；禁止返回 "high"、"medium" 或 "low"。
+- missing_information 必须是 JSON 数组；没有缺失信息时必须返回 "missing_information": []，禁止返回 "missing_information": "无"。

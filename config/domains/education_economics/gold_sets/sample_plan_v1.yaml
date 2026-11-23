@@ -1,0 +1,45 @@
+plan_version: gold-sample-plan-v1
+corpus_version: eduecon-gold-corpus-v1.1
+sample_size: 300
+random_seed: 20260726
+replacement: false
+
+# These are source strata, not Gold labels or model priors. Empty families remain
+# explicit when the monitored production corpus contains no journal of that type.
+journal_families:
+  education_economics_core: []
+  labor_economics: []
+  public_economics: []
+  development_economics: []
+  general_economics:
+    - QJE
+    - JPE
+    - AER
+    - ECMA
+    - REStud
+    - RAND
+    - JEP
+    - JEL
+    - ARE
+    - REStat
+    - JoE
+    - JEG
+    - AEJApplied
+    - JEEA
+  other_or_low_prior:
+    - JF
+    - JFE
+    - AEJMacro
+    - RFS
+    - BPEA
+    - JME
+
+dimensions:
+  - journal_family
+  - publication_year_band
+  - abstract_quality_status
+  - title_term_presence_from_existing_ontology
+
+ai_enrichment:
+  enabled: false
+  allowed_only_for_separate_error_enrichment: false

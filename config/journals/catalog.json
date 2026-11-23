@@ -1,0 +1,1725 @@
+{
+  "catalog_version": "2026-09-27.1",
+  "authority": "Global journal registry shared by every research profile. A profile selects which of these journals it monitors and how it ranks them; it never owns them. ISSNs were verified against the Crossref journals endpoint.",
+  "groups": {
+    "general": {
+      "display_name": "综合与理论经济学期刊",
+      "description": "General and theoretical economics."
+    },
+    "education": {
+      "display_name": "教育经济与教育研究",
+      "description": "Education economics and education research."
+    },
+    "labor": {
+      "display_name": "劳动、人口与人力资本",
+      "description": "Labour, demography and human capital."
+    },
+    "behavioral": {
+      "display_name": "行为与实验经济学",
+      "description": "Behavioural and experimental economics."
+    },
+    "political_economy": {
+      "display_name": "政治经济学与政治学",
+      "description": "Political economy and political science."
+    },
+    "public": {
+      "display_name": "公共经济学与税收",
+      "description": "Public economics and taxation."
+    },
+    "development": {
+      "display_name": "发展与比较经济学",
+      "description": "Development and comparative economics."
+    },
+    "health": {
+      "display_name": "健康经济学",
+      "description": "Health economics."
+    },
+    "industrial_organization": {
+      "display_name": "产业组织与规制",
+      "description": "Industrial organization and regulation."
+    },
+    "econometrics": {
+      "display_name": "计量与统计方法",
+      "description": "Econometrics and statistical methods."
+    },
+    "applied_micro": {
+      "display_name": "应用微观与不平等",
+      "description": "Applied microeconomics and inequality."
+    },
+    "macro_finance": {
+      "display_name": "宏观与金融（选择性收录）",
+      "description": "Selected macroeconomics and finance."
+    }
+  },
+  "journals": [
+    {
+      "journal_key": "american_economic_journal_applied_economics",
+      "canonical_name": "American Economic Journal: Applied Economics",
+      "short_name": "AEJ Applied",
+      "aliases": [
+        "AEJ Applied",
+        "AEJ: Applied Economics",
+        "American Economic Journal: Applied Economics"
+      ],
+      "print_issn": "1945-7782",
+      "online_issn": "1945-7790",
+      "publisher": "American Economic Association",
+      "subject_tags": [
+        "applied_economics",
+        "labor_economics",
+        "public_economics"
+      ],
+      "default_priority": 2,
+      "metadata_source": "publisher_registry",
+      "subject": "applied_micro"
+    },
+    {
+      "journal_key": "american_economic_journal_economic_policy",
+      "canonical_name": "American Economic Journal: Economic Policy",
+      "short_name": "AEJ: Policy",
+      "aliases": [
+        "AEJ: Policy",
+        "American Economic Journal Economic Policy",
+        "American Economic Journal: Economic Policy"
+      ],
+      "print_issn": "1945-7731",
+      "online_issn": "1945-774X",
+      "publisher": "American Economic Association",
+      "subject_tags": [
+        "public_economics",
+        "applied_economics"
+      ],
+      "default_priority": 2,
+      "metadata_source": "crossref_verified",
+      "subject": "public"
+    },
+    {
+      "journal_key": "american_economic_journal_microeconomics",
+      "canonical_name": "American Economic Journal: Microeconomics",
+      "short_name": "AEJ Micro",
+      "aliases": [
+        "AEJ Micro",
+        "American Economic Journal Microeconomics",
+        "American Economic Journal: Microeconomics"
+      ],
+      "print_issn": "1945-7669",
+      "online_issn": "1945-7685",
+      "publisher": "American Economic Association",
+      "subject_tags": [
+        "microeconomics",
+        "behavioral_economics"
+      ],
+      "default_priority": 2,
+      "metadata_source": "crossref_verified",
+      "subject": "applied_micro"
+    },
+    {
+      "journal_key": "american_journal_of_political_science",
+      "canonical_name": "American Journal of Political Science",
+      "short_name": "AJPS",
+      "aliases": [
+        "AJPS",
+        "Am J Polit Sci",
+        "American Journal of Political Science"
+      ],
+      "print_issn": "0092-5853",
+      "online_issn": "1540-5907",
+      "publisher": "Wiley",
+      "subject_tags": [
+        "political_science"
+      ],
+      "default_priority": 2,
+      "metadata_source": "crossref_verified",
+      "subject": "political_economy"
+    },
+    {
+      "journal_key": "american_political_science_review",
+      "canonical_name": "American Political Science Review",
+      "short_name": "APSR",
+      "aliases": [
+        "APSR",
+        "Am Polit Sci Rev",
+        "American Political Science Review"
+      ],
+      "print_issn": "0003-0554",
+      "online_issn": "1537-5943",
+      "publisher": "Cambridge University Press",
+      "subject_tags": [
+        "political_science"
+      ],
+      "default_priority": 2,
+      "metadata_source": "crossref_verified",
+      "subject": "political_economy"
+    },
+    {
+      "journal_key": "applied_economics",
+      "canonical_name": "Applied Economics",
+      "short_name": "AE",
+      "aliases": [
+        "AE",
+        "Applied Economics"
+      ],
+      "print_issn": "0003-6846",
+      "online_issn": "1466-4283",
+      "publisher": "Informa UK (Taylor & Francis)",
+      "subject_tags": [
+        "applied_economics"
+      ],
+      "default_priority": 2,
+      "metadata_source": "crossref_verified",
+      "subject": "applied_micro"
+    },
+    {
+      "journal_key": "british_educational_research_journal",
+      "canonical_name": "British Educational Research Journal",
+      "short_name": "BERJ",
+      "aliases": [
+        "BERJ",
+        "British Educational Research Journal"
+      ],
+      "print_issn": "0141-1926",
+      "online_issn": "1469-3518",
+      "publisher": "Wiley (John Wiley & Sons)",
+      "subject_tags": [
+        "education_economics",
+        "education_research"
+      ],
+      "default_priority": 2,
+      "metadata_source": "crossref_verified",
+      "subject": "education"
+    },
+    {
+      "journal_key": "british_journal_of_political_science",
+      "canonical_name": "British Journal of Political Science",
+      "short_name": "BJPS",
+      "aliases": [
+        "BJPS",
+        "Br J Polit Sci",
+        "British Journal of Political Science"
+      ],
+      "print_issn": "0007-1234",
+      "online_issn": "1469-2112",
+      "publisher": "Cambridge University Press",
+      "subject_tags": [
+        "political_science"
+      ],
+      "default_priority": 2,
+      "metadata_source": "crossref_verified",
+      "subject": "political_economy"
+    },
+    {
+      "journal_key": "comparative_political_studies",
+      "canonical_name": "Comparative Political Studies",
+      "short_name": "CPS",
+      "aliases": [
+        "CPS",
+        "Comp Polit Stud",
+        "Comparative Political Studies"
+      ],
+      "print_issn": "0010-4140",
+      "online_issn": "1552-3829",
+      "publisher": "SAGE Publications",
+      "subject_tags": [
+        "political_science",
+        "comparative_politics"
+      ],
+      "default_priority": 2,
+      "metadata_source": "crossref_verified",
+      "subject": "political_economy"
+    },
+    {
+      "journal_key": "econometric_theory",
+      "canonical_name": "Econometric Theory",
+      "short_name": "ET",
+      "aliases": [
+        "ET",
+        "Econometric Theory"
+      ],
+      "print_issn": "0266-4666",
+      "online_issn": "1469-4360",
+      "publisher": "Cambridge University Press",
+      "subject_tags": [
+        "econometrics"
+      ],
+      "default_priority": 2,
+      "metadata_source": "crossref_verified",
+      "subject": "econometrics"
+    },
+    {
+      "journal_key": "economic_development_and_cultural_change",
+      "canonical_name": "Economic Development and Cultural Change",
+      "short_name": "EDCC",
+      "aliases": [
+        "EDCC",
+        "Economic Development and Cultural Change"
+      ],
+      "print_issn": "0013-0079",
+      "online_issn": "1539-2988",
+      "publisher": "The University of Chicago Press",
+      "subject_tags": [
+        "development_economics"
+      ],
+      "default_priority": 2,
+      "metadata_source": "crossref_verified",
+      "subject": "development"
+    },
+    {
+      "journal_key": "economic_journal",
+      "canonical_name": "The Economic Journal",
+      "short_name": "EJ",
+      "aliases": [
+        "EJ",
+        "The Economic Journal"
+      ],
+      "print_issn": "0013-0133",
+      "online_issn": "1468-0297",
+      "publisher": "Oxford University Press",
+      "subject_tags": [
+        "general_economics"
+      ],
+      "default_priority": 2,
+      "metadata_source": "crossref_verified",
+      "subject": "general"
+    },
+    {
+      "journal_key": "economic_policy",
+      "canonical_name": "Economic Policy",
+      "short_name": "EP",
+      "aliases": [
+        "EP",
+        "Economic Policy"
+      ],
+      "print_issn": "0266-4658",
+      "online_issn": "1468-0327",
+      "publisher": "Oxford University Press",
+      "subject_tags": [
+        "political_economy",
+        "public_economics"
+      ],
+      "default_priority": 2,
+      "metadata_source": "crossref_verified",
+      "subject": "political_economy"
+    },
+    {
+      "journal_key": "economics_and_politics",
+      "canonical_name": "Economics & Politics",
+      "short_name": "E&P",
+      "aliases": [
+        "E&P",
+        "Economics & Politics",
+        "Economics Politics",
+        "Economics and Politics"
+      ],
+      "print_issn": "0954-1985",
+      "online_issn": "1468-0343",
+      "publisher": "Wiley",
+      "subject_tags": [
+        "political_economy"
+      ],
+      "default_priority": 1,
+      "metadata_source": "crossref_verified",
+      "subject": "political_economy"
+    },
+    {
+      "journal_key": "economics_of_education_review",
+      "canonical_name": "Economics of Education Review",
+      "short_name": "EER",
+      "aliases": [
+        "EER",
+        "Econ Educ Rev",
+        "Economics of Education Review"
+      ],
+      "print_issn": "0272-7757",
+      "online_issn": "1873-7382",
+      "publisher": "Elsevier",
+      "subject_tags": [
+        "education_economics"
+      ],
+      "default_priority": 1,
+      "metadata_source": "publisher_and_user_verified_registry",
+      "subject": "education"
+    },
+    {
+      "journal_key": "education_economics",
+      "canonical_name": "Education Economics",
+      "short_name": "Education Economics",
+      "aliases": [
+        "Educ Econ",
+        "Education Economics"
+      ],
+      "print_issn": "0964-5292",
+      "online_issn": "1469-5782",
+      "publisher": "Taylor & Francis",
+      "subject_tags": [
+        "education_economics"
+      ],
+      "default_priority": 1,
+      "metadata_source": "publisher_and_user_verified_registry",
+      "subject": "education"
+    },
+    {
+      "journal_key": "education_finance_and_policy",
+      "canonical_name": "Education Finance and Policy",
+      "short_name": "EFP",
+      "aliases": [
+        "EFP",
+        "Education Finance and Policy"
+      ],
+      "print_issn": "1557-3060",
+      "online_issn": "1557-3079",
+      "publisher": "MIT Press",
+      "subject_tags": [
+        "education_economics",
+        "public_economics"
+      ],
+      "default_priority": 1,
+      "metadata_source": "publisher_and_user_verified_registry",
+      "subject": "education"
+    },
+    {
+      "journal_key": "european_journal_of_political_economy",
+      "canonical_name": "European Journal of Political Economy",
+      "short_name": "EJPE",
+      "aliases": [
+        "EJPE",
+        "Eur J Polit Econ",
+        "European Journal of Political Economy"
+      ],
+      "print_issn": "0176-2680",
+      "online_issn": null,
+      "publisher": "Elsevier",
+      "subject_tags": [
+        "political_economy"
+      ],
+      "default_priority": 1,
+      "metadata_source": "crossref_verified",
+      "subject": "political_economy"
+    },
+    {
+      "journal_key": "experimental_economics",
+      "canonical_name": "Experimental Economics",
+      "short_name": "Exp Econ",
+      "aliases": [
+        "Exp Econ",
+        "Experimental Economics",
+        "Experimental Economics (Journal)"
+      ],
+      "print_issn": "1386-4157",
+      "online_issn": "1573-6938",
+      "publisher": "Cambridge University Press",
+      "subject_tags": [
+        "behavioral_economics"
+      ],
+      "default_priority": 1,
+      "metadata_source": "crossref_verified",
+      "subject": "behavioral"
+    },
+    {
+      "journal_key": "fiscal_studies",
+      "canonical_name": "Fiscal Studies",
+      "short_name": "FS",
+      "aliases": [
+        "FS",
+        "Fiscal Studies"
+      ],
+      "print_issn": "0143-5671",
+      "online_issn": "1475-5890",
+      "publisher": "Wiley (Blackwell Publishing)",
+      "subject_tags": [
+        "public_economics"
+      ],
+      "default_priority": 2,
+      "metadata_source": "crossref_verified",
+      "subject": "public"
+    },
+    {
+      "journal_key": "games_and_economic_behavior",
+      "canonical_name": "Games and Economic Behavior",
+      "short_name": "GEB",
+      "aliases": [
+        "GEB",
+        "Games Econ Behav",
+        "Games and Economic Behavior"
+      ],
+      "print_issn": "0899-8256",
+      "online_issn": "1090-2473",
+      "publisher": "Elsevier",
+      "subject_tags": [
+        "behavioral_economics"
+      ],
+      "default_priority": 1,
+      "metadata_source": "crossref_verified",
+      "subject": "behavioral"
+    },
+    {
+      "journal_key": "general_aejmacro",
+      "canonical_name": "American Economic Journal: Macroeconomics",
+      "short_name": "AEJMacro",
+      "aliases": [
+        "AEJMacro",
+        "American Economic Journal: Macroeconomics"
+      ],
+      "print_issn": "1945-7707",
+      "online_issn": "1945-7715",
+      "publisher": "American Economic Association",
+      "subject_tags": [
+        "general_economics"
+      ],
+      "default_priority": 3,
+      "metadata_source": "journals.yaml",
+      "subject": "general",
+      "crossref_title": "American Economic Journal Macroeconomics"
+    },
+    {
+      "journal_key": "general_aer",
+      "canonical_name": "American Economic Review",
+      "short_name": "AER",
+      "aliases": [
+        "AER",
+        "American Economic Review"
+      ],
+      "print_issn": "0002-8282",
+      "online_issn": "1944-7981",
+      "publisher": "American Economic Association",
+      "subject_tags": [
+        "general_economics"
+      ],
+      "default_priority": 3,
+      "metadata_source": "journals.yaml",
+      "subject": "general",
+      "crossref_title": "American Economic Review"
+    },
+    {
+      "journal_key": "general_are",
+      "canonical_name": "Annual Review of Economics",
+      "short_name": "ARE",
+      "aliases": [
+        "ARE",
+        "Annual Review of Economics"
+      ],
+      "print_issn": "1941-1383",
+      "online_issn": "1941-1391",
+      "publisher": "Annual Reviews",
+      "subject_tags": [
+        "general_economics"
+      ],
+      "default_priority": 3,
+      "metadata_source": "journals.yaml",
+      "subject": "general",
+      "crossref_title": "Annual Review of Economics"
+    },
+    {
+      "journal_key": "general_bpea",
+      "canonical_name": "Brookings Papers on Economic Activity",
+      "short_name": "BPEA",
+      "aliases": [
+        "BPEA",
+        "Brookings Papers on Economic Activity"
+      ],
+      "print_issn": "0007-2303",
+      "online_issn": "1533-4465",
+      "publisher": "Project MUSE",
+      "subject_tags": [
+        "general_economics"
+      ],
+      "default_priority": 3,
+      "metadata_source": "journals.yaml",
+      "subject": "general",
+      "crossref_title": "Brookings Papers on Economic Activity"
+    },
+    {
+      "journal_key": "general_ecma",
+      "canonical_name": "Econometrica",
+      "short_name": "ECMA",
+      "aliases": [
+        "ECMA",
+        "Econometrica"
+      ],
+      "print_issn": "0012-9682",
+      "online_issn": "1468-0262",
+      "publisher": "The Econometric Society",
+      "subject_tags": [
+        "general_economics"
+      ],
+      "default_priority": 3,
+      "metadata_source": "journals.yaml",
+      "subject": "general",
+      "crossref_title": "Econometrica"
+    },
+    {
+      "journal_key": "general_jeea",
+      "canonical_name": "Journal of the European Economic Association",
+      "short_name": "JEEA",
+      "aliases": [
+        "JEEA",
+        "Journal of the European Economic Association"
+      ],
+      "print_issn": "1542-4766",
+      "online_issn": "1542-4774",
+      "publisher": "Oxford University Press",
+      "subject_tags": [
+        "general_economics"
+      ],
+      "default_priority": 3,
+      "metadata_source": "journals.yaml",
+      "subject": "general",
+      "crossref_title": "Journal of the European Economic Association"
+    },
+    {
+      "journal_key": "general_jeg",
+      "canonical_name": "Journal of Economic Growth",
+      "short_name": "JEG",
+      "aliases": [
+        "JEG",
+        "Journal of Economic Growth"
+      ],
+      "print_issn": "1381-4338",
+      "online_issn": "1573-7020",
+      "publisher": "Springer-Verlag",
+      "subject_tags": [
+        "general_economics"
+      ],
+      "default_priority": 3,
+      "metadata_source": "journals.yaml",
+      "subject": "general",
+      "crossref_title": "Journal of Economic Growth"
+    },
+    {
+      "journal_key": "general_jel",
+      "canonical_name": "Journal of Economic Literature",
+      "short_name": "JEL",
+      "aliases": [
+        "JEL",
+        "Journal of Economic Literature"
+      ],
+      "print_issn": "0022-0515",
+      "online_issn": "2328-8175",
+      "publisher": "American Economic Association",
+      "subject_tags": [
+        "general_economics"
+      ],
+      "default_priority": 3,
+      "metadata_source": "journals.yaml",
+      "subject": "general",
+      "crossref_title": "Journal of Economic Literature"
+    },
+    {
+      "journal_key": "general_jep",
+      "canonical_name": "Journal of Economic Perspectives",
+      "short_name": "JEP",
+      "aliases": [
+        "JEP",
+        "Journal of Economic Perspectives"
+      ],
+      "print_issn": "0895-3309",
+      "online_issn": "1944-7965",
+      "publisher": "American Economic Association",
+      "subject_tags": [
+        "general_economics"
+      ],
+      "default_priority": 3,
+      "metadata_source": "journals.yaml",
+      "subject": "general",
+      "crossref_title": "Journal of Economic Perspectives"
+    },
+    {
+      "journal_key": "general_jf",
+      "canonical_name": "The Journal of Finance",
+      "short_name": "JF",
+      "aliases": [
+        "JF",
+        "The Journal of Finance"
+      ],
+      "print_issn": "0022-1082",
+      "online_issn": "1540-6261",
+      "publisher": "Wiley (Blackwell Publishing)",
+      "subject_tags": [
+        "general_economics"
+      ],
+      "default_priority": 3,
+      "metadata_source": "journals.yaml",
+      "subject": "general",
+      "crossref_title": "The Journal of Finance"
+    },
+    {
+      "journal_key": "general_jfe",
+      "canonical_name": "Journal of Financial Economics",
+      "short_name": "JFE",
+      "aliases": [
+        "JFE",
+        "Journal of Financial Economics"
+      ],
+      "print_issn": "0304-405X",
+      "online_issn": "1879-2774",
+      "publisher": "Elsevier",
+      "subject_tags": [
+        "general_economics"
+      ],
+      "default_priority": 3,
+      "metadata_source": "journals.yaml",
+      "subject": "general",
+      "crossref_title": "Journal of Financial Economics"
+    },
+    {
+      "journal_key": "general_jme",
+      "canonical_name": "Journal of Monetary Economics",
+      "short_name": "JME",
+      "aliases": [
+        "JME",
+        "Journal of Monetary Economics"
+      ],
+      "print_issn": "0304-3932",
+      "online_issn": "1873-1295",
+      "publisher": "Elsevier",
+      "subject_tags": [
+        "general_economics"
+      ],
+      "default_priority": 3,
+      "metadata_source": "journals.yaml",
+      "subject": "general",
+      "crossref_title": "Journal of Monetary Economics"
+    },
+    {
+      "journal_key": "general_joe",
+      "canonical_name": "Journal of Econometrics",
+      "short_name": "JoE",
+      "aliases": [
+        "JoE",
+        "Journal of Econometrics"
+      ],
+      "print_issn": "0304-4076",
+      "online_issn": "1872-6895",
+      "publisher": "Elsevier",
+      "subject_tags": [
+        "general_economics"
+      ],
+      "default_priority": 3,
+      "metadata_source": "journals.yaml",
+      "subject": "general",
+      "crossref_title": "Journal of Econometrics"
+    },
+    {
+      "journal_key": "general_jpe",
+      "canonical_name": "Journal of Political Economy",
+      "short_name": "JPE",
+      "aliases": [
+        "JPE",
+        "Journal of Political Economy"
+      ],
+      "print_issn": "0022-3808",
+      "online_issn": "1537-534X",
+      "publisher": "The University of Chicago Press",
+      "subject_tags": [
+        "general_economics"
+      ],
+      "default_priority": 3,
+      "metadata_source": "journals.yaml",
+      "subject": "general",
+      "crossref_title": "Journal of Political Economy"
+    },
+    {
+      "journal_key": "general_qje",
+      "canonical_name": "The Quarterly Journal of Economics",
+      "short_name": "QJE",
+      "aliases": [
+        "QJE",
+        "The Quarterly Journal of Economics"
+      ],
+      "print_issn": "0033-5533",
+      "online_issn": "1531-4650",
+      "publisher": "Oxford University Press",
+      "subject_tags": [
+        "general_economics"
+      ],
+      "default_priority": 3,
+      "metadata_source": "journals.yaml",
+      "subject": "general",
+      "crossref_title": "The Quarterly Journal of Economics"
+    },
+    {
+      "journal_key": "general_rand",
+      "canonical_name": "The RAND Journal of Economics",
+      "short_name": "RAND",
+      "aliases": [
+        "RAND",
+        "The RAND Journal of Economics"
+      ],
+      "print_issn": "0741-6261",
+      "online_issn": "1756-2171",
+      "publisher": "Wiley (Blackwell Publishing)",
+      "subject_tags": [
+        "general_economics"
+      ],
+      "default_priority": 3,
+      "metadata_source": "journals.yaml",
+      "subject": "general",
+      "crossref_title": "The RAND Journal of Economics"
+    },
+    {
+      "journal_key": "general_restat",
+      "canonical_name": "The Review of Economics and Statistics",
+      "short_name": "REStat",
+      "aliases": [
+        "REStat",
+        "The Review of Economics and Statistics"
+      ],
+      "print_issn": "0034-6535",
+      "online_issn": "1530-9142",
+      "publisher": "MIT Press",
+      "subject_tags": [
+        "general_economics"
+      ],
+      "default_priority": 3,
+      "metadata_source": "journals.yaml",
+      "subject": "general",
+      "crossref_title": "The Review of Economics and Statistics"
+    },
+    {
+      "journal_key": "general_restud",
+      "canonical_name": "The Review of Economic Studies",
+      "short_name": "REStud",
+      "aliases": [
+        "REStud",
+        "The Review of Economic Studies"
+      ],
+      "print_issn": "0034-6527",
+      "online_issn": "1467-937X",
+      "publisher": "Oxford University Press",
+      "subject_tags": [
+        "general_economics"
+      ],
+      "default_priority": 3,
+      "metadata_source": "journals.yaml",
+      "subject": "general",
+      "crossref_title": "The Review of Economic Studies"
+    },
+    {
+      "journal_key": "general_rfs",
+      "canonical_name": "The Review of Financial Studies",
+      "short_name": "RFS",
+      "aliases": [
+        "RFS",
+        "The Review of Financial Studies"
+      ],
+      "print_issn": "0893-9454",
+      "online_issn": "1465-7368",
+      "publisher": "Oxford University Press",
+      "subject_tags": [
+        "general_economics"
+      ],
+      "default_priority": 3,
+      "metadata_source": "journals.yaml",
+      "subject": "general",
+      "crossref_title": "Review of Financial Studies"
+    },
+    {
+      "journal_key": "health_economics",
+      "canonical_name": "Health Economics",
+      "short_name": "HE",
+      "aliases": [
+        "HE",
+        "Health Economics"
+      ],
+      "print_issn": "1057-9230",
+      "online_issn": "1099-1050",
+      "publisher": "Wiley (John Wiley & Sons)",
+      "subject_tags": [
+        "health_economics"
+      ],
+      "default_priority": 2,
+      "metadata_source": "crossref_verified",
+      "subject": "health"
+    },
+    {
+      "journal_key": "health_policy",
+      "canonical_name": "Health Policy",
+      "short_name": "HP",
+      "aliases": [
+        "HP",
+        "Health Policy"
+      ],
+      "print_issn": "0168-8510",
+      "online_issn": null,
+      "publisher": "Elsevier",
+      "subject_tags": [
+        "health_economics",
+        "public_economics"
+      ],
+      "default_priority": 2,
+      "metadata_source": "crossref_verified",
+      "subject": "health"
+    },
+    {
+      "journal_key": "industrial_and_labor_relations_review",
+      "canonical_name": "ILR Review",
+      "short_name": "ILR Review",
+      "aliases": [
+        "ILR Review",
+        "Ind Labor Relat Rev",
+        "Industrial and Labor Relations Review"
+      ],
+      "print_issn": "0019-7939",
+      "online_issn": "2162-271X",
+      "publisher": "SAGE Publications",
+      "subject_tags": [
+        "labor_economics"
+      ],
+      "default_priority": 2,
+      "metadata_source": "crossref_verified",
+      "subject": "labor"
+    },
+    {
+      "journal_key": "international_journal_of_educational_development",
+      "canonical_name": "International Journal of Educational Development",
+      "short_name": "IJED",
+      "aliases": [
+        "IJED",
+        "International Journal of Educational Development"
+      ],
+      "print_issn": "0738-0593",
+      "online_issn": null,
+      "publisher": "Elsevier",
+      "subject_tags": [
+        "education_economics",
+        "development_economics"
+      ],
+      "default_priority": 2,
+      "metadata_source": "crossref_verified",
+      "subject": "education"
+    },
+    {
+      "journal_key": "international_journal_of_industrial_organization",
+      "canonical_name": "International Journal of Industrial Organization",
+      "short_name": "IJIO",
+      "aliases": [
+        "IJIO",
+        "International Journal of Industrial Organization"
+      ],
+      "print_issn": "0167-7187",
+      "online_issn": null,
+      "publisher": "Elsevier",
+      "subject_tags": [
+        "industrial_organization"
+      ],
+      "default_priority": 2,
+      "metadata_source": "crossref_verified",
+      "subject": "industrial_organization"
+    },
+    {
+      "journal_key": "international_organization",
+      "canonical_name": "International Organization",
+      "short_name": "IO",
+      "aliases": [
+        "IO",
+        "International Organization"
+      ],
+      "print_issn": "0020-8183",
+      "online_issn": "1531-5088",
+      "publisher": "Cambridge University Press",
+      "subject_tags": [
+        "political_science",
+        "political_economy"
+      ],
+      "default_priority": 2,
+      "metadata_source": "crossref_verified",
+      "subject": "political_economy"
+    },
+    {
+      "journal_key": "international_tax_and_public_finance",
+      "canonical_name": "International Tax and Public Finance",
+      "short_name": "ITPF",
+      "aliases": [
+        "ITPF",
+        "International Tax and Public Finance"
+      ],
+      "print_issn": "0927-5940",
+      "online_issn": "1573-6970",
+      "publisher": "Springer-Verlag",
+      "subject_tags": [
+        "public_economics"
+      ],
+      "default_priority": 2,
+      "metadata_source": "crossref_verified",
+      "subject": "public"
+    },
+    {
+      "journal_key": "public_finance_review",
+      "canonical_name": "Public Finance Review",
+      "short_name": "PFR",
+      "aliases": [
+        "PFR",
+        "Public Finance Review"
+      ],
+      "print_issn": "1091-1421",
+      "online_issn": "1552-7530",
+      "publisher": "SAGE Publications",
+      "subject_tags": [
+        "public_economics"
+      ],
+      "default_priority": 2,
+      "metadata_source": "crossref_verified",
+      "subject": "public"
+    },
+    {
+      "journal_key": "journal_of_applied_econometrics",
+      "canonical_name": "Journal of Applied Econometrics",
+      "short_name": "JAE",
+      "aliases": [
+        "JAE",
+        "Journal of Applied Econometrics"
+      ],
+      "print_issn": "0883-7252",
+      "online_issn": "1099-1255",
+      "publisher": "Wiley (John Wiley & Sons)",
+      "subject_tags": [
+        "applied_economics",
+        "econometrics"
+      ],
+      "default_priority": 2,
+      "metadata_source": "crossref_verified",
+      "subject": "applied_micro"
+    },
+    {
+      "journal_key": "journal_of_behavioral_and_experimental_economics",
+      "canonical_name": "Journal of Behavioral and Experimental Economics",
+      "short_name": "JBEE",
+      "aliases": [
+        "J Behav Exp Econ",
+        "JBEE",
+        "Journal of Behavioral and Experimental Economics"
+      ],
+      "print_issn": "2214-8043",
+      "online_issn": null,
+      "publisher": "Elsevier",
+      "subject_tags": [
+        "behavioral_economics"
+      ],
+      "default_priority": 2,
+      "metadata_source": "crossref_verified",
+      "subject": "behavioral"
+    },
+    {
+      "journal_key": "journal_of_behavioral_and_experimental_finance",
+      "canonical_name": "Journal of Behavioral and Experimental Finance",
+      "short_name": "JBEF",
+      "aliases": [
+        "JBEF",
+        "Journal of Behavioral and Experimental Finance"
+      ],
+      "print_issn": "2214-6350",
+      "online_issn": null,
+      "publisher": "Elsevier",
+      "subject_tags": [
+        "behavioral_economics",
+        "finance"
+      ],
+      "default_priority": 2,
+      "metadata_source": "crossref_verified",
+      "subject": "behavioral"
+    },
+    {
+      "journal_key": "journal_of_business_and_economic_statistics",
+      "canonical_name": "Journal of Business & Economic Statistics",
+      "short_name": "JBES",
+      "aliases": [
+        "JBES",
+        "Journal of Business & Economic Statistics",
+        "Journal of Business and Economic Statistics"
+      ],
+      "print_issn": "0735-0015",
+      "online_issn": "1537-2707",
+      "publisher": "Informa UK (American Statistical Association)",
+      "subject_tags": [
+        "econometrics"
+      ],
+      "default_priority": 2,
+      "metadata_source": "crossref_verified",
+      "subject": "econometrics"
+    },
+    {
+      "journal_key": "journal_of_comparative_economics",
+      "canonical_name": "Journal of Comparative Economics",
+      "short_name": "JCE",
+      "aliases": [
+        "J Comp Econ",
+        "JCE",
+        "Journal of Comparative Economics"
+      ],
+      "print_issn": "0147-5967",
+      "online_issn": "1095-7227",
+      "publisher": "Elsevier",
+      "subject_tags": [
+        "political_economy",
+        "comparative_economics"
+      ],
+      "default_priority": 1,
+      "metadata_source": "crossref_verified",
+      "subject": "political_economy"
+    },
+    {
+      "journal_key": "journal_of_competition_law_and_economics",
+      "canonical_name": "Journal of Competition Law & Economics",
+      "short_name": "JCLE",
+      "aliases": [
+        "JCLE",
+        "Journal of Competition Law & Economics"
+      ],
+      "print_issn": "1744-6414",
+      "online_issn": "1744-6422",
+      "publisher": "Oxford University Press",
+      "subject_tags": [
+        "industrial_organization",
+        "law_and_economics"
+      ],
+      "default_priority": 2,
+      "metadata_source": "crossref_verified",
+      "subject": "industrial_organization"
+    },
+    {
+      "journal_key": "journal_of_development_economics",
+      "canonical_name": "Journal of Development Economics",
+      "short_name": "JDE",
+      "aliases": [
+        "J Dev Econ",
+        "JDE",
+        "Journal of Development Economics"
+      ],
+      "print_issn": "0304-3878",
+      "online_issn": null,
+      "publisher": "Elsevier",
+      "subject_tags": [
+        "development_economics",
+        "political_economy"
+      ],
+      "default_priority": 2,
+      "metadata_source": "crossref_verified",
+      "subject": "development"
+    },
+    {
+      "journal_key": "journal_of_development_studies",
+      "canonical_name": "The Journal of Development Studies",
+      "short_name": "JDS",
+      "aliases": [
+        "JDS",
+        "The Journal of Development Studies"
+      ],
+      "print_issn": "0022-0388",
+      "online_issn": "1743-9140",
+      "publisher": "Informa UK (Taylor & Francis)",
+      "subject_tags": [
+        "development_economics",
+        "political_economy"
+      ],
+      "default_priority": 2,
+      "metadata_source": "crossref_verified",
+      "subject": "development"
+    },
+    {
+      "journal_key": "journal_of_economic_behavior_and_organization",
+      "canonical_name": "Journal of Economic Behavior & Organization",
+      "short_name": "JEBO",
+      "aliases": [
+        "J Econ Behav Organ",
+        "JEBO",
+        "Journal of Economic Behavior & Organization",
+        "Journal of Economic Behavior and Organization"
+      ],
+      "print_issn": "0167-2681",
+      "online_issn": null,
+      "publisher": "Elsevier",
+      "subject_tags": [
+        "behavioral_economics"
+      ],
+      "default_priority": 1,
+      "metadata_source": "crossref_verified",
+      "subject": "behavioral"
+    },
+    {
+      "journal_key": "journal_of_economic_dynamics_and_control",
+      "canonical_name": "Journal of Economic Dynamics and Control",
+      "short_name": "JEDC",
+      "aliases": [
+        "JEDC",
+        "Journal of Economic Dynamics and Control"
+      ],
+      "print_issn": "0165-1889",
+      "online_issn": null,
+      "publisher": "Elsevier",
+      "subject_tags": [
+        "macroeconomics",
+        "econometrics"
+      ],
+      "default_priority": 2,
+      "metadata_source": "crossref_verified",
+      "subject": "macro_finance"
+    },
+    {
+      "journal_key": "journal_of_economic_inequality",
+      "canonical_name": "The Journal of Economic Inequality",
+      "short_name": "JEI",
+      "aliases": [
+        "JEI",
+        "The Journal of Economic Inequality"
+      ],
+      "print_issn": "1573-8701",
+      "online_issn": null,
+      "publisher": "Springer-Verlag",
+      "subject_tags": [
+        "public_economics",
+        "applied_economics"
+      ],
+      "default_priority": 2,
+      "metadata_source": "crossref_verified",
+      "subject": "public"
+    },
+    {
+      "journal_key": "journal_of_health_economics",
+      "canonical_name": "Journal of Health Economics",
+      "short_name": "JHE",
+      "aliases": [
+        "JHE",
+        "Journal of Health Economics"
+      ],
+      "print_issn": "0167-6296",
+      "online_issn": null,
+      "publisher": "Elsevier",
+      "subject_tags": [
+        "health_economics"
+      ],
+      "default_priority": 2,
+      "metadata_source": "crossref_verified",
+      "subject": "health"
+    },
+    {
+      "journal_key": "journal_of_human_capital",
+      "canonical_name": "Journal of Human Capital",
+      "short_name": "JHC",
+      "aliases": [
+        "JHC",
+        "Journal of Human Capital"
+      ],
+      "print_issn": "1932-8575",
+      "online_issn": "1932-8664",
+      "publisher": "The University of Chicago Press",
+      "subject_tags": [
+        "human_capital",
+        "labor_economics"
+      ],
+      "default_priority": 2,
+      "metadata_source": "crossref_verified",
+      "subject": "labor"
+    },
+    {
+      "journal_key": "journal_of_human_resources",
+      "canonical_name": "Journal of Human Resources",
+      "short_name": "JHR",
+      "aliases": [
+        "J Hum Resour",
+        "JHR",
+        "Journal of Human Resources"
+      ],
+      "print_issn": "0022-166X",
+      "online_issn": "1548-8004",
+      "publisher": "University of Wisconsin Press",
+      "subject_tags": [
+        "labor_economics",
+        "human_capital"
+      ],
+      "default_priority": 2,
+      "metadata_source": "publisher_registry",
+      "subject": "labor"
+    },
+    {
+      "journal_key": "journal_of_industrial_economics",
+      "canonical_name": "The Journal of Industrial Economics",
+      "short_name": "JIE-IO",
+      "aliases": [
+        "JIE-IO",
+        "Journal of Industrial Economics",
+        "The Journal of Industrial Economics"
+      ],
+      "print_issn": "0022-1821",
+      "online_issn": "1467-6451",
+      "publisher": "Wiley (Blackwell Publishing)",
+      "subject_tags": [
+        "industrial_organization"
+      ],
+      "default_priority": 2,
+      "metadata_source": "crossref_verified",
+      "subject": "industrial_organization"
+    },
+    {
+      "journal_key": "journal_of_institutional_economics",
+      "canonical_name": "Journal of Institutional Economics",
+      "short_name": "JOIE",
+      "aliases": [
+        "J Inst Econ",
+        "JOIE",
+        "Journal of Institutional Economics"
+      ],
+      "print_issn": "1744-1374",
+      "online_issn": "1744-1382",
+      "publisher": "Cambridge University Press",
+      "subject_tags": [
+        "political_economy",
+        "institutional_economics"
+      ],
+      "default_priority": 1,
+      "metadata_source": "crossref_verified",
+      "subject": "political_economy"
+    },
+    {
+      "journal_key": "journal_of_international_economics",
+      "canonical_name": "Journal of International Economics",
+      "short_name": "JIE",
+      "aliases": [
+        "JIE",
+        "Journal of International Economics"
+      ],
+      "print_issn": "0022-1996",
+      "online_issn": null,
+      "publisher": "Elsevier",
+      "subject_tags": [
+        "international_economics"
+      ],
+      "default_priority": 2,
+      "metadata_source": "crossref_verified",
+      "subject": "development"
+    },
+    {
+      "journal_key": "journal_of_labor_economics",
+      "canonical_name": "Journal of Labor Economics",
+      "short_name": "JOLE",
+      "aliases": [
+        "J Labor Econ",
+        "JOLE",
+        "Journal of Labor Economics"
+      ],
+      "print_issn": "0734-306X",
+      "online_issn": "1537-5307",
+      "publisher": "University of Chicago Press",
+      "subject_tags": [
+        "labor_economics",
+        "human_capital"
+      ],
+      "default_priority": 2,
+      "metadata_source": "publisher_registry",
+      "subject": "labor"
+    },
+    {
+      "journal_key": "journal_of_law_and_economics",
+      "canonical_name": "The Journal of Law and Economics",
+      "short_name": "JLE",
+      "aliases": [
+        "J Law Econ",
+        "JLE",
+        "Journal of Law and Economics",
+        "The Journal of Law and Economics"
+      ],
+      "print_issn": "0022-2186",
+      "online_issn": "1537-5285",
+      "publisher": "The University of Chicago Press",
+      "subject_tags": [
+        "political_economy",
+        "law_and_economics"
+      ],
+      "default_priority": 1,
+      "metadata_source": "crossref_verified",
+      "subject": "political_economy"
+    },
+    {
+      "journal_key": "journal_of_law_economics_and_organization",
+      "canonical_name": "The Journal of Law, Economics, and Organization",
+      "short_name": "JLEO",
+      "aliases": [
+        "J Law Econ Organ",
+        "JLEO",
+        "The Journal of Law Economics and Organization",
+        "The Journal of Law, Economics, and Organization"
+      ],
+      "print_issn": "8756-6222",
+      "online_issn": "1465-7341",
+      "publisher": "Oxford University Press",
+      "subject_tags": [
+        "political_economy",
+        "law_and_economics"
+      ],
+      "default_priority": 1,
+      "metadata_source": "crossref_verified",
+      "subject": "political_economy"
+    },
+    {
+      "journal_key": "journal_of_peace_research",
+      "canonical_name": "Journal of Peace Research",
+      "short_name": "JPR",
+      "aliases": [
+        "JPR",
+        "Journal of Peace Research"
+      ],
+      "print_issn": "0022-3433",
+      "online_issn": "1460-3578",
+      "publisher": "Oxford University Press",
+      "subject_tags": [
+        "political_science",
+        "political_economy"
+      ],
+      "default_priority": 2,
+      "metadata_source": "crossref_verified",
+      "subject": "political_economy"
+    },
+    {
+      "journal_key": "journal_of_politics",
+      "canonical_name": "The Journal of Politics",
+      "short_name": "JOP",
+      "aliases": [
+        "J Polit",
+        "JOP",
+        "Journal of Politics",
+        "The Journal of Politics"
+      ],
+      "print_issn": "0022-3816",
+      "online_issn": "1468-2508",
+      "publisher": "The University of Chicago Press",
+      "subject_tags": [
+        "political_science"
+      ],
+      "default_priority": 2,
+      "metadata_source": "crossref_verified",
+      "subject": "political_economy"
+    },
+    {
+      "journal_key": "journal_of_population_economics",
+      "canonical_name": "Journal of Population Economics",
+      "short_name": "JPopE",
+      "aliases": [
+        "JPopE",
+        "Journal of Population Economics"
+      ],
+      "print_issn": "0933-1433",
+      "online_issn": "1432-1475",
+      "publisher": "Springer-Verlag",
+      "subject_tags": [
+        "labor_economics",
+        "demography"
+      ],
+      "default_priority": 2,
+      "metadata_source": "crossref_verified",
+      "subject": "labor"
+    },
+    {
+      "journal_key": "journal_of_public_economic_theory",
+      "canonical_name": "Journal of Public Economic Theory",
+      "short_name": "JPET",
+      "aliases": [
+        "JPET",
+        "Journal of Public Economic Theory"
+      ],
+      "print_issn": "1097-3923",
+      "online_issn": "1467-9779",
+      "publisher": "Wiley (Blackwell Publishing)",
+      "subject_tags": [
+        "public_economics"
+      ],
+      "default_priority": 2,
+      "metadata_source": "crossref_verified",
+      "subject": "public"
+    },
+    {
+      "journal_key": "journal_of_public_economics",
+      "canonical_name": "Journal of Public Economics",
+      "short_name": "JPubE",
+      "aliases": [
+        "J Public Econ",
+        "JPubE",
+        "Journal of Public Economics"
+      ],
+      "print_issn": "0047-2727",
+      "online_issn": "1879-2316",
+      "publisher": "Elsevier",
+      "subject_tags": [
+        "public_economics"
+      ],
+      "default_priority": 2,
+      "metadata_source": "publisher_registry",
+      "subject": "public"
+    },
+    {
+      "journal_key": "journal_of_regulatory_economics",
+      "canonical_name": "Journal of Regulatory Economics",
+      "short_name": "JRE",
+      "aliases": [
+        "JRE",
+        "Journal of Regulatory Economics"
+      ],
+      "print_issn": "0922-680X",
+      "online_issn": "1573-0468",
+      "publisher": "Springer-Verlag",
+      "subject_tags": [
+        "industrial_organization",
+        "public_economics"
+      ],
+      "default_priority": 2,
+      "metadata_source": "crossref_verified",
+      "subject": "industrial_organization"
+    },
+    {
+      "journal_key": "journal_of_risk_and_uncertainty",
+      "canonical_name": "Journal of Risk and Uncertainty",
+      "short_name": "JRU",
+      "aliases": [
+        "J Risk Uncertain",
+        "JRU",
+        "Journal of Risk and Uncertainty"
+      ],
+      "print_issn": "0895-5646",
+      "online_issn": "1573-0476",
+      "publisher": "Springer",
+      "subject_tags": [
+        "behavioral_economics"
+      ],
+      "default_priority": 1,
+      "metadata_source": "crossref_verified",
+      "subject": "behavioral"
+    },
+    {
+      "journal_key": "journal_of_the_economic_science_association",
+      "canonical_name": "Journal of the Economic Science Association",
+      "short_name": "JESA",
+      "aliases": [
+        "JESA",
+        "Journal of the Economic Science Association"
+      ],
+      "print_issn": "2199-6776",
+      "online_issn": "2199-6784",
+      "publisher": "Cambridge University Press",
+      "subject_tags": [
+        "behavioral_economics"
+      ],
+      "default_priority": 2,
+      "metadata_source": "crossref_verified",
+      "subject": "behavioral"
+    },
+    {
+      "journal_key": "labour_economics",
+      "canonical_name": "Labour Economics",
+      "short_name": "Labour Economics",
+      "aliases": [
+        "Labor Economics",
+        "Labour Econ",
+        "Labour Economics"
+      ],
+      "print_issn": "0927-5371",
+      "online_issn": "1879-1034",
+      "publisher": "Elsevier",
+      "subject_tags": [
+        "labor_economics",
+        "human_capital"
+      ],
+      "default_priority": 2,
+      "metadata_source": "publisher_registry",
+      "subject": "labor"
+    },
+    {
+      "journal_key": "national_tax_journal",
+      "canonical_name": "National Tax Journal",
+      "short_name": "NTJ",
+      "aliases": [
+        "NTJ",
+        "National Tax Journal"
+      ],
+      "print_issn": "0028-0283",
+      "online_issn": "1944-7477",
+      "publisher": "The University of Chicago Press",
+      "subject_tags": [
+        "public_economics"
+      ],
+      "default_priority": 2,
+      "metadata_source": "crossref_verified",
+      "subject": "public"
+    },
+    {
+      "journal_key": "political_analysis",
+      "canonical_name": "Political Analysis",
+      "short_name": "Political Analysis",
+      "aliases": [
+        "Polit Anal",
+        "Political Analysis"
+      ],
+      "print_issn": "1047-1987",
+      "online_issn": "1476-4989",
+      "publisher": "Cambridge University Press",
+      "subject_tags": [
+        "political_science",
+        "political_methodology"
+      ],
+      "default_priority": 3,
+      "metadata_source": "crossref_verified",
+      "subject": "political_economy"
+    },
+    {
+      "journal_key": "public_choice",
+      "canonical_name": "Public Choice",
+      "short_name": "Public Choice",
+      "aliases": [
+        "Public Choice"
+      ],
+      "print_issn": "0048-5829",
+      "online_issn": "1573-7101",
+      "publisher": "Springer",
+      "subject_tags": [
+        "political_economy"
+      ],
+      "default_priority": 1,
+      "metadata_source": "crossref_verified",
+      "subject": "political_economy"
+    },
+    {
+      "journal_key": "quantitative_economics",
+      "canonical_name": "Quantitative Economics",
+      "short_name": "QE",
+      "aliases": [
+        "QE",
+        "Quantitative Economics"
+      ],
+      "print_issn": "1759-7323",
+      "online_issn": "1759-7331",
+      "publisher": "The Econometric Society",
+      "subject_tags": [
+        "econometrics"
+      ],
+      "default_priority": 2,
+      "metadata_source": "crossref_verified",
+      "subject": "econometrics"
+    },
+    {
+      "journal_key": "review_of_economic_dynamics",
+      "canonical_name": "Review of Economic Dynamics",
+      "short_name": "RED",
+      "aliases": [
+        "RED",
+        "Review of Economic Dynamics"
+      ],
+      "print_issn": "1094-2025",
+      "online_issn": null,
+      "publisher": "Elsevier",
+      "subject_tags": [
+        "macroeconomics"
+      ],
+      "default_priority": 2,
+      "metadata_source": "crossref_verified",
+      "subject": "macro_finance"
+    },
+    {
+      "journal_key": "review_of_world_economics",
+      "canonical_name": "Review of World Economics",
+      "short_name": "RWE",
+      "aliases": [
+        "RWE",
+        "Review of World Economics"
+      ],
+      "print_issn": "1610-2878",
+      "online_issn": "1610-2886",
+      "publisher": "Springer-Verlag",
+      "subject_tags": [
+        "development_economics",
+        "international_economics"
+      ],
+      "default_priority": 2,
+      "metadata_source": "crossref_verified",
+      "subject": "development"
+    },
+    {
+      "journal_key": "teaching_and_teacher_education",
+      "canonical_name": "Teaching and Teacher Education",
+      "short_name": "TTE",
+      "aliases": [
+        "TTE",
+        "Teaching and Teacher Education"
+      ],
+      "print_issn": "0742-051X",
+      "online_issn": null,
+      "publisher": "Elsevier",
+      "subject_tags": [
+        "education_economics",
+        "education_research"
+      ],
+      "default_priority": 2,
+      "metadata_source": "crossref_verified",
+      "subject": "education"
+    },
+    {
+      "journal_key": "work_employment_and_society",
+      "canonical_name": "Work, Employment and Society",
+      "short_name": "WES",
+      "aliases": [
+        "WES",
+        "Work Employment and Society",
+        "Work, Employment and Society"
+      ],
+      "print_issn": "0950-0170",
+      "online_issn": "1469-8722",
+      "publisher": "SAGE Publications",
+      "subject_tags": [
+        "labor_economics",
+        "sociology"
+      ],
+      "default_priority": 2,
+      "metadata_source": "crossref_verified",
+      "subject": "labor"
+    },
+    {
+      "journal_key": "world_bank_economic_review",
+      "canonical_name": "The World Bank Economic Review",
+      "short_name": "WBER",
+      "aliases": [
+        "The World Bank Economic Review",
+        "WBER"
+      ],
+      "print_issn": "0258-6770",
+      "online_issn": "1564-698X",
+      "publisher": "Oxford University Press",
+      "subject_tags": [
+        "development_economics"
+      ],
+      "default_priority": 2,
+      "metadata_source": "crossref_verified",
+      "subject": "development"
+    },
+    {
+      "journal_key": "world_development",
+      "canonical_name": "World Development",
+      "short_name": "WD",
+      "aliases": [
+        "WD",
+        "World Development"
+      ],
+      "print_issn": "0305-750X",
+      "online_issn": null,
+      "publisher": "Elsevier",
+      "subject_tags": [
+        "development_economics"
+      ],
+      "default_priority": 2,
+      "metadata_source": "crossref_verified",
+      "subject": "development"
+    },
+    {
+      "journal_key": "world_politics",
+      "canonical_name": "World Politics",
+      "short_name": "World Politics",
+      "aliases": [
+        "World Polit",
+        "World Politics"
+      ],
+      "print_issn": "0043-8871",
+      "online_issn": "1086-3338",
+      "publisher": "Johns Hopkins University Press",
+      "subject_tags": [
+        "political_science"
+      ],
+      "default_priority": 2,
+      "metadata_source": "crossref_verified",
+      "subject": "political_economy"
+    }
+  ]
+}

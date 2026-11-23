@@ -1,0 +1,5 @@
+请为以下已筛选论文生成中文卡片：
+{paper_json}
+
+只输出 JSON，字段为 chinese_title、research_question、data_and_sample、identification_strategy、main_result、heterogeneity、policy_implication、chinese_summary、missing_information。
+

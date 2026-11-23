@@ -1,0 +1,55 @@
+exclusion_contexts:
+  profile_id: education_economics
+  version: 0.2.0-phase6d-candidate
+  released_at: null
+  status: candidate
+  contexts:
+    - &theory_context
+      context_id: abstract_economic_theory
+      preferred_term: abstract economic theory
+      phrases: [general equilibrium existence, abstract game theory, social choice theory, decision theory, pure contract theory, auction theory]
+      description: A methodological theory contribution with no education research object.
+      signal_strength: moderate
+      exceptions: &education_exceptions [school choice, college admissions, student assignment, teacher labor market, education signaling, schooling, education production function]
+      evidence_sources: &fixture_evidence [{source_type: offline_fixture_registry, title: Phase 6D screening fixtures, identifier: phase6d-fixtures-v1, year: 2026}]
+      enabled: true
+      hard_exclude: false
+      status: candidate
+      version_added: 0.2.0-phase6d-candidate
+    - <<: *theory_context
+      context_id: econometric_theory
+      preferred_term: econometric theory
+      phrases: [econometric asymptotics, asymptotic theory, identification theorem, semiparametric efficiency, statistical limit theory]
+      description: Pure econometric or statistical theory without an education application.
+    - <<: *theory_context
+      context_id: machine_learning_theory
+      preferred_term: machine learning theory
+      phrases: [statistical learning theory, neural network generalization, machine learning convergence, representation learning theory]
+      description: Computational learning theory without students, schools, or education outcomes.
+    - <<: *theory_context
+      context_id: non_education_matching
+      preferred_term: non education matching theory
+      phrases: [stable matching theory, two sided matching, matching market, assignment game]
+      description: Matching or assignment theory without students, schools, teachers, or admissions.
+    - <<: *theory_context
+      context_id: non_education_mechanism_design
+      preferred_term: non education mechanism design
+      phrases: [mechanism design, optimal mechanism design, incentive compatible mechanism, revelation principle, implementation theory]
+      description: Mechanism-design theory without an education allocation object.
+    - <<: *theory_context
+      context_id: mathematical_economics
+      preferred_term: mathematical economics
+      phrases: [fixed point theorem, existence and uniqueness theorem, mathematical economic model, abstract economy]
+      description: Formal mathematical economics with no substantive education object.
+    - <<: *theory_context
+      context_id: theoretical_industrial_organization
+      preferred_term: theoretical industrial organization
+      phrases: [oligopoly theory, dynamic pricing game, vertical differentiation model, industrial organization theory]
+      description: Industrial-organization theory without an education market or institution.
+    - {context_id: seed_medical_education, preferred_term: medical education, phrases: [medical education], description: Adjacent professional education candidate requiring later review, signal_strength: weak, exceptions: [], enabled: false, hard_exclude: false, status: draft, version_added: 0.1.0-draft}
+    - {context_id: seed_nursing_education, preferred_term: nursing education, phrases: [nursing education], description: Adjacent professional education candidate requiring later review, signal_strength: weak, exceptions: [], enabled: false, hard_exclude: false, status: draft, version_added: 0.1.0-draft}
+    - {context_id: seed_patient_education, preferred_term: patient education, phrases: [patient education], description: Health communication candidate requiring later review, signal_strength: weak, exceptions: [], enabled: false, hard_exclude: false, status: draft, version_added: 0.1.0-draft}
+    - {context_id: seed_engineering_education, preferred_term: engineering education, phrases: [engineering education], description: Adjacent discipline candidate requiring later review, signal_strength: weak, exceptions: [], enabled: false, hard_exclude: false, status: draft, version_added: 0.1.0-draft}
+    - {context_id: seed_model_training, preferred_term: model training, phrases: [model training], description: Non-education use of training, signal_strength: weak, exceptions: [], enabled: false, hard_exclude: false, status: draft, version_added: 0.1.0-draft}
+    - {context_id: seed_training_data, preferred_term: training data, phrases: [training data], description: Non-education use of training, signal_strength: weak, exceptions: [], enabled: false, hard_exclude: false, status: draft, version_added: 0.1.0-draft}
+    - {context_id: seed_public_information_campaign, preferred_term: public information campaign, phrases: [public information campaign], description: Candidate that must not exclude education-policy evaluations automatically, signal_strength: weak, exceptions: [], enabled: false, hard_exclude: false, status: draft, version_added: 0.1.0-draft}

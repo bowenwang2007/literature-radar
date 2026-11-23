@@ -1,0 +1,23 @@
+subject_codes:
+  profile_id: education_economics
+  version: 0.1.0-draft
+  released_at: null
+  status: draft
+  missing_signal_behavior: neutral
+  codes:
+    - code: I20-I29
+      label: Reserved JEL education range pending authoritative verification
+      source: JEL
+      signal_type: unknown
+      strength: neutral
+      enabled: false
+      status: candidate
+      version_added: 0.1.0-draft
+    - code: J24
+      label: Reserved human-capital code pending authoritative verification
+      source: JEL
+      signal_type: unknown
+      strength: neutral
+      enabled: false
+      status: candidate
+      version_added: 0.1.0-draft

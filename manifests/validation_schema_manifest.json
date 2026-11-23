@@ -1,0 +1,758 @@
+{
+  "application_git_commit": null,
+  "database_profile": "validation",
+  "foreign_key_check": [],
+  "integrity_check": "ok",
+  "manifest_sha256": "0d17471b163879bf917f8781b15fd74390e15bb88ce307d20ba55b3edbad0ab2",
+  "manifest_version": "1",
+  "migrations": [
+    {
+      "database_profile": "validation",
+      "filename": "0006_add_validation_batches.sql",
+      "inferred": 0,
+      "migration_id": 6,
+      "migration_sha256": "8fbbad2874c23ee3d1126c9a34d2dc30daf75901c9bb1f9ac19cc9a21f3f04bd",
+      "schema_version_after": "0006_add_validation_batches.sql",
+      "schema_version_before": "empty"
+    }
+  ],
+  "schema_fingerprint": "46ed30d3820ab6d510dfd40f40dc09beb557f4c4811b18a728f91ab84443d6a7",
+  "sqlite_version": "3.50.4",
+  "tables": [
+    {
+      "check_constraints": [
+        "CHECK (success IN (0,1))",
+        "CHECK (inferred IN (0,1))"
+      ],
+      "columns": [
+        {
+          "cid": 0,
+          "default": null,
+          "name": "migration_id",
+          "not_null": true,
+          "primary_key_position": 2,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 1,
+          "default": null,
+          "name": "filename",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 2,
+          "default": null,
+          "name": "migration_sha256",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 3,
+          "default": null,
+          "name": "applied_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 4,
+          "default": null,
+          "name": "application_version",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 5,
+          "default": null,
+          "name": "schema_version_before",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 6,
+          "default": null,
+          "name": "schema_version_after",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 7,
+          "default": null,
+          "name": "execution_ms",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 8,
+          "default": null,
+          "name": "success",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 9,
+          "default": null,
+          "name": "error_type",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 10,
+          "default": null,
+          "name": "error_message",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 11,
+          "default": "0",
+          "name": "inferred",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 12,
+          "default": null,
+          "name": "inference_method",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 13,
+          "default": null,
+          "name": "schema_fingerprint",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 14,
+          "default": null,
+          "name": "source_manifest",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 15,
+          "default": null,
+          "name": "database_profile",
+          "not_null": true,
+          "primary_key_position": 1,
+          "type": "TEXT"
+        }
+      ],
+      "foreign_keys": [],
+      "indexes": [
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "filename",
+              "seqno": 0
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 1
+            }
+          ],
+          "name": "sqlite_autoindex_schema_migrations_1",
+          "origin": "u",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        },
+        {
+          "columns": [
+            {
+              "cid": 15,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "database_profile",
+              "seqno": 0
+            },
+            {
+              "cid": 0,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "migration_id",
+              "seqno": 1
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 2
+            }
+          ],
+          "name": "sqlite_autoindex_schema_migrations_2",
+          "origin": "pk",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        }
+      ],
+      "name": "schema_migrations",
+      "primary_key": [
+        "database_profile",
+        "migration_id"
+      ],
+      "sql": "CREATE TABLE schema_migrations ( migration_id INTEGER NOT NULL, filename TEXT NOT NULL UNIQUE, migration_sha256 TEXT NOT NULL, applied_at TEXT NOT NULL, application_version TEXT NOT NULL, schema_version_before TEXT NOT NULL, schema_version_after TEXT NOT NULL, execution_ms INTEGER NOT NULL, success INTEGER NOT NULL CHECK (success IN (0,1)), error_type TEXT, error_message TEXT, inferred INTEGER NOT NULL DEFAULT 0 CHECK (inferred IN (0,1)), inference_method TEXT, schema_fingerprint TEXT, source_manifest TEXT, database_profile TEXT NOT NULL, PRIMARY KEY(database_profile,migration_id) )"
+    },
+    {
+      "check_constraints": [
+        "CHECK (label IN ('include','borderline','exclude'))",
+        "CHECK (difficulty IN ('easy','medium','hard'))"
+      ],
+      "columns": [
+        {
+          "cid": 0,
+          "default": null,
+          "name": "id",
+          "not_null": false,
+          "primary_key_position": 1,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 1,
+          "default": null,
+          "name": "validation_item_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 2,
+          "default": null,
+          "name": "label",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 3,
+          "default": null,
+          "name": "reviewer",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 4,
+          "default": null,
+          "name": "notes",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 5,
+          "default": null,
+          "name": "difficulty",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 6,
+          "default": null,
+          "name": "created_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 7,
+          "default": null,
+          "name": "updated_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "validation_item_id",
+          "id": 0,
+          "match": "NONE",
+          "on_delete": "CASCADE",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "validation_items",
+          "to": "id"
+        }
+      ],
+      "indexes": [
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "validation_item_id",
+              "seqno": 0
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 1
+            }
+          ],
+          "name": "idx_validation_annotations_item",
+          "origin": "c",
+          "partial": false,
+          "sql": "CREATE INDEX idx_validation_annotations_item ON validation_annotations(validation_item_id)",
+          "unique": false
+        },
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "validation_item_id",
+              "seqno": 0
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 1
+            }
+          ],
+          "name": "sqlite_autoindex_validation_annotations_1",
+          "origin": "u",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        }
+      ],
+      "name": "validation_annotations",
+      "primary_key": [
+        "id"
+      ],
+      "sql": "CREATE TABLE validation_annotations ( id INTEGER PRIMARY KEY, validation_item_id INTEGER NOT NULL UNIQUE REFERENCES validation_items(id) ON DELETE CASCADE, label TEXT NOT NULL CHECK (label IN ('include','borderline','exclude')), reviewer TEXT NOT NULL, notes TEXT, difficulty TEXT NOT NULL CHECK (difficulty IN ('easy','medium','hard')), created_at TEXT NOT NULL, updated_at TEXT NOT NULL )"
+    },
+    {
+      "check_constraints": [
+        "CHECK (status IN ('annotation','completed'))"
+      ],
+      "columns": [
+        {
+          "cid": 0,
+          "default": null,
+          "name": "id",
+          "not_null": false,
+          "primary_key_position": 1,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 1,
+          "default": null,
+          "name": "source_database_path",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 2,
+          "default": null,
+          "name": "source_database_sha256",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 3,
+          "default": null,
+          "name": "source_journals_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 4,
+          "default": null,
+          "name": "date_from",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 5,
+          "default": null,
+          "name": "date_to",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 6,
+          "default": null,
+          "name": "total_papers",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 7,
+          "default": null,
+          "name": "ontology_version",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 8,
+          "default": null,
+          "name": "semantic_prompt_version",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 9,
+          "default": null,
+          "name": "composite_version",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 10,
+          "default": null,
+          "name": "status",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 11,
+          "default": null,
+          "name": "created_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        }
+      ],
+      "foreign_keys": [],
+      "indexes": [
+        {
+          "columns": [
+            {
+              "cid": 10,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "status",
+              "seqno": 0
+            },
+            {
+              "cid": 11,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "created_at",
+              "seqno": 1
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 2
+            }
+          ],
+          "name": "idx_validation_batches_status",
+          "origin": "c",
+          "partial": false,
+          "sql": "CREATE INDEX idx_validation_batches_status ON validation_batches(status, created_at)",
+          "unique": false
+        }
+      ],
+      "name": "validation_batches",
+      "primary_key": [
+        "id"
+      ],
+      "sql": "CREATE TABLE validation_batches ( id INTEGER PRIMARY KEY, source_database_path TEXT NOT NULL, source_database_sha256 TEXT NOT NULL, source_journals_json TEXT NOT NULL, date_from TEXT, date_to TEXT, total_papers INTEGER NOT NULL, ontology_version TEXT NOT NULL, semantic_prompt_version TEXT NOT NULL, composite_version TEXT NOT NULL, status TEXT NOT NULL CHECK (status IN ('annotation','completed')), created_at TEXT NOT NULL )"
+    },
+    {
+      "check_constraints": [
+        "CHECK (ai_decision IN ('include','borderline','exclude'))",
+        "CHECK ( sampled_stratum IN ('include','borderline','exclude') )"
+      ],
+      "columns": [
+        {
+          "cid": 0,
+          "default": null,
+          "name": "id",
+          "not_null": false,
+          "primary_key_position": 1,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 1,
+          "default": null,
+          "name": "batch_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 2,
+          "default": null,
+          "name": "source_paper_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 3,
+          "default": null,
+          "name": "doi",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 4,
+          "default": null,
+          "name": "original_title",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 5,
+          "default": null,
+          "name": "chinese_title",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 6,
+          "default": "'[]'",
+          "name": "authors_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 7,
+          "default": null,
+          "name": "original_abstract",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 8,
+          "default": null,
+          "name": "journal",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 9,
+          "default": null,
+          "name": "publication_date",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 10,
+          "default": null,
+          "name": "ai_decision",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 11,
+          "default": null,
+          "name": "ai_reason",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 12,
+          "default": null,
+          "name": "semantic_score",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "REAL"
+        },
+        {
+          "cid": 13,
+          "default": null,
+          "name": "confidence",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "REAL"
+        },
+        {
+          "cid": 14,
+          "default": "'{}'",
+          "name": "evidence_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 15,
+          "default": "'{}'",
+          "name": "semantic_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 16,
+          "default": null,
+          "name": "sampled_stratum",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 17,
+          "default": null,
+          "name": "created_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "batch_id",
+          "id": 0,
+          "match": "NONE",
+          "on_delete": "CASCADE",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "validation_batches",
+          "to": "id"
+        }
+      ],
+      "indexes": [
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "batch_id",
+              "seqno": 0
+            },
+            {
+              "cid": 16,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "sampled_stratum",
+              "seqno": 1
+            },
+            {
+              "cid": 0,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "id",
+              "seqno": 2
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 3
+            }
+          ],
+          "name": "idx_validation_items_batch_stratum",
+          "origin": "c",
+          "partial": false,
+          "sql": "CREATE INDEX idx_validation_items_batch_stratum ON validation_items(batch_id, sampled_stratum, id)",
+          "unique": false
+        },
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "batch_id",
+              "seqno": 0
+            },
+            {
+              "cid": 2,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "source_paper_id",
+              "seqno": 1
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 2
+            }
+          ],
+          "name": "sqlite_autoindex_validation_items_1",
+          "origin": "u",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        }
+      ],
+      "name": "validation_items",
+      "primary_key": [
+        "id"
+      ],
+      "sql": "CREATE TABLE validation_items ( id INTEGER PRIMARY KEY, batch_id INTEGER NOT NULL REFERENCES validation_batches(id) ON DELETE CASCADE, source_paper_id INTEGER NOT NULL, doi TEXT, original_title TEXT NOT NULL, chinese_title TEXT, authors_json TEXT NOT NULL DEFAULT '[]', original_abstract TEXT, journal TEXT NOT NULL, publication_date TEXT, ai_decision TEXT NOT NULL CHECK (ai_decision IN ('include','borderline','exclude')), ai_reason TEXT, semantic_score REAL, confidence REAL, evidence_json TEXT NOT NULL DEFAULT '{}', semantic_json TEXT NOT NULL DEFAULT '{}', sampled_stratum TEXT NOT NULL CHECK ( sampled_stratum IN ('include','borderline','exclude') ), created_at TEXT NOT NULL, UNIQUE(batch_id, source_paper_id) )"
+    }
+  ],
+  "triggers": [],
+  "views": []
+}

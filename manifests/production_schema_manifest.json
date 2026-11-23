@@ -1,0 +1,6382 @@
+{
+  "application_git_commit": null,
+  "database_profile": "production",
+  "foreign_key_check": [],
+  "integrity_check": "ok",
+  "manifest_sha256": "d95b45f90d14ff65809a4ac204e05422d77d990333dac0dac196ff8911ce0506",
+  "manifest_version": "1",
+  "migrations": [
+    {
+      "database_profile": "production",
+      "filename": "0001_add_paper_translations.sql",
+      "inferred": 1,
+      "migration_id": 1,
+      "migration_sha256": "916406609e3b05d5fda00e6acc2600bf1bde07e2a9d5b6d3a481074886f9ced7",
+      "schema_version_after": "0001_add_paper_translations.sql",
+      "schema_version_before": "base"
+    },
+    {
+      "database_profile": "production",
+      "filename": "0002_add_workflow_batches.sql",
+      "inferred": 1,
+      "migration_id": 2,
+      "migration_sha256": "ed29d8767d2876b232601df63e2ad320caf8f4710817759bad32cb41b010e12f",
+      "schema_version_after": "0002_add_workflow_batches.sql",
+      "schema_version_before": "0001_add_paper_translations.sql"
+    },
+    {
+      "database_profile": "production",
+      "filename": "0003_add_domain_evidence_runs.sql",
+      "inferred": 1,
+      "migration_id": 3,
+      "migration_sha256": "45d948945a95a0dfd4a8a1df5841c039a38ab23bbf2f9f0590cc06230f5b71c7",
+      "schema_version_after": "0003_add_domain_evidence_runs.sql",
+      "schema_version_before": "0002_add_workflow_batches.sql"
+    },
+    {
+      "database_profile": "production",
+      "filename": "0004_add_domain_semantic_runs.sql",
+      "inferred": 1,
+      "migration_id": 4,
+      "migration_sha256": "767883c613aa0fd55c391f54a77f5e0734b92dadd11c58d2fe71dfb8747ad970",
+      "schema_version_after": "0004_add_domain_semantic_runs.sql",
+      "schema_version_before": "0003_add_domain_evidence_runs.sql"
+    },
+    {
+      "database_profile": "production",
+      "filename": "0007_add_runtime_leases_and_task_reviews.sql",
+      "inferred": 0,
+      "migration_id": 7,
+      "migration_sha256": "599eab3751a549f9ef105edf0ccc77bfeaa32c6116a02eff266bf7ee4e94a16b",
+      "schema_version_after": "0007_add_runtime_leases_and_task_reviews.sql",
+      "schema_version_before": "0004_add_domain_semantic_runs.sql"
+    },
+    {
+      "database_profile": "production",
+      "filename": "0008_add_metadata_provenance_and_ai_budgets.sql",
+      "inferred": 0,
+      "migration_id": 8,
+      "migration_sha256": "9bdd1a69236112a224e2552b16e490d713631a494e15879c8c1c05e68966ffaf",
+      "schema_version_after": "0008_add_metadata_provenance_and_ai_budgets.sql",
+      "schema_version_before": "0007_add_runtime_leases_and_task_reviews.sql"
+    },
+    {
+      "database_profile": "production",
+      "filename": "0010_add_overnight_pipeline.sql",
+      "inferred": 1,
+      "migration_id": 10,
+      "migration_sha256": "0b70f74013e213e683a6a95784f5a4050fd09610a15648772e465087188f95db",
+      "schema_version_after": "0010_add_overnight_pipeline.sql",
+      "schema_version_before": "0008_add_metadata_provenance_and_ai_budgets.sql"
+    },
+    {
+      "database_profile": "production",
+      "filename": "0011_add_product_safety_and_verification.sql",
+      "inferred": 1,
+      "migration_id": 11,
+      "migration_sha256": "929c627f9d79b931b9f8bce3f94e1c883a10bc7c983a0fdc473a5c21ca19e566",
+      "schema_version_after": "0011_add_product_safety_and_verification.sql",
+      "schema_version_before": "migration_id:10"
+    },
+    {
+      "database_profile": "production",
+      "filename": "0012_add_verification_intake.sql",
+      "inferred": 1,
+      "migration_id": 12,
+      "migration_sha256": "b1bbe277633ca62c1655f77a21987ab2d1d2b320946d4d840f2d49cdd36896a9",
+      "schema_version_after": "0012_add_verification_intake.sql",
+      "schema_version_before": "migration_id:11"
+    },
+    {
+      "database_profile": "production",
+      "filename": "0013_add_profile_scoped_assessment.sql",
+      "inferred": 0,
+      "migration_id": 13,
+      "migration_sha256": "50b0d6cec656cd2ff08f596e1561d80ef904e013df373659cd9c0240a4bee9e4",
+      "schema_version_after": "0013_add_profile_scoped_assessment.sql",
+      "schema_version_before": "0012_add_verification_intake.sql"
+    },
+    {
+      "database_profile": "production",
+      "filename": "0014_add_jel_observations.sql",
+      "inferred": 0,
+      "migration_id": 14,
+      "migration_sha256": "75d6b7edd4fb9aa3f1061937557831d7ddde51397d7db099b5af9c6540acdb3e",
+      "schema_version_after": "0014_add_jel_observations.sql",
+      "schema_version_before": "0013_add_profile_scoped_assessment.sql"
+    }
+  ],
+  "schema_fingerprint": "d93fedeff26c9bff8f07de3e9d0af7e533c80e134c1dce0b92be8f6666f17a14",
+  "sqlite_version": "3.53.1",
+  "tables": [
+    {
+      "check_constraints": [],
+      "columns": [
+        {
+          "cid": 0,
+          "default": null,
+          "name": "id",
+          "not_null": false,
+          "primary_key_position": 1,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 1,
+          "default": null,
+          "name": "task_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 2,
+          "default": null,
+          "name": "changed_by",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 3,
+          "default": null,
+          "name": "previous_budget_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 4,
+          "default": null,
+          "name": "new_budget_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 5,
+          "default": null,
+          "name": "reason",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 6,
+          "default": null,
+          "name": "created_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "task_id",
+          "id": 0,
+          "match": "NONE",
+          "on_delete": "CASCADE",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "workflow_batches",
+          "to": "id"
+        }
+      ],
+      "indexes": [],
+      "name": "ai_budget_changes",
+      "primary_key": [
+        "id"
+      ],
+      "sql": "CREATE TABLE ai_budget_changes ( id INTEGER PRIMARY KEY, task_id INTEGER NOT NULL REFERENCES workflow_batches(id) ON DELETE CASCADE, changed_by TEXT NOT NULL, previous_budget_json TEXT NOT NULL, new_budget_json TEXT NOT NULL, reason TEXT NOT NULL, created_at TEXT NOT NULL )"
+    },
+    {
+      "check_constraints": [
+        "CHECK (stage IN ( 'title_translation','fast_semantic','strong_semantic','abstract_translation' ))",
+        "CHECK (max_calls > 0)",
+        "CHECK (max_input_tokens > 0)",
+        "CHECK (max_output_tokens > 0)",
+        "CHECK (max_estimated_cost_microunits > 0)"
+      ],
+      "columns": [
+        {
+          "cid": 0,
+          "default": null,
+          "name": "task_id",
+          "not_null": true,
+          "primary_key_position": 1,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 1,
+          "default": null,
+          "name": "stage",
+          "not_null": true,
+          "primary_key_position": 2,
+          "type": "TEXT"
+        },
+        {
+          "cid": 2,
+          "default": null,
+          "name": "max_calls",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 3,
+          "default": null,
+          "name": "max_input_tokens",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 4,
+          "default": null,
+          "name": "max_output_tokens",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 5,
+          "default": null,
+          "name": "max_estimated_cost_microunits",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 6,
+          "default": null,
+          "name": "created_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 7,
+          "default": null,
+          "name": "updated_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "task_id",
+          "id": 0,
+          "match": "NONE",
+          "on_delete": "CASCADE",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "workflow_batches",
+          "to": "id"
+        }
+      ],
+      "indexes": [
+        {
+          "columns": [
+            {
+              "cid": 0,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "task_id",
+              "seqno": 0
+            },
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "stage",
+              "seqno": 1
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 2
+            }
+          ],
+          "name": "sqlite_autoindex_ai_stage_budgets_1",
+          "origin": "pk",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        }
+      ],
+      "name": "ai_stage_budgets",
+      "primary_key": [
+        "task_id",
+        "stage"
+      ],
+      "sql": "CREATE TABLE ai_stage_budgets ( task_id INTEGER NOT NULL REFERENCES workflow_batches(id) ON DELETE CASCADE, stage TEXT NOT NULL CHECK (stage IN ( 'title_translation','fast_semantic','strong_semantic','abstract_translation' )), max_calls INTEGER NOT NULL CHECK (max_calls > 0), max_input_tokens INTEGER NOT NULL CHECK (max_input_tokens > 0), max_output_tokens INTEGER NOT NULL CHECK (max_output_tokens > 0), max_estimated_cost_microunits INTEGER NOT NULL CHECK (max_estimated_cost_microunits > 0), created_at TEXT NOT NULL, updated_at TEXT NOT NULL, PRIMARY KEY(task_id,stage) )"
+    },
+    {
+      "check_constraints": [
+        "CHECK (max_calls > 0)",
+        "CHECK (max_input_tokens > 0)",
+        "CHECK (max_output_tokens > 0)",
+        "CHECK (max_estimated_cost_microunits > 0)",
+        "CHECK (max_strong_calls > 0)",
+        "CHECK (max_translation_calls > 0)"
+      ],
+      "columns": [
+        {
+          "cid": 0,
+          "default": null,
+          "name": "task_id",
+          "not_null": false,
+          "primary_key_position": 1,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 1,
+          "default": "'USD'",
+          "name": "currency",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 2,
+          "default": null,
+          "name": "price_version",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 3,
+          "default": null,
+          "name": "max_calls",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 4,
+          "default": null,
+          "name": "max_input_tokens",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 5,
+          "default": null,
+          "name": "max_output_tokens",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 6,
+          "default": null,
+          "name": "max_estimated_cost_microunits",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 7,
+          "default": null,
+          "name": "max_strong_calls",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 8,
+          "default": null,
+          "name": "max_translation_calls",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 9,
+          "default": null,
+          "name": "created_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 10,
+          "default": null,
+          "name": "updated_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "task_id",
+          "id": 0,
+          "match": "NONE",
+          "on_delete": "CASCADE",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "workflow_batches",
+          "to": "id"
+        }
+      ],
+      "indexes": [],
+      "name": "ai_task_budgets",
+      "primary_key": [
+        "task_id"
+      ],
+      "sql": "CREATE TABLE ai_task_budgets ( task_id INTEGER PRIMARY KEY REFERENCES workflow_batches(id) ON DELETE CASCADE, currency TEXT NOT NULL DEFAULT 'USD', price_version TEXT NOT NULL, max_calls INTEGER NOT NULL CHECK (max_calls > 0), max_input_tokens INTEGER NOT NULL CHECK (max_input_tokens > 0), max_output_tokens INTEGER NOT NULL CHECK (max_output_tokens > 0), max_estimated_cost_microunits INTEGER NOT NULL CHECK (max_estimated_cost_microunits > 0), max_strong_calls INTEGER NOT NULL CHECK (max_strong_calls > 0), max_translation_calls INTEGER NOT NULL CHECK (max_translation_calls > 0), created_at TEXT NOT NULL, updated_at TEXT NOT NULL )"
+    },
+    {
+      "check_constraints": [
+        "CHECK (stage IN ( 'title_translation','fast_semantic','strong_semantic','abstract_translation' ))",
+        "CHECK (fencing_token > 0)",
+        "CHECK (reserved_calls > 0)",
+        "CHECK (reserved_input_tokens > 0)",
+        "CHECK (reserved_output_tokens > 0)",
+        "CHECK (reserved_cost_microunits > 0)",
+        "CHECK (usage_missing IN (0,1))",
+        "CHECK ( status IN ('reserved','settled','failed','released') )"
+      ],
+      "columns": [
+        {
+          "cid": 0,
+          "default": null,
+          "name": "id",
+          "not_null": false,
+          "primary_key_position": 1,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 1,
+          "default": null,
+          "name": "reservation_uid",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 2,
+          "default": null,
+          "name": "task_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 3,
+          "default": null,
+          "name": "stage",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 4,
+          "default": null,
+          "name": "provider",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 5,
+          "default": null,
+          "name": "model_name",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 6,
+          "default": null,
+          "name": "idempotency_key",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 7,
+          "default": null,
+          "name": "fencing_token",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 8,
+          "default": "1",
+          "name": "reserved_calls",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 9,
+          "default": null,
+          "name": "reserved_input_tokens",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 10,
+          "default": null,
+          "name": "reserved_output_tokens",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 11,
+          "default": null,
+          "name": "reserved_cost_microunits",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 12,
+          "default": null,
+          "name": "actual_input_tokens",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 13,
+          "default": null,
+          "name": "actual_output_tokens",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 14,
+          "default": null,
+          "name": "actual_cost_microunits",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 15,
+          "default": "0",
+          "name": "usage_missing",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 16,
+          "default": null,
+          "name": "status",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 17,
+          "default": null,
+          "name": "error_type",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 18,
+          "default": null,
+          "name": "reserved_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 19,
+          "default": null,
+          "name": "settled_at",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 20,
+          "default": null,
+          "name": "updated_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "task_id",
+          "id": 0,
+          "match": "NONE",
+          "on_delete": "CASCADE",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "workflow_batches",
+          "to": "id"
+        }
+      ],
+      "indexes": [
+        {
+          "columns": [
+            {
+              "cid": 2,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "task_id",
+              "seqno": 0
+            },
+            {
+              "cid": 16,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "status",
+              "seqno": 1
+            },
+            {
+              "cid": 3,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "stage",
+              "seqno": 2
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 3
+            }
+          ],
+          "name": "idx_ai_usage_task_status",
+          "origin": "c",
+          "partial": false,
+          "sql": "CREATE INDEX idx_ai_usage_task_status ON ai_usage_reservations(task_id,status,stage)",
+          "unique": false
+        },
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "reservation_uid",
+              "seqno": 0
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 1
+            }
+          ],
+          "name": "sqlite_autoindex_ai_usage_reservations_1",
+          "origin": "u",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        },
+        {
+          "columns": [
+            {
+              "cid": 2,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "task_id",
+              "seqno": 0
+            },
+            {
+              "cid": 3,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "stage",
+              "seqno": 1
+            },
+            {
+              "cid": 6,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "idempotency_key",
+              "seqno": 2
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 3
+            }
+          ],
+          "name": "sqlite_autoindex_ai_usage_reservations_2",
+          "origin": "u",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        }
+      ],
+      "name": "ai_usage_reservations",
+      "primary_key": [
+        "id"
+      ],
+      "sql": "CREATE TABLE ai_usage_reservations ( id INTEGER PRIMARY KEY, reservation_uid TEXT NOT NULL UNIQUE, task_id INTEGER NOT NULL REFERENCES workflow_batches(id) ON DELETE CASCADE, stage TEXT NOT NULL CHECK (stage IN ( 'title_translation','fast_semantic','strong_semantic','abstract_translation' )), provider TEXT NOT NULL, model_name TEXT NOT NULL, idempotency_key TEXT NOT NULL, fencing_token INTEGER NOT NULL CHECK (fencing_token > 0), reserved_calls INTEGER NOT NULL DEFAULT 1 CHECK (reserved_calls > 0), reserved_input_tokens INTEGER NOT NULL CHECK (reserved_input_tokens > 0), reserved_output_tokens INTEGER NOT NULL CHECK (reserved_output_tokens > 0), reserved_cost_microunits INTEGER NOT NULL CHECK (reserved_cost_microunits > 0), actual_input_tokens INTEGER, actual_output_tokens INTEGER, actual_cost_microunits INTEGER, usage_missing INTEGER NOT NULL DEFAULT 0 CHECK (usage_missing IN (0,1)), status TEXT NOT NULL CHECK ( status IN ('reserved','settled','failed','released') ), error_type TEXT, reserved_at TEXT NOT NULL, settled_at TEXT, updated_at TEXT NOT NULL, UNIQUE(task_id,stage,idempotency_key) )"
+    },
+    {
+      "check_constraints": [
+        "CHECK (provisional_decision IN ( 'include','borderline','exclude' ))",
+        "CHECK (calibration_status='uncalibrated')",
+        "CHECK (publishable=0)"
+      ],
+      "columns": [
+        {
+          "cid": 0,
+          "default": null,
+          "name": "id",
+          "not_null": false,
+          "primary_key_position": 1,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 1,
+          "default": null,
+          "name": "paper_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 2,
+          "default": null,
+          "name": "workflow_batch_id",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 3,
+          "default": null,
+          "name": "domain_evidence_run_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 4,
+          "default": null,
+          "name": "fast_semantic_run_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 5,
+          "default": null,
+          "name": "strong_semantic_run_id",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 6,
+          "default": null,
+          "name": "input_fingerprint",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 7,
+          "default": null,
+          "name": "escalation_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 8,
+          "default": null,
+          "name": "composite_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 9,
+          "default": null,
+          "name": "missed_priority_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 10,
+          "default": null,
+          "name": "policy_version",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 11,
+          "default": null,
+          "name": "provisional_decision",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 12,
+          "default": null,
+          "name": "uncertainty_level",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 13,
+          "default": null,
+          "name": "conflict_types_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 14,
+          "default": null,
+          "name": "calibration_status",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 15,
+          "default": "0",
+          "name": "publishable",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 16,
+          "default": null,
+          "name": "created_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "strong_semantic_run_id",
+          "id": 0,
+          "match": "NONE",
+          "on_delete": "NO ACTION",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "domain_semantic_runs",
+          "to": "id"
+        },
+        {
+          "from": "fast_semantic_run_id",
+          "id": 1,
+          "match": "NONE",
+          "on_delete": "NO ACTION",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "domain_semantic_runs",
+          "to": "id"
+        },
+        {
+          "from": "domain_evidence_run_id",
+          "id": 2,
+          "match": "NONE",
+          "on_delete": "CASCADE",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "domain_evidence_runs",
+          "to": "id"
+        },
+        {
+          "from": "paper_id",
+          "id": 3,
+          "match": "NONE",
+          "on_delete": "CASCADE",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "papers",
+          "to": "id"
+        }
+      ],
+      "indexes": [
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "paper_id",
+              "seqno": 0
+            },
+            {
+              "cid": 16,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "created_at",
+              "seqno": 1
+            },
+            {
+              "cid": 0,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "id",
+              "seqno": 2
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 3
+            }
+          ],
+          "name": "idx_domain_composite_paper",
+          "origin": "c",
+          "partial": false,
+          "sql": "CREATE INDEX idx_domain_composite_paper ON domain_composite_decisions(paper_id,created_at,id)",
+          "unique": false
+        },
+        {
+          "columns": [
+            {
+              "cid": 6,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "input_fingerprint",
+              "seqno": 0
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 1
+            }
+          ],
+          "name": "sqlite_autoindex_domain_composite_decisions_1",
+          "origin": "u",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        }
+      ],
+      "name": "domain_composite_decisions",
+      "primary_key": [
+        "id"
+      ],
+      "sql": "CREATE TABLE domain_composite_decisions ( id INTEGER PRIMARY KEY, paper_id INTEGER NOT NULL REFERENCES papers(id) ON DELETE CASCADE, workflow_batch_id INTEGER, domain_evidence_run_id INTEGER NOT NULL REFERENCES domain_evidence_runs(id) ON DELETE CASCADE, fast_semantic_run_id INTEGER NOT NULL REFERENCES domain_semantic_runs(id), strong_semantic_run_id INTEGER REFERENCES domain_semantic_runs(id), input_fingerprint TEXT NOT NULL UNIQUE, escalation_json TEXT NOT NULL, composite_json TEXT NOT NULL, missed_priority_json TEXT NOT NULL, policy_version TEXT NOT NULL, provisional_decision TEXT NOT NULL CHECK (provisional_decision IN ( 'include','borderline','exclude' )), uncertainty_level TEXT NOT NULL, conflict_types_json TEXT NOT NULL, calibration_status TEXT NOT NULL CHECK (calibration_status='uncalibrated'), publishable INTEGER NOT NULL DEFAULT 0 CHECK (publishable=0), created_at TEXT NOT NULL )"
+    },
+    {
+      "check_constraints": [
+        "CHECK (rule_evidence_tier IN ( 'strong_positive','moderate_positive','weak_or_mixed','little_evidence' ))",
+        "CHECK (opaque_title IN (0,1))",
+        "CHECK (opacity_level IN ('low','medium','high'))",
+        "CHECK (review_priority_tier IN ( 'urgent','high','normal','low' ))",
+        "CHECK (publishable IN (0,1))"
+      ],
+      "columns": [
+        {
+          "cid": 0,
+          "default": null,
+          "name": "id",
+          "not_null": false,
+          "primary_key_position": 1,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 1,
+          "default": null,
+          "name": "paper_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 2,
+          "default": null,
+          "name": "workflow_batch_id",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 3,
+          "default": null,
+          "name": "profile_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 4,
+          "default": null,
+          "name": "ontology_version",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 5,
+          "default": null,
+          "name": "subject_code_version",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 6,
+          "default": null,
+          "name": "journal_prior_version",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 7,
+          "default": null,
+          "name": "scoring_version",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 8,
+          "default": null,
+          "name": "config_bundle_sha256",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 9,
+          "default": null,
+          "name": "application_version",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 10,
+          "default": null,
+          "name": "ontology_evidence_score",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "REAL"
+        },
+        {
+          "cid": 11,
+          "default": null,
+          "name": "subject_code_evidence_score",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "REAL"
+        },
+        {
+          "cid": 12,
+          "default": null,
+          "name": "journal_prior_evidence_score",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "REAL"
+        },
+        {
+          "cid": 13,
+          "default": null,
+          "name": "exclusion_evidence_penalty",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "REAL"
+        },
+        {
+          "cid": 14,
+          "default": null,
+          "name": "concept_diversity_score",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "REAL"
+        },
+        {
+          "cid": 15,
+          "default": null,
+          "name": "metadata_confidence",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "REAL"
+        },
+        {
+          "cid": 16,
+          "default": null,
+          "name": "provisional_rule_score",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "REAL"
+        },
+        {
+          "cid": 17,
+          "default": null,
+          "name": "rule_evidence_tier",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 18,
+          "default": null,
+          "name": "opaque_title",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 19,
+          "default": null,
+          "name": "opacity_level",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 20,
+          "default": null,
+          "name": "review_priority_tier",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 21,
+          "default": null,
+          "name": "review_priority_score",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "REAL"
+        },
+        {
+          "cid": 22,
+          "default": null,
+          "name": "evidence_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 23,
+          "default": "0",
+          "name": "publishable",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 24,
+          "default": null,
+          "name": "created_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "paper_id",
+          "id": 0,
+          "match": "NONE",
+          "on_delete": "CASCADE",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "papers",
+          "to": "id"
+        }
+      ],
+      "indexes": [
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "paper_id",
+              "seqno": 0
+            },
+            {
+              "cid": 2,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "workflow_batch_id",
+              "seqno": 1
+            },
+            {
+              "cid": 8,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "config_bundle_sha256",
+              "seqno": 2
+            },
+            {
+              "cid": 7,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "scoring_version",
+              "seqno": 3
+            },
+            {
+              "cid": 24,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "created_at",
+              "seqno": 4
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 5
+            }
+          ],
+          "name": "idx_domain_evidence_identity",
+          "origin": "c",
+          "partial": false,
+          "sql": "CREATE INDEX idx_domain_evidence_identity ON domain_evidence_runs( paper_id,workflow_batch_id,config_bundle_sha256,scoring_version,created_at )",
+          "unique": false
+        },
+        {
+          "columns": [
+            {
+              "cid": 20,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "review_priority_tier",
+              "seqno": 0
+            },
+            {
+              "cid": 21,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "review_priority_score",
+              "seqno": 1
+            },
+            {
+              "cid": 24,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "created_at",
+              "seqno": 2
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 3
+            }
+          ],
+          "name": "idx_domain_evidence_priority",
+          "origin": "c",
+          "partial": false,
+          "sql": "CREATE INDEX idx_domain_evidence_priority ON domain_evidence_runs(review_priority_tier,review_priority_score,created_at)",
+          "unique": false
+        }
+      ],
+      "name": "domain_evidence_runs",
+      "primary_key": [
+        "id"
+      ],
+      "sql": "CREATE TABLE domain_evidence_runs ( id INTEGER PRIMARY KEY, paper_id INTEGER NOT NULL REFERENCES papers(id) ON DELETE CASCADE, workflow_batch_id INTEGER, profile_id TEXT NOT NULL, ontology_version TEXT NOT NULL, subject_code_version TEXT NOT NULL, journal_prior_version TEXT NOT NULL, scoring_version TEXT NOT NULL, config_bundle_sha256 TEXT NOT NULL, application_version TEXT NOT NULL, ontology_evidence_score REAL, subject_code_evidence_score REAL, journal_prior_evidence_score REAL, exclusion_evidence_penalty REAL, concept_diversity_score REAL, metadata_confidence REAL NOT NULL, provisional_rule_score REAL, rule_evidence_tier TEXT NOT NULL CHECK (rule_evidence_tier IN ( 'strong_positive','moderate_positive','weak_or_mixed','little_evidence' )), opaque_title INTEGER NOT NULL CHECK (opaque_title IN (0,1)), opacity_level TEXT NOT NULL CHECK (opacity_level IN ('low','medium','high')), review_priority_tier TEXT NOT NULL CHECK (review_priority_tier IN ( 'urgent','high','normal','low' )), review_priority_score REAL, evidence_json TEXT NOT NULL, publishable INTEGER NOT NULL DEFAULT 0 CHECK (publishable IN (0,1)), created_at TEXT NOT NULL )"
+    },
+    {
+      "check_constraints": [
+        "CHECK (run_role IN ('fast','strong_review'))",
+        "CHECK (decision IN ('include','borderline','exclude'))",
+        "CHECK (education_is_core IN (0,1))",
+        "CHECK (economics_mechanism_present IN (0,1))",
+        "CHECK (suspected_false_friend IN (0,1))",
+        "CHECK (succeeded IN (0,1))"
+      ],
+      "columns": [
+        {
+          "cid": 0,
+          "default": null,
+          "name": "id",
+          "not_null": false,
+          "primary_key_position": 1,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 1,
+          "default": null,
+          "name": "paper_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 2,
+          "default": null,
+          "name": "workflow_batch_id",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 3,
+          "default": null,
+          "name": "domain_evidence_run_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 4,
+          "default": null,
+          "name": "profile_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 5,
+          "default": null,
+          "name": "run_role",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 6,
+          "default": null,
+          "name": "input_fingerprint",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 7,
+          "default": null,
+          "name": "input_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 8,
+          "default": null,
+          "name": "prompt_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 9,
+          "default": null,
+          "name": "prompt_version",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 10,
+          "default": null,
+          "name": "system_prompt_sha256",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 11,
+          "default": null,
+          "name": "user_prompt_sha256",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 12,
+          "default": null,
+          "name": "model_provider",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 13,
+          "default": null,
+          "name": "model_name",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 14,
+          "default": null,
+          "name": "engine_version",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 15,
+          "default": null,
+          "name": "escalation_policy_version",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 16,
+          "default": null,
+          "name": "parent_fast_run_id",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 17,
+          "default": null,
+          "name": "result_json",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 18,
+          "default": null,
+          "name": "semantic_score",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "REAL"
+        },
+        {
+          "cid": 19,
+          "default": null,
+          "name": "decision",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 20,
+          "default": null,
+          "name": "confidence",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "REAL"
+        },
+        {
+          "cid": 21,
+          "default": null,
+          "name": "education_is_core",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 22,
+          "default": null,
+          "name": "economics_mechanism_present",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 23,
+          "default": null,
+          "name": "information_sufficiency",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 24,
+          "default": null,
+          "name": "title_evidence_sufficiency",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 25,
+          "default": null,
+          "name": "suspected_false_friend",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 26,
+          "default": null,
+          "name": "adjacent_domain",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 27,
+          "default": null,
+          "name": "succeeded",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 28,
+          "default": null,
+          "name": "failure_type",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 29,
+          "default": null,
+          "name": "failure_message",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 30,
+          "default": null,
+          "name": "input_tokens",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 31,
+          "default": null,
+          "name": "output_tokens",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 32,
+          "default": null,
+          "name": "estimated_cost",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "REAL"
+        },
+        {
+          "cid": 33,
+          "default": null,
+          "name": "created_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "parent_fast_run_id",
+          "id": 0,
+          "match": "NONE",
+          "on_delete": "NO ACTION",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "domain_semantic_runs",
+          "to": "id"
+        },
+        {
+          "from": "domain_evidence_run_id",
+          "id": 1,
+          "match": "NONE",
+          "on_delete": "CASCADE",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "domain_evidence_runs",
+          "to": "id"
+        },
+        {
+          "from": "paper_id",
+          "id": 2,
+          "match": "NONE",
+          "on_delete": "CASCADE",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "papers",
+          "to": "id"
+        }
+      ],
+      "indexes": [
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "paper_id",
+              "seqno": 0
+            },
+            {
+              "cid": 5,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "run_role",
+              "seqno": 1
+            },
+            {
+              "cid": 33,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "created_at",
+              "seqno": 2
+            },
+            {
+              "cid": 0,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "id",
+              "seqno": 3
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 4
+            }
+          ],
+          "name": "idx_domain_semantic_paper",
+          "origin": "c",
+          "partial": false,
+          "sql": "CREATE INDEX idx_domain_semantic_paper ON domain_semantic_runs(paper_id,run_role,created_at,id)",
+          "unique": false
+        },
+        {
+          "columns": [
+            {
+              "cid": 6,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "input_fingerprint",
+              "seqno": 0
+            },
+            {
+              "cid": 5,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "run_role",
+              "seqno": 1
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 2
+            }
+          ],
+          "name": "uq_domain_semantic_success",
+          "origin": "c",
+          "partial": true,
+          "sql": "CREATE UNIQUE INDEX uq_domain_semantic_success ON domain_semantic_runs(input_fingerprint,run_role) WHERE succeeded=1",
+          "unique": true
+        }
+      ],
+      "name": "domain_semantic_runs",
+      "primary_key": [
+        "id"
+      ],
+      "sql": "CREATE TABLE domain_semantic_runs ( id INTEGER PRIMARY KEY, paper_id INTEGER NOT NULL REFERENCES papers(id) ON DELETE CASCADE, workflow_batch_id INTEGER, domain_evidence_run_id INTEGER NOT NULL REFERENCES domain_evidence_runs(id) ON DELETE CASCADE, profile_id TEXT NOT NULL, run_role TEXT NOT NULL CHECK (run_role IN ('fast','strong_review')), input_fingerprint TEXT NOT NULL, input_json TEXT NOT NULL, prompt_id TEXT NOT NULL, prompt_version TEXT NOT NULL, system_prompt_sha256 TEXT NOT NULL, user_prompt_sha256 TEXT NOT NULL, model_provider TEXT NOT NULL, model_name TEXT NOT NULL, engine_version TEXT NOT NULL, escalation_policy_version TEXT NOT NULL, parent_fast_run_id INTEGER REFERENCES domain_semantic_runs(id), result_json TEXT, semantic_score REAL, decision TEXT CHECK (decision IN ('include','borderline','exclude')), confidence REAL, education_is_core INTEGER CHECK (education_is_core IN (0,1)), economics_mechanism_present INTEGER CHECK (economics_mechanism_present IN (0,1)), information_sufficiency TEXT, title_evidence_sufficiency TEXT, suspected_false_friend INTEGER CHECK (suspected_false_friend IN (0,1)), adjacent_domain TEXT, succeeded INTEGER NOT NULL CHECK (succeeded IN (0,1)), failure_type TEXT, failure_message TEXT, input_tokens INTEGER, output_tokens INTEGER, estimated_cost REAL, created_at TEXT NOT NULL )"
+    },
+    {
+      "check_constraints": [],
+      "columns": [
+        {
+          "cid": 0,
+          "default": null,
+          "name": "id",
+          "not_null": false,
+          "primary_key_position": 1,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 1,
+          "default": null,
+          "name": "name",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 2,
+          "default": null,
+          "name": "short_name",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 3,
+          "default": null,
+          "name": "issn",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 4,
+          "default": null,
+          "name": "eissn",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 5,
+          "default": null,
+          "name": "rank",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 6,
+          "default": null,
+          "name": "rank_source",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 7,
+          "default": null,
+          "name": "priority",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 8,
+          "default": "1",
+          "name": "enabled",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 9,
+          "default": null,
+          "name": "last_synced_at",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 10,
+          "default": null,
+          "name": "created_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 11,
+          "default": null,
+          "name": "updated_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        }
+      ],
+      "foreign_keys": [],
+      "indexes": [
+        {
+          "columns": [
+            {
+              "cid": 2,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "short_name",
+              "seqno": 0
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 1
+            }
+          ],
+          "name": "sqlite_autoindex_journals_1",
+          "origin": "u",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        }
+      ],
+      "name": "journals",
+      "primary_key": [
+        "id"
+      ],
+      "sql": "CREATE TABLE journals ( id INTEGER PRIMARY KEY, name TEXT NOT NULL, short_name TEXT NOT NULL UNIQUE, issn TEXT NOT NULL, eissn TEXT, rank INTEGER, rank_source TEXT, priority TEXT NOT NULL, enabled INTEGER NOT NULL DEFAULT 1, last_synced_at TEXT, created_at TEXT NOT NULL, updated_at TEXT NOT NULL )"
+    },
+    {
+      "check_constraints": [
+        "CHECK (resolution IN ( 'resolved', 'absent_at_source', 'unresolved' ))"
+      ],
+      "columns": [
+        {
+          "cid": 0,
+          "default": null,
+          "name": "id",
+          "not_null": false,
+          "primary_key_position": 1,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 1,
+          "default": null,
+          "name": "paper_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 2,
+          "default": null,
+          "name": "source_name",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 3,
+          "default": null,
+          "name": "source_record_url",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 4,
+          "default": null,
+          "name": "extraction_method",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 5,
+          "default": null,
+          "name": "resolution",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 6,
+          "default": "'[]'",
+          "name": "codes_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 7,
+          "default": "''",
+          "name": "codes_normalized",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 8,
+          "default": null,
+          "name": "raw_evidence",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 9,
+          "default": null,
+          "name": "http_status",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 10,
+          "default": null,
+          "name": "failure_reason",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 11,
+          "default": null,
+          "name": "observed_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "paper_id",
+          "id": 0,
+          "match": "NONE",
+          "on_delete": "CASCADE",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "papers",
+          "to": "id"
+        }
+      ],
+      "indexes": [
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "paper_id",
+              "seqno": 0
+            },
+            {
+              "cid": 2,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "source_name",
+              "seqno": 1
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 2
+            }
+          ],
+          "name": "idx_jel_observations_paper",
+          "origin": "c",
+          "partial": false,
+          "sql": "CREATE INDEX idx_jel_observations_paper ON paper_jel_observations(paper_id, source_name)",
+          "unique": false
+        },
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "paper_id",
+              "seqno": 0
+            },
+            {
+              "cid": 2,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "source_name",
+              "seqno": 1
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 2
+            }
+          ],
+          "name": "idx_jel_observations_paper_source",
+          "origin": "c",
+          "partial": false,
+          "sql": "CREATE UNIQUE INDEX idx_jel_observations_paper_source ON paper_jel_observations(paper_id, source_name)",
+          "unique": true
+        },
+        {
+          "columns": [
+            {
+              "cid": 5,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "resolution",
+              "seqno": 0
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 1
+            }
+          ],
+          "name": "idx_jel_observations_resolution",
+          "origin": "c",
+          "partial": false,
+          "sql": "CREATE INDEX idx_jel_observations_resolution ON paper_jel_observations(resolution)",
+          "unique": false
+        }
+      ],
+      "name": "paper_jel_observations",
+      "primary_key": [
+        "id"
+      ],
+      "sql": "CREATE TABLE paper_jel_observations ( id INTEGER PRIMARY KEY, paper_id INTEGER NOT NULL REFERENCES papers(id) ON DELETE CASCADE, source_name TEXT NOT NULL, source_record_url TEXT, -- How the codes were obtained. 'structured_metadata' means the source -- exposed them as a machine-readable field; 'structured_page' means they -- were read verbatim from a source-rendered classification line. Neither -- involves any model, inference, or title-based guesswork: a code that was -- not published by the source is never written here. extraction_method TEXT NOT NULL, -- 'resolved' -> source published codes for this paper -- 'absent_at_source' -> source was reached and has no codes for this paper -- 'unresolved' -> source could not be reached or the paper was not found resolution TEXT NOT NULL CHECK (resolution IN ( 'resolved', 'absent_at_source', 'unresolved' )), codes_json TEXT NOT NULL DEFAULT '[]', codes_normalized TEXT NOT NULL DEFAULT '', raw_evidence TEXT, http_status INTEGER, failure_reason TEXT, observed_at TEXT NOT NULL )"
+    },
+    {
+      "check_constraints": [
+        "CHECK (is_current IN (0,1))",
+        "CHECK ( decision IN ('accepted','ignored','supplemented','conflict','degraded_prevention') )"
+      ],
+      "columns": [
+        {
+          "cid": 0,
+          "default": null,
+          "name": "id",
+          "not_null": false,
+          "primary_key_position": 1,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 1,
+          "default": null,
+          "name": "paper_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 2,
+          "default": null,
+          "name": "field_name",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 3,
+          "default": null,
+          "name": "active_value_hash",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 4,
+          "default": null,
+          "name": "source_name",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 5,
+          "default": null,
+          "name": "source_record_id",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 6,
+          "default": null,
+          "name": "source_priority",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 7,
+          "default": null,
+          "name": "source_observed_at",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 8,
+          "default": null,
+          "name": "fetched_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 9,
+          "default": "0",
+          "name": "is_current",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 10,
+          "default": "'[]'",
+          "name": "quality_flags_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 11,
+          "default": null,
+          "name": "decision",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 12,
+          "default": null,
+          "name": "replacement_reason",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 13,
+          "default": null,
+          "name": "previous_provenance_id",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 14,
+          "default": null,
+          "name": "created_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "previous_provenance_id",
+          "id": 0,
+          "match": "NONE",
+          "on_delete": "NO ACTION",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "paper_metadata_provenance",
+          "to": "id"
+        },
+        {
+          "from": "paper_id",
+          "id": 1,
+          "match": "NONE",
+          "on_delete": "CASCADE",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "papers",
+          "to": "id"
+        }
+      ],
+      "indexes": [
+        {
+          "columns": [
+            {
+              "cid": 4,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "source_name",
+              "seqno": 0
+            },
+            {
+              "cid": 2,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "field_name",
+              "seqno": 1
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 2
+            }
+          ],
+          "name": "idx_paper_metadata_provenance_source",
+          "origin": "c",
+          "partial": false,
+          "sql": "CREATE INDEX idx_paper_metadata_provenance_source ON paper_metadata_provenance(source_name,field_name)",
+          "unique": false
+        },
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "paper_id",
+              "seqno": 0
+            },
+            {
+              "cid": 2,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "field_name",
+              "seqno": 1
+            },
+            {
+              "cid": 4,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "source_name",
+              "seqno": 2
+            },
+            {
+              "cid": 3,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "active_value_hash",
+              "seqno": 3
+            },
+            {
+              "cid": 11,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "decision",
+              "seqno": 4
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 5
+            }
+          ],
+          "name": "sqlite_autoindex_paper_metadata_provenance_1",
+          "origin": "u",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        },
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "paper_id",
+              "seqno": 0
+            },
+            {
+              "cid": 2,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "field_name",
+              "seqno": 1
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 2
+            }
+          ],
+          "name": "uq_paper_metadata_current_field",
+          "origin": "c",
+          "partial": true,
+          "sql": "CREATE UNIQUE INDEX uq_paper_metadata_current_field ON paper_metadata_provenance(paper_id,field_name) WHERE is_current=1",
+          "unique": true
+        }
+      ],
+      "name": "paper_metadata_provenance",
+      "primary_key": [
+        "id"
+      ],
+      "sql": "CREATE TABLE paper_metadata_provenance ( id INTEGER PRIMARY KEY, paper_id INTEGER NOT NULL REFERENCES papers(id) ON DELETE CASCADE, field_name TEXT NOT NULL, active_value_hash TEXT, source_name TEXT NOT NULL, source_record_id TEXT, source_priority INTEGER NOT NULL, source_observed_at TEXT, fetched_at TEXT NOT NULL, is_current INTEGER NOT NULL DEFAULT 0 CHECK (is_current IN (0,1)), quality_flags_json TEXT NOT NULL DEFAULT '[]', decision TEXT NOT NULL CHECK ( decision IN ('accepted','ignored','supplemented','conflict','degraded_prevention') ), replacement_reason TEXT, previous_provenance_id INTEGER REFERENCES paper_metadata_provenance(id), created_at TEXT NOT NULL, UNIQUE(paper_id,field_name,source_name,active_value_hash,decision) )"
+    },
+    {
+      "check_constraints": [
+        "CHECK (status IN ( 'pending', 'processing', 'abstract_ready', 'needs_retry', 'needs_manual_abstract', 'classification_ready', 'classified', 'failed' ))",
+        "CHECK (human_decision IN ('undecided', 'related', 'irrelevant', 'uncertain'))"
+      ],
+      "columns": [
+        {
+          "cid": 0,
+          "default": null,
+          "name": "id",
+          "not_null": false,
+          "primary_key_position": 1,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 1,
+          "default": null,
+          "name": "sync_run_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 2,
+          "default": null,
+          "name": "paper_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 3,
+          "default": "'pending'",
+          "name": "status",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 4,
+          "default": "'pending'",
+          "name": "stage",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 5,
+          "default": "0",
+          "name": "attempts",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 6,
+          "default": "'{}'",
+          "name": "classification_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 7,
+          "default": null,
+          "name": "model_name",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 8,
+          "default": null,
+          "name": "prompt_version",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 9,
+          "default": null,
+          "name": "classified_at",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 10,
+          "default": "'{}'",
+          "name": "title_translation_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 11,
+          "default": "'{}'",
+          "name": "abstract_retrieval_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 12,
+          "default": "'undecided'",
+          "name": "human_decision",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 13,
+          "default": null,
+          "name": "human_note",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 14,
+          "default": null,
+          "name": "human_decided_at",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 15,
+          "default": null,
+          "name": "error_type",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 16,
+          "default": null,
+          "name": "error_message",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 17,
+          "default": null,
+          "name": "created_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 18,
+          "default": null,
+          "name": "updated_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "paper_id",
+          "id": 0,
+          "match": "NONE",
+          "on_delete": "CASCADE",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "papers",
+          "to": "id"
+        },
+        {
+          "from": "sync_run_id",
+          "id": 1,
+          "match": "NONE",
+          "on_delete": "CASCADE",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "sync_runs",
+          "to": "id"
+        }
+      ],
+      "indexes": [
+        {
+          "columns": [
+            {
+              "cid": 2,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "paper_id",
+              "seqno": 0
+            },
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "sync_run_id",
+              "seqno": 1
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 2
+            }
+          ],
+          "name": "idx_paper_processing_status_paper",
+          "origin": "c",
+          "partial": false,
+          "sql": "CREATE INDEX idx_paper_processing_status_paper ON paper_processing_status(paper_id, sync_run_id)",
+          "unique": false
+        },
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "sync_run_id",
+              "seqno": 0
+            },
+            {
+              "cid": 3,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "status",
+              "seqno": 1
+            },
+            {
+              "cid": 2,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "paper_id",
+              "seqno": 2
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 3
+            }
+          ],
+          "name": "idx_paper_processing_status_run",
+          "origin": "c",
+          "partial": false,
+          "sql": "CREATE INDEX idx_paper_processing_status_run ON paper_processing_status(sync_run_id, status, paper_id)",
+          "unique": false
+        },
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "sync_run_id",
+              "seqno": 0
+            },
+            {
+              "cid": 2,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "paper_id",
+              "seqno": 1
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 2
+            }
+          ],
+          "name": "sqlite_autoindex_paper_processing_status_1",
+          "origin": "u",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        }
+      ],
+      "name": "paper_processing_status",
+      "primary_key": [
+        "id"
+      ],
+      "sql": "CREATE TABLE paper_processing_status ( id INTEGER PRIMARY KEY, sync_run_id INTEGER NOT NULL REFERENCES sync_runs(id) ON DELETE CASCADE, paper_id INTEGER NOT NULL REFERENCES papers(id) ON DELETE CASCADE, status TEXT NOT NULL DEFAULT 'pending' CHECK (status IN ( 'pending', 'processing', 'abstract_ready', 'needs_retry', 'needs_manual_abstract', 'classification_ready', 'classified', 'failed' )), stage TEXT NOT NULL DEFAULT 'pending', attempts INTEGER NOT NULL DEFAULT 0, classification_json TEXT NOT NULL DEFAULT '{}', model_name TEXT, prompt_version TEXT, classified_at TEXT, title_translation_json TEXT NOT NULL DEFAULT '{}', abstract_retrieval_json TEXT NOT NULL DEFAULT '{}', human_decision TEXT NOT NULL DEFAULT 'undecided' CHECK (human_decision IN ('undecided', 'related', 'irrelevant', 'uncertain')), human_note TEXT, human_decided_at TEXT, error_type TEXT, error_message TEXT, created_at TEXT NOT NULL, updated_at TEXT NOT NULL, UNIQUE(sync_run_id, paper_id) )"
+    },
+    {
+      "check_constraints": [],
+      "columns": [
+        {
+          "cid": 0,
+          "default": null,
+          "name": "id",
+          "not_null": false,
+          "primary_key_position": 1,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 1,
+          "default": null,
+          "name": "profile_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 2,
+          "default": null,
+          "name": "paper_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 3,
+          "default": null,
+          "name": "decision",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 4,
+          "default": null,
+          "name": "screening_basis",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 5,
+          "default": "'{}'",
+          "name": "classification_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 6,
+          "default": null,
+          "name": "model_name",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 7,
+          "default": null,
+          "name": "prompt_version",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 8,
+          "default": null,
+          "name": "input_fingerprint",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 9,
+          "default": null,
+          "name": "source_run_id",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 10,
+          "default": null,
+          "name": "assessed_at",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 11,
+          "default": null,
+          "name": "updated_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "source_run_id",
+          "id": 0,
+          "match": "NONE",
+          "on_delete": "SET NULL",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "sync_runs",
+          "to": "id"
+        },
+        {
+          "from": "paper_id",
+          "id": 1,
+          "match": "NONE",
+          "on_delete": "CASCADE",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "papers",
+          "to": "id"
+        }
+      ],
+      "indexes": [
+        {
+          "columns": [
+            {
+              "cid": 2,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "paper_id",
+              "seqno": 0
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 1
+            }
+          ],
+          "name": "idx_profile_assessments_paper",
+          "origin": "c",
+          "partial": false,
+          "sql": "CREATE INDEX idx_profile_assessments_paper ON paper_profile_assessments(paper_id)",
+          "unique": false
+        },
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "profile_id",
+              "seqno": 0
+            },
+            {
+              "cid": 3,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "decision",
+              "seqno": 1
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 2
+            }
+          ],
+          "name": "idx_profile_assessments_profile",
+          "origin": "c",
+          "partial": false,
+          "sql": "CREATE INDEX idx_profile_assessments_profile ON paper_profile_assessments(profile_id, decision)",
+          "unique": false
+        },
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "profile_id",
+              "seqno": 0
+            },
+            {
+              "cid": 2,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "paper_id",
+              "seqno": 1
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 2
+            }
+          ],
+          "name": "sqlite_autoindex_paper_profile_assessments_1",
+          "origin": "u",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        }
+      ],
+      "name": "paper_profile_assessments",
+      "primary_key": [
+        "id"
+      ],
+      "sql": "CREATE TABLE paper_profile_assessments ( id INTEGER PRIMARY KEY, profile_id TEXT NOT NULL, paper_id INTEGER NOT NULL REFERENCES papers(id) ON DELETE CASCADE, decision TEXT, screening_basis TEXT, classification_json TEXT NOT NULL DEFAULT '{}', model_name TEXT, prompt_version TEXT, input_fingerprint TEXT, source_run_id INTEGER REFERENCES sync_runs(id) ON DELETE SET NULL, assessed_at TEXT, updated_at TEXT NOT NULL, UNIQUE(profile_id, paper_id) )"
+    },
+    {
+      "check_constraints": [
+        "CHECK (human_decision IN ('undecided', 'related', 'irrelevant', 'uncertain'))"
+      ],
+      "columns": [
+        {
+          "cid": 0,
+          "default": null,
+          "name": "id",
+          "not_null": false,
+          "primary_key_position": 1,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 1,
+          "default": null,
+          "name": "profile_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 2,
+          "default": null,
+          "name": "paper_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 3,
+          "default": "'undecided'",
+          "name": "human_decision",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 4,
+          "default": null,
+          "name": "human_note",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 5,
+          "default": null,
+          "name": "decided_at",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 6,
+          "default": null,
+          "name": "updated_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "paper_id",
+          "id": 0,
+          "match": "NONE",
+          "on_delete": "CASCADE",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "papers",
+          "to": "id"
+        }
+      ],
+      "indexes": [
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "profile_id",
+              "seqno": 0
+            },
+            {
+              "cid": 3,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "human_decision",
+              "seqno": 1
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 2
+            }
+          ],
+          "name": "idx_profile_reviews_profile",
+          "origin": "c",
+          "partial": false,
+          "sql": "CREATE INDEX idx_profile_reviews_profile ON paper_profile_reviews(profile_id, human_decision)",
+          "unique": false
+        },
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "profile_id",
+              "seqno": 0
+            },
+            {
+              "cid": 2,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "paper_id",
+              "seqno": 1
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 2
+            }
+          ],
+          "name": "sqlite_autoindex_paper_profile_reviews_1",
+          "origin": "u",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        }
+      ],
+      "name": "paper_profile_reviews",
+      "primary_key": [
+        "id"
+      ],
+      "sql": "CREATE TABLE paper_profile_reviews ( id INTEGER PRIMARY KEY, profile_id TEXT NOT NULL, paper_id INTEGER NOT NULL REFERENCES papers(id) ON DELETE CASCADE, human_decision TEXT NOT NULL DEFAULT 'undecided' CHECK (human_decision IN ('undecided', 'related', 'irrelevant', 'uncertain')), human_note TEXT, decided_at TEXT, updated_at TEXT NOT NULL, UNIQUE(profile_id, paper_id) )"
+    },
+    {
+      "check_constraints": [
+        "CHECK (validation_status IN ('valid','invalid','needs_recheck','recheck_failed','parse_failed'))",
+        "CHECK (stale IN (0,1))"
+      ],
+      "columns": [
+        {
+          "cid": 0,
+          "default": null,
+          "name": "id",
+          "not_null": false,
+          "primary_key_position": 1,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 1,
+          "default": null,
+          "name": "paper_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 2,
+          "default": null,
+          "name": "task_id",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 3,
+          "default": null,
+          "name": "input_hash",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 4,
+          "default": null,
+          "name": "model_decision",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 5,
+          "default": null,
+          "name": "education_centrality",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 6,
+          "default": null,
+          "name": "economic_relevance",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 7,
+          "default": null,
+          "name": "evidence_sufficiency",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 8,
+          "default": null,
+          "name": "confidence",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 9,
+          "default": "'[]'",
+          "name": "evidence_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 10,
+          "default": null,
+          "name": "reason",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 11,
+          "default": "'[]'",
+          "name": "topic_tags_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 12,
+          "default": "'medium'",
+          "name": "review_priority",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 13,
+          "default": null,
+          "name": "model_name",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 14,
+          "default": null,
+          "name": "model_identity",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 15,
+          "default": null,
+          "name": "prompt_version",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 16,
+          "default": null,
+          "name": "prompt_hash",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 17,
+          "default": null,
+          "name": "ontology_version",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 18,
+          "default": null,
+          "name": "screened_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 19,
+          "default": "'{}'",
+          "name": "raw_response_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 20,
+          "default": null,
+          "name": "parser_version",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 21,
+          "default": null,
+          "name": "evidence_validation_version",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 22,
+          "default": "'valid'",
+          "name": "validation_status",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 23,
+          "default": "'[]'",
+          "name": "validation_errors_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 24,
+          "default": "0",
+          "name": "stale",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 25,
+          "default": null,
+          "name": "review_decision",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 26,
+          "default": null,
+          "name": "final_model_decision",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 27,
+          "default": null,
+          "name": "disagreement_reason",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 28,
+          "default": "'[]'",
+          "name": "validated_evidence_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 29,
+          "default": null,
+          "name": "review_reason",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 30,
+          "default": null,
+          "name": "review_model_name",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 31,
+          "default": null,
+          "name": "review_prompt_version",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 32,
+          "default": null,
+          "name": "created_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 33,
+          "default": null,
+          "name": "updated_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "task_id",
+          "id": 0,
+          "match": "NONE",
+          "on_delete": "CASCADE",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "workflow_batches",
+          "to": "id"
+        },
+        {
+          "from": "paper_id",
+          "id": 1,
+          "match": "NONE",
+          "on_delete": "CASCADE",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "papers",
+          "to": "id"
+        }
+      ],
+      "indexes": [
+        {
+          "columns": [
+            {
+              "cid": 4,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "model_decision",
+              "seqno": 0
+            },
+            {
+              "cid": 24,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "stale",
+              "seqno": 1
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 2
+            }
+          ],
+          "name": "idx_paper_screenings_decision",
+          "origin": "c",
+          "partial": false,
+          "sql": "CREATE INDEX idx_paper_screenings_decision ON paper_screenings(model_decision, stale)",
+          "unique": false
+        },
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "paper_id",
+              "seqno": 0
+            },
+            {
+              "cid": 24,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "stale",
+              "seqno": 1
+            },
+            {
+              "cid": 0,
+              "coll": "BINARY",
+              "desc": 1,
+              "key": 1,
+              "name": "id",
+              "seqno": 2
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 3
+            }
+          ],
+          "name": "idx_paper_screenings_paper_latest",
+          "origin": "c",
+          "partial": false,
+          "sql": "CREATE INDEX idx_paper_screenings_paper_latest ON paper_screenings(paper_id, stale, id DESC)",
+          "unique": false
+        }
+      ],
+      "name": "paper_screenings",
+      "primary_key": [
+        "id"
+      ],
+      "sql": "CREATE TABLE paper_screenings ( id INTEGER PRIMARY KEY, paper_id INTEGER NOT NULL REFERENCES papers(id) ON DELETE CASCADE, task_id INTEGER REFERENCES workflow_batches(id) ON DELETE CASCADE, input_hash TEXT NOT NULL, model_decision TEXT NOT NULL, education_centrality TEXT, economic_relevance TEXT, evidence_sufficiency TEXT, confidence TEXT, evidence_json TEXT NOT NULL DEFAULT '[]', reason TEXT, topic_tags_json TEXT NOT NULL DEFAULT '[]', review_priority TEXT NOT NULL DEFAULT 'medium', model_name TEXT, model_identity TEXT, prompt_version TEXT, prompt_hash TEXT, ontology_version TEXT, screened_at TEXT NOT NULL, raw_response_json TEXT NOT NULL DEFAULT '{}', parser_version TEXT NOT NULL, evidence_validation_version TEXT NOT NULL, validation_status TEXT NOT NULL DEFAULT 'valid' CHECK (validation_status IN ('valid','invalid','needs_recheck','recheck_failed','parse_failed')), validation_errors_json TEXT NOT NULL DEFAULT '[]', stale INTEGER NOT NULL DEFAULT 0 CHECK (stale IN (0,1)), review_decision TEXT, final_model_decision TEXT, disagreement_reason TEXT, validated_evidence_json TEXT NOT NULL DEFAULT '[]', review_reason TEXT, review_model_name TEXT, review_prompt_version TEXT, created_at TEXT NOT NULL, updated_at TEXT NOT NULL )"
+    },
+    {
+      "check_constraints": [
+        "CHECK (has_human_data IN (0,1))"
+      ],
+      "columns": [
+        {
+          "cid": 0,
+          "default": null,
+          "name": "id",
+          "not_null": false,
+          "primary_key_position": 1,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 1,
+          "default": null,
+          "name": "doi",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 2,
+          "default": null,
+          "name": "fingerprint",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 3,
+          "default": null,
+          "name": "journal_id",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 4,
+          "default": null,
+          "name": "title",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 5,
+          "default": "0",
+          "name": "has_human_data",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 6,
+          "default": null,
+          "name": "archived_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 7,
+          "default": null,
+          "name": "removed_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 8,
+          "default": null,
+          "name": "restored_at",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        }
+      ],
+      "foreign_keys": [],
+      "indexes": [
+        {
+          "columns": [
+            {
+              "cid": 3,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "journal_id",
+              "seqno": 0
+            },
+            {
+              "cid": 7,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "removed_at",
+              "seqno": 1
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 2
+            }
+          ],
+          "name": "idx_paper_tombstones_journal",
+          "origin": "c",
+          "partial": false,
+          "sql": "CREATE INDEX idx_paper_tombstones_journal ON paper_tombstones(journal_id, removed_at)",
+          "unique": false
+        },
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "doi",
+              "seqno": 0
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 1
+            }
+          ],
+          "name": "sqlite_autoindex_paper_tombstones_1",
+          "origin": "u",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        },
+        {
+          "columns": [
+            {
+              "cid": 2,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "fingerprint",
+              "seqno": 0
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 1
+            }
+          ],
+          "name": "sqlite_autoindex_paper_tombstones_2",
+          "origin": "u",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        }
+      ],
+      "name": "paper_tombstones",
+      "primary_key": [
+        "id"
+      ],
+      "sql": "CREATE TABLE paper_tombstones ( id INTEGER PRIMARY KEY, doi TEXT UNIQUE, fingerprint TEXT NOT NULL UNIQUE, journal_id INTEGER, title TEXT NOT NULL, has_human_data INTEGER NOT NULL DEFAULT 0 CHECK (has_human_data IN (0,1)), archived_json TEXT NOT NULL, removed_at TEXT NOT NULL , restored_at TEXT)"
+    },
+    {
+      "check_constraints": [
+        "CHECK (title_translation_status IN ( 'pending', 'ai_generated', 'human_edited', 'unavailable', 'failed' ))",
+        "CHECK (abstract_translation_status IN ( 'pending', 'ai_generated', 'human_edited', 'unavailable', 'failed' ))",
+        "CHECK (title_translation_source IN ('ai_generated', 'human_edited'))",
+        "CHECK (abstract_translation_source IN ('ai_generated', 'human_edited'))"
+      ],
+      "columns": [
+        {
+          "cid": 0,
+          "default": null,
+          "name": "id",
+          "not_null": false,
+          "primary_key_position": 1,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 1,
+          "default": null,
+          "name": "paper_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 2,
+          "default": null,
+          "name": "chinese_title",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 3,
+          "default": null,
+          "name": "chinese_abstract",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 4,
+          "default": "'pending'",
+          "name": "title_translation_status",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 5,
+          "default": "'pending'",
+          "name": "abstract_translation_status",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 6,
+          "default": null,
+          "name": "title_translation_source",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 7,
+          "default": null,
+          "name": "abstract_translation_source",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 8,
+          "default": null,
+          "name": "model_name",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 9,
+          "default": null,
+          "name": "prompt_version",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 10,
+          "default": null,
+          "name": "translated_at",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 11,
+          "default": null,
+          "name": "updated_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 12,
+          "default": null,
+          "name": "source_title_hash",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 13,
+          "default": null,
+          "name": "validation_status",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 14,
+          "default": null,
+          "name": "error_category",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 15,
+          "default": null,
+          "name": "error_message",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 16,
+          "default": null,
+          "name": "source_abstract_hash",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "paper_id",
+          "id": 0,
+          "match": "NONE",
+          "on_delete": "CASCADE",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "papers",
+          "to": "id"
+        }
+      ],
+      "indexes": [
+        {
+          "columns": [
+            {
+              "cid": 4,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "title_translation_status",
+              "seqno": 0
+            },
+            {
+              "cid": 5,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "abstract_translation_status",
+              "seqno": 1
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 2
+            }
+          ],
+          "name": "idx_paper_translations_status",
+          "origin": "c",
+          "partial": false,
+          "sql": "CREATE INDEX idx_paper_translations_status ON paper_translations(title_translation_status, abstract_translation_status)",
+          "unique": false
+        },
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "paper_id",
+              "seqno": 0
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 1
+            }
+          ],
+          "name": "sqlite_autoindex_paper_translations_1",
+          "origin": "u",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        }
+      ],
+      "name": "paper_translations",
+      "primary_key": [
+        "id"
+      ],
+      "sql": "CREATE TABLE paper_translations ( id INTEGER PRIMARY KEY, paper_id INTEGER NOT NULL UNIQUE REFERENCES papers(id) ON DELETE CASCADE, chinese_title TEXT, chinese_abstract TEXT, title_translation_status TEXT NOT NULL DEFAULT 'pending' CHECK (title_translation_status IN ( 'pending', 'ai_generated', 'human_edited', 'unavailable', 'failed' )), abstract_translation_status TEXT NOT NULL DEFAULT 'pending' CHECK (abstract_translation_status IN ( 'pending', 'ai_generated', 'human_edited', 'unavailable', 'failed' )), title_translation_source TEXT CHECK (title_translation_source IN ('ai_generated', 'human_edited')), abstract_translation_source TEXT CHECK (abstract_translation_source IN ('ai_generated', 'human_edited')), model_name TEXT, prompt_version TEXT, translated_at TEXT, updated_at TEXT NOT NULL , source_title_hash TEXT, validation_status TEXT, error_category TEXT, error_message TEXT, source_abstract_hash TEXT)"
+    },
+    {
+      "check_constraints": [],
+      "columns": [
+        {
+          "cid": 0,
+          "default": null,
+          "name": "id",
+          "not_null": false,
+          "primary_key_position": 1,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 1,
+          "default": null,
+          "name": "doi",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 2,
+          "default": null,
+          "name": "fingerprint",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 3,
+          "default": null,
+          "name": "title",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 4,
+          "default": null,
+          "name": "abstract",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 5,
+          "default": "'[]'",
+          "name": "authors_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 6,
+          "default": null,
+          "name": "journal_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 7,
+          "default": null,
+          "name": "publisher",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 8,
+          "default": null,
+          "name": "article_type",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 9,
+          "default": null,
+          "name": "online_date",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 10,
+          "default": null,
+          "name": "issue_date",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 11,
+          "default": null,
+          "name": "volume",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 12,
+          "default": null,
+          "name": "issue",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 13,
+          "default": null,
+          "name": "pages",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 14,
+          "default": null,
+          "name": "source_url",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 15,
+          "default": null,
+          "name": "open_access_url",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 16,
+          "default": "'[]'",
+          "name": "keywords_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 17,
+          "default": "'[]'",
+          "name": "jel_codes_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 18,
+          "default": "'{}'",
+          "name": "source_metadata_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 19,
+          "default": null,
+          "name": "first_seen_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 20,
+          "default": null,
+          "name": "last_seen_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 21,
+          "default": null,
+          "name": "created_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 22,
+          "default": null,
+          "name": "updated_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "journal_id",
+          "id": 0,
+          "match": "NONE",
+          "on_delete": "NO ACTION",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "journals",
+          "to": "id"
+        }
+      ],
+      "indexes": [
+        {
+          "columns": [
+            {
+              "cid": 6,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "journal_id",
+              "seqno": 0
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 1
+            }
+          ],
+          "name": "idx_papers_journal",
+          "origin": "c",
+          "partial": false,
+          "sql": "CREATE INDEX idx_papers_journal ON papers(journal_id)",
+          "unique": false
+        },
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "doi",
+              "seqno": 0
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 1
+            }
+          ],
+          "name": "sqlite_autoindex_papers_1",
+          "origin": "u",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        },
+        {
+          "columns": [
+            {
+              "cid": 2,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "fingerprint",
+              "seqno": 0
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 1
+            }
+          ],
+          "name": "sqlite_autoindex_papers_2",
+          "origin": "u",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        }
+      ],
+      "name": "papers",
+      "primary_key": [
+        "id"
+      ],
+      "sql": "CREATE TABLE papers ( id INTEGER PRIMARY KEY, doi TEXT UNIQUE, fingerprint TEXT NOT NULL UNIQUE, title TEXT NOT NULL, abstract TEXT, authors_json TEXT NOT NULL DEFAULT '[]', journal_id INTEGER NOT NULL REFERENCES journals(id), publisher TEXT, article_type TEXT, online_date TEXT, issue_date TEXT, volume TEXT, issue TEXT, pages TEXT, source_url TEXT, open_access_url TEXT, keywords_json TEXT NOT NULL DEFAULT '[]', jel_codes_json TEXT NOT NULL DEFAULT '[]', source_metadata_json TEXT NOT NULL DEFAULT '{}', first_seen_at TEXT NOT NULL, last_seen_at TEXT NOT NULL, created_at TEXT NOT NULL, updated_at TEXT NOT NULL )"
+    },
+    {
+      "check_constraints": [
+        "CHECK (retryable IN (0,1))",
+        "CHECK (cache_hit IN (0,1))",
+        "CHECK (fused_skip IN (0,1))"
+      ],
+      "columns": [
+        {
+          "cid": 0,
+          "default": null,
+          "name": "id",
+          "not_null": false,
+          "primary_key_position": 1,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 1,
+          "default": null,
+          "name": "run_key",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 2,
+          "default": null,
+          "name": "paper_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 3,
+          "default": null,
+          "name": "provider",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 4,
+          "default": null,
+          "name": "query_mode",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 5,
+          "default": null,
+          "name": "query_identifier",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 6,
+          "default": null,
+          "name": "status",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 7,
+          "default": null,
+          "name": "abstract_text",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 8,
+          "default": null,
+          "name": "abstract_language",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 9,
+          "default": null,
+          "name": "matched_title",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 10,
+          "default": null,
+          "name": "matched_doi",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 11,
+          "default": "'[]'",
+          "name": "matched_authors_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 12,
+          "default": null,
+          "name": "matched_year",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 13,
+          "default": null,
+          "name": "confidence",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "REAL"
+        },
+        {
+          "cid": 14,
+          "default": null,
+          "name": "http_status",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 15,
+          "default": "0",
+          "name": "retryable",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 16,
+          "default": null,
+          "name": "retry_after",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "REAL"
+        },
+        {
+          "cid": 17,
+          "default": null,
+          "name": "next_retry_at",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 18,
+          "default": null,
+          "name": "error_category",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 19,
+          "default": null,
+          "name": "error_message",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 20,
+          "default": null,
+          "name": "started_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 21,
+          "default": null,
+          "name": "finished_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 22,
+          "default": "0",
+          "name": "cache_hit",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 23,
+          "default": "0",
+          "name": "fused_skip",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 24,
+          "default": null,
+          "name": "created_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "paper_id",
+          "id": 0,
+          "match": "NONE",
+          "on_delete": "CASCADE",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "papers",
+          "to": "id"
+        }
+      ],
+      "indexes": [
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "run_key",
+              "seqno": 0
+            },
+            {
+              "cid": 3,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "provider",
+              "seqno": 1
+            },
+            {
+              "cid": 2,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "paper_id",
+              "seqno": 2
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 3
+            }
+          ],
+          "name": "idx_provider_call_log_run",
+          "origin": "c",
+          "partial": false,
+          "sql": "CREATE INDEX idx_provider_call_log_run ON provider_call_log(run_key, provider, paper_id)",
+          "unique": false
+        }
+      ],
+      "name": "provider_call_log",
+      "primary_key": [
+        "id"
+      ],
+      "sql": "CREATE TABLE provider_call_log ( id INTEGER PRIMARY KEY, run_key TEXT NOT NULL, paper_id INTEGER NOT NULL REFERENCES papers(id) ON DELETE CASCADE, provider TEXT NOT NULL, query_mode TEXT NOT NULL, query_identifier TEXT, status TEXT NOT NULL, abstract_text TEXT, abstract_language TEXT, matched_title TEXT, matched_doi TEXT, matched_authors_json TEXT NOT NULL DEFAULT '[]', matched_year INTEGER, confidence REAL, http_status INTEGER, retryable INTEGER NOT NULL DEFAULT 0 CHECK (retryable IN (0,1)), retry_after REAL, next_retry_at TEXT, error_category TEXT, error_message TEXT, started_at TEXT NOT NULL, finished_at TEXT NOT NULL, cache_hit INTEGER NOT NULL DEFAULT 0 CHECK (cache_hit IN (0,1)), fused_skip INTEGER NOT NULL DEFAULT 0 CHECK (fused_skip IN (0,1)), created_at TEXT NOT NULL )"
+    },
+    {
+      "check_constraints": [
+        "CHECK (status IN ( 'consistent', 'broadly_consistent', 'possible_gaps', 'unavailable' ))"
+      ],
+      "columns": [
+        {
+          "cid": 0,
+          "default": null,
+          "name": "id",
+          "not_null": false,
+          "primary_key_position": 1,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 1,
+          "default": null,
+          "name": "sync_run_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 2,
+          "default": null,
+          "name": "source_name",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 3,
+          "default": null,
+          "name": "status",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 4,
+          "default": null,
+          "name": "local_count",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 5,
+          "default": null,
+          "name": "independent_count",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 6,
+          "default": null,
+          "name": "comparable_independent_count",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 7,
+          "default": "0",
+          "name": "exact_doi_matches",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 8,
+          "default": "0",
+          "name": "possible_missing_count",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 9,
+          "default": "0",
+          "name": "source_only_count",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 10,
+          "default": "0",
+          "name": "local_only_count",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 11,
+          "default": "0",
+          "name": "query_count",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 12,
+          "default": "0",
+          "name": "duration_ms",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 13,
+          "default": "'{}'",
+          "name": "detail_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 14,
+          "default": null,
+          "name": "error_message",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 15,
+          "default": null,
+          "name": "verified_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "sync_run_id",
+          "id": 0,
+          "match": "NONE",
+          "on_delete": "CASCADE",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "sync_runs",
+          "to": "id"
+        }
+      ],
+      "indexes": [
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "sync_run_id",
+              "seqno": 0
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 1
+            }
+          ],
+          "name": "sqlite_autoindex_retrieval_verifications_1",
+          "origin": "u",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        }
+      ],
+      "name": "retrieval_verifications",
+      "primary_key": [
+        "id"
+      ],
+      "sql": "CREATE TABLE retrieval_verifications ( id INTEGER PRIMARY KEY, sync_run_id INTEGER NOT NULL UNIQUE REFERENCES sync_runs(id) ON DELETE CASCADE, source_name TEXT NOT NULL, status TEXT NOT NULL CHECK (status IN ( 'consistent', 'broadly_consistent', 'possible_gaps', 'unavailable' )), local_count INTEGER NOT NULL, independent_count INTEGER, comparable_independent_count INTEGER, exact_doi_matches INTEGER NOT NULL DEFAULT 0, possible_missing_count INTEGER NOT NULL DEFAULT 0, source_only_count INTEGER NOT NULL DEFAULT 0, local_only_count INTEGER NOT NULL DEFAULT 0, query_count INTEGER NOT NULL DEFAULT 0, duration_ms INTEGER NOT NULL DEFAULT 0, detail_json TEXT NOT NULL DEFAULT '{}', error_message TEXT, verified_at TEXT NOT NULL )"
+    },
+    {
+      "check_constraints": [],
+      "columns": [
+        {
+          "cid": 0,
+          "default": null,
+          "name": "id",
+          "not_null": false,
+          "primary_key_position": 1,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 1,
+          "default": null,
+          "name": "paper_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 2,
+          "default": "'pending'",
+          "name": "status",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 3,
+          "default": null,
+          "name": "reviewer_note",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 4,
+          "default": null,
+          "name": "edited_chinese_title",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 5,
+          "default": null,
+          "name": "edited_chinese_summary",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 6,
+          "default": "0",
+          "name": "verified_numbers",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 7,
+          "default": "0",
+          "name": "verified_causal_language",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 8,
+          "default": null,
+          "name": "reviewed_at",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "paper_id",
+          "id": 0,
+          "match": "NONE",
+          "on_delete": "CASCADE",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "papers",
+          "to": "id"
+        }
+      ],
+      "indexes": [
+        {
+          "columns": [
+            {
+              "cid": 2,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "status",
+              "seqno": 0
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 1
+            }
+          ],
+          "name": "idx_reviews_status",
+          "origin": "c",
+          "partial": false,
+          "sql": "CREATE INDEX idx_reviews_status ON reviews(status)",
+          "unique": false
+        },
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "paper_id",
+              "seqno": 0
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 1
+            }
+          ],
+          "name": "sqlite_autoindex_reviews_1",
+          "origin": "u",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        }
+      ],
+      "name": "reviews",
+      "primary_key": [
+        "id"
+      ],
+      "sql": "CREATE TABLE reviews ( id INTEGER PRIMARY KEY, paper_id INTEGER NOT NULL UNIQUE REFERENCES papers(id) ON DELETE CASCADE, status TEXT NOT NULL DEFAULT 'pending', reviewer_note TEXT, edited_chinese_title TEXT, edited_chinese_summary TEXT, verified_numbers INTEGER NOT NULL DEFAULT 0, verified_causal_language INTEGER NOT NULL DEFAULT 0, reviewed_at TEXT )"
+    },
+    {
+      "check_constraints": [
+        "CHECK (success IN (0,1))",
+        "CHECK (inferred IN (0,1))"
+      ],
+      "columns": [
+        {
+          "cid": 0,
+          "default": null,
+          "name": "migration_id",
+          "not_null": true,
+          "primary_key_position": 2,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 1,
+          "default": null,
+          "name": "filename",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 2,
+          "default": null,
+          "name": "migration_sha256",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 3,
+          "default": null,
+          "name": "applied_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 4,
+          "default": null,
+          "name": "application_version",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 5,
+          "default": null,
+          "name": "schema_version_before",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 6,
+          "default": null,
+          "name": "schema_version_after",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 7,
+          "default": null,
+          "name": "execution_ms",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 8,
+          "default": null,
+          "name": "success",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 9,
+          "default": null,
+          "name": "error_type",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 10,
+          "default": null,
+          "name": "error_message",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 11,
+          "default": "0",
+          "name": "inferred",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 12,
+          "default": null,
+          "name": "inference_method",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 13,
+          "default": null,
+          "name": "schema_fingerprint",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 14,
+          "default": null,
+          "name": "source_manifest",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 15,
+          "default": null,
+          "name": "database_profile",
+          "not_null": true,
+          "primary_key_position": 1,
+          "type": "TEXT"
+        }
+      ],
+      "foreign_keys": [],
+      "indexes": [
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "filename",
+              "seqno": 0
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 1
+            }
+          ],
+          "name": "sqlite_autoindex_schema_migrations_1",
+          "origin": "u",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        },
+        {
+          "columns": [
+            {
+              "cid": 15,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "database_profile",
+              "seqno": 0
+            },
+            {
+              "cid": 0,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "migration_id",
+              "seqno": 1
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 2
+            }
+          ],
+          "name": "sqlite_autoindex_schema_migrations_2",
+          "origin": "pk",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        }
+      ],
+      "name": "schema_migrations",
+      "primary_key": [
+        "database_profile",
+        "migration_id"
+      ],
+      "sql": "CREATE TABLE schema_migrations ( migration_id INTEGER NOT NULL, filename TEXT NOT NULL UNIQUE, migration_sha256 TEXT NOT NULL, applied_at TEXT NOT NULL, application_version TEXT NOT NULL, schema_version_before TEXT NOT NULL, schema_version_after TEXT NOT NULL, execution_ms INTEGER NOT NULL, success INTEGER NOT NULL CHECK (success IN (0,1)), error_type TEXT, error_message TEXT, inferred INTEGER NOT NULL DEFAULT 0 CHECK (inferred IN (0,1)), inference_method TEXT, schema_fingerprint TEXT, source_manifest TEXT, database_profile TEXT NOT NULL, PRIMARY KEY(database_profile,migration_id) )"
+    },
+    {
+      "check_constraints": [],
+      "columns": [
+        {
+          "cid": 0,
+          "default": null,
+          "name": "id",
+          "not_null": false,
+          "primary_key_position": 1,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 1,
+          "default": null,
+          "name": "paper_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 2,
+          "default": "0",
+          "name": "rule_score",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "REAL"
+        },
+        {
+          "cid": 3,
+          "default": "'{}'",
+          "name": "rule_hits_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 4,
+          "default": "'unprocessed'",
+          "name": "ai_decision",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 5,
+          "default": null,
+          "name": "ai_confidence",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "REAL"
+        },
+        {
+          "cid": 6,
+          "default": null,
+          "name": "ai_reason",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 7,
+          "default": "'[]'",
+          "name": "topics_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 8,
+          "default": null,
+          "name": "education_level",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 9,
+          "default": null,
+          "name": "country_or_region",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 10,
+          "default": null,
+          "name": "method",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 11,
+          "default": null,
+          "name": "research_question",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 12,
+          "default": null,
+          "name": "data_and_sample",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 13,
+          "default": null,
+          "name": "identification_strategy",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 14,
+          "default": null,
+          "name": "main_result",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 15,
+          "default": null,
+          "name": "heterogeneity",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 16,
+          "default": null,
+          "name": "policy_implication",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 17,
+          "default": null,
+          "name": "chinese_title",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 18,
+          "default": null,
+          "name": "chinese_summary",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 19,
+          "default": "'[]'",
+          "name": "missing_information_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 20,
+          "default": null,
+          "name": "model_name",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 21,
+          "default": null,
+          "name": "prompt_version",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 22,
+          "default": null,
+          "name": "screened_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "paper_id",
+          "id": 0,
+          "match": "NONE",
+          "on_delete": "CASCADE",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "papers",
+          "to": "id"
+        }
+      ],
+      "indexes": [
+        {
+          "columns": [
+            {
+              "cid": 4,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "ai_decision",
+              "seqno": 0
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 1
+            }
+          ],
+          "name": "idx_screenings_decision",
+          "origin": "c",
+          "partial": false,
+          "sql": "CREATE INDEX idx_screenings_decision ON screenings(ai_decision)",
+          "unique": false
+        },
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "paper_id",
+              "seqno": 0
+            },
+            {
+              "cid": 20,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "model_name",
+              "seqno": 1
+            },
+            {
+              "cid": 21,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "prompt_version",
+              "seqno": 2
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 3
+            }
+          ],
+          "name": "sqlite_autoindex_screenings_1",
+          "origin": "u",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        }
+      ],
+      "name": "screenings",
+      "primary_key": [
+        "id"
+      ],
+      "sql": "CREATE TABLE screenings ( id INTEGER PRIMARY KEY, paper_id INTEGER NOT NULL REFERENCES papers(id) ON DELETE CASCADE, rule_score REAL NOT NULL DEFAULT 0, rule_hits_json TEXT NOT NULL DEFAULT '{}', ai_decision TEXT NOT NULL DEFAULT 'unprocessed', ai_confidence REAL, ai_reason TEXT, topics_json TEXT NOT NULL DEFAULT '[]', education_level TEXT, country_or_region TEXT, method TEXT, research_question TEXT, data_and_sample TEXT, identification_strategy TEXT, main_result TEXT, heterogeneity TEXT, policy_implication TEXT, chinese_title TEXT, chinese_summary TEXT, missing_information_json TEXT NOT NULL DEFAULT '[]', model_name TEXT NOT NULL, prompt_version TEXT NOT NULL, screened_at TEXT NOT NULL, UNIQUE(paper_id, model_name, prompt_version) )"
+    },
+    {
+      "check_constraints": [],
+      "columns": [
+        {
+          "cid": 0,
+          "default": null,
+          "name": "id",
+          "not_null": false,
+          "primary_key_position": 1,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 1,
+          "default": null,
+          "name": "started_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 2,
+          "default": null,
+          "name": "finished_at",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 3,
+          "default": null,
+          "name": "status",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 4,
+          "default": "0",
+          "name": "journals_checked",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 5,
+          "default": "0",
+          "name": "records_fetched",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 6,
+          "default": "0",
+          "name": "records_inserted",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 7,
+          "default": "0",
+          "name": "records_updated",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 8,
+          "default": "0",
+          "name": "records_failed",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 9,
+          "default": "0",
+          "name": "ai_calls",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 10,
+          "default": "0",
+          "name": "input_tokens",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 11,
+          "default": "0",
+          "name": "output_tokens",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 12,
+          "default": "0",
+          "name": "estimated_cost",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "REAL"
+        },
+        {
+          "cid": 13,
+          "default": null,
+          "name": "error_summary",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 14,
+          "default": null,
+          "name": "selected_journal_keys",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 15,
+          "default": null,
+          "name": "query_start_date",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 16,
+          "default": null,
+          "name": "query_end_date",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 17,
+          "default": null,
+          "name": "requested_limit",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 18,
+          "default": null,
+          "name": "matched_paper_ids",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 19,
+          "default": null,
+          "name": "inserted_paper_ids",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 20,
+          "default": null,
+          "name": "updated_paper_ids",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 21,
+          "default": null,
+          "name": "unchanged_paper_ids",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 22,
+          "default": null,
+          "name": "duplicate_paper_ids",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 23,
+          "default": null,
+          "name": "rejected_candidates",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 24,
+          "default": null,
+          "name": "query_errors",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 25,
+          "default": null,
+          "name": "overall_status",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 26,
+          "default": null,
+          "name": "provider_returned_count",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 27,
+          "default": null,
+          "name": "pages_requested",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 28,
+          "default": null,
+          "name": "raw_candidate_count",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 29,
+          "default": null,
+          "name": "normalized_count",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 30,
+          "default": null,
+          "name": "stopped_reason",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 31,
+          "default": null,
+          "name": "profile_id",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        }
+      ],
+      "foreign_keys": [],
+      "indexes": [],
+      "name": "sync_runs",
+      "primary_key": [
+        "id"
+      ],
+      "sql": "CREATE TABLE sync_runs ( id INTEGER PRIMARY KEY, started_at TEXT NOT NULL, finished_at TEXT, status TEXT NOT NULL, journals_checked INTEGER NOT NULL DEFAULT 0, records_fetched INTEGER NOT NULL DEFAULT 0, records_inserted INTEGER NOT NULL DEFAULT 0, records_updated INTEGER NOT NULL DEFAULT 0, records_failed INTEGER NOT NULL DEFAULT 0, ai_calls INTEGER NOT NULL DEFAULT 0, input_tokens INTEGER NOT NULL DEFAULT 0, output_tokens INTEGER NOT NULL DEFAULT 0, estimated_cost REAL NOT NULL DEFAULT 0, error_summary TEXT , selected_journal_keys TEXT, query_start_date TEXT, query_end_date TEXT, requested_limit INTEGER, matched_paper_ids TEXT, inserted_paper_ids TEXT, updated_paper_ids TEXT, unchanged_paper_ids TEXT, duplicate_paper_ids TEXT, rejected_candidates TEXT, query_errors TEXT, overall_status TEXT, provider_returned_count INTEGER, pages_requested INTEGER, raw_candidate_count INTEGER, normalized_count INTEGER, stopped_reason TEXT, profile_id TEXT)"
+    },
+    {
+      "check_constraints": [],
+      "columns": [
+        {
+          "cid": 0,
+          "default": null,
+          "name": "batch_id",
+          "not_null": true,
+          "primary_key_position": 1,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 1,
+          "default": null,
+          "name": "paper_id",
+          "not_null": true,
+          "primary_key_position": 2,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 2,
+          "default": null,
+          "name": "position",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 3,
+          "default": null,
+          "name": "added_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "paper_id",
+          "id": 0,
+          "match": "NONE",
+          "on_delete": "CASCADE",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "papers",
+          "to": "id"
+        },
+        {
+          "from": "batch_id",
+          "id": 1,
+          "match": "NONE",
+          "on_delete": "CASCADE",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "workflow_batches",
+          "to": "id"
+        }
+      ],
+      "indexes": [
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "paper_id",
+              "seqno": 0
+            },
+            {
+              "cid": 0,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "batch_id",
+              "seqno": 1
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 2
+            }
+          ],
+          "name": "idx_workflow_batch_items_paper",
+          "origin": "c",
+          "partial": false,
+          "sql": "CREATE INDEX idx_workflow_batch_items_paper ON workflow_batch_items(paper_id, batch_id)",
+          "unique": false
+        },
+        {
+          "columns": [
+            {
+              "cid": 0,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "batch_id",
+              "seqno": 0
+            },
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "paper_id",
+              "seqno": 1
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 2
+            }
+          ],
+          "name": "sqlite_autoindex_workflow_batch_items_1",
+          "origin": "pk",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        }
+      ],
+      "name": "workflow_batch_items",
+      "primary_key": [
+        "batch_id",
+        "paper_id"
+      ],
+      "sql": "CREATE TABLE workflow_batch_items ( batch_id INTEGER NOT NULL REFERENCES workflow_batches(id) ON DELETE CASCADE, paper_id INTEGER NOT NULL REFERENCES papers(id) ON DELETE CASCADE, position INTEGER NOT NULL, added_at TEXT NOT NULL, PRIMARY KEY (batch_id, paper_id) )"
+    },
+    {
+      "check_constraints": [
+        "CHECK (source_type IN ('selected_papers', 'sync'))",
+        "CHECK (status IN ( 'draft', 'ready', 'running', 'paused', 'ready_for_review', 'completed', 'failed' ))"
+      ],
+      "columns": [
+        {
+          "cid": 0,
+          "default": null,
+          "name": "id",
+          "not_null": false,
+          "primary_key_position": 1,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 1,
+          "default": null,
+          "name": "name",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 2,
+          "default": null,
+          "name": "source_type",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 3,
+          "default": "'draft'",
+          "name": "status",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 4,
+          "default": "'{}'",
+          "name": "source_config_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 5,
+          "default": "'{}'",
+          "name": "screening_policy",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 6,
+          "default": "'{}'",
+          "name": "translation_policy",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 7,
+          "default": null,
+          "name": "sync_completed_at",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 8,
+          "default": null,
+          "name": "screening_completed_at",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 9,
+          "default": null,
+          "name": "translation_completed_at",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 10,
+          "default": null,
+          "name": "created_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 11,
+          "default": null,
+          "name": "updated_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 12,
+          "default": null,
+          "name": "completed_at",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 13,
+          "default": null,
+          "name": "last_error",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 14,
+          "default": "'{}'",
+          "name": "result_summary_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        }
+      ],
+      "foreign_keys": [],
+      "indexes": [
+        {
+          "columns": [
+            {
+              "cid": 3,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "status",
+              "seqno": 0
+            },
+            {
+              "cid": 11,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "updated_at",
+              "seqno": 1
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 2
+            }
+          ],
+          "name": "idx_workflow_batches_status",
+          "origin": "c",
+          "partial": false,
+          "sql": "CREATE INDEX idx_workflow_batches_status ON workflow_batches(status, updated_at)",
+          "unique": false
+        }
+      ],
+      "name": "workflow_batches",
+      "primary_key": [
+        "id"
+      ],
+      "sql": "CREATE TABLE workflow_batches ( id INTEGER PRIMARY KEY, name TEXT NOT NULL, source_type TEXT NOT NULL CHECK (source_type IN ('selected_papers', 'sync')), status TEXT NOT NULL DEFAULT 'draft' CHECK (status IN ( 'draft', 'ready', 'running', 'paused', 'ready_for_review', 'completed', 'failed' )), source_config_json TEXT NOT NULL DEFAULT '{}', screening_policy TEXT NOT NULL DEFAULT '{}', translation_policy TEXT NOT NULL DEFAULT '{}', sync_completed_at TEXT, screening_completed_at TEXT, translation_completed_at TEXT, created_at TEXT NOT NULL, updated_at TEXT NOT NULL, completed_at TEXT, last_error TEXT, result_summary_json TEXT NOT NULL DEFAULT '{}' )"
+    },
+    {
+      "check_constraints": [
+        "CHECK (length(trim(owner_id)) > 0)",
+        "CHECK (status IN ('active','released','stale'))",
+        "CHECK (fencing_token > 0)"
+      ],
+      "columns": [
+        {
+          "cid": 0,
+          "default": null,
+          "name": "id",
+          "not_null": false,
+          "primary_key_position": 1,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 1,
+          "default": null,
+          "name": "task_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 2,
+          "default": null,
+          "name": "owner_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 3,
+          "default": null,
+          "name": "acquired_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 4,
+          "default": null,
+          "name": "heartbeat_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 5,
+          "default": null,
+          "name": "expires_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 6,
+          "default": null,
+          "name": "released_at",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 7,
+          "default": null,
+          "name": "status",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 8,
+          "default": null,
+          "name": "current_stage",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 9,
+          "default": null,
+          "name": "fencing_token",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 10,
+          "default": null,
+          "name": "created_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 11,
+          "default": null,
+          "name": "updated_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "task_id",
+          "id": 0,
+          "match": "NONE",
+          "on_delete": "CASCADE",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "workflow_batches",
+          "to": "id"
+        }
+      ],
+      "indexes": [
+        {
+          "columns": [
+            {
+              "cid": 7,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "status",
+              "seqno": 0
+            },
+            {
+              "cid": 5,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "expires_at",
+              "seqno": 1
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 2
+            }
+          ],
+          "name": "idx_workflow_task_leases_expiry",
+          "origin": "c",
+          "partial": false,
+          "sql": "CREATE INDEX idx_workflow_task_leases_expiry ON workflow_task_leases(status, expires_at)",
+          "unique": false
+        },
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "task_id",
+              "seqno": 0
+            },
+            {
+              "cid": 9,
+              "coll": "BINARY",
+              "desc": 1,
+              "key": 1,
+              "name": "fencing_token",
+              "seqno": 1
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 2
+            }
+          ],
+          "name": "idx_workflow_task_leases_task_history",
+          "origin": "c",
+          "partial": false,
+          "sql": "CREATE INDEX idx_workflow_task_leases_task_history ON workflow_task_leases(task_id, fencing_token DESC)",
+          "unique": false
+        },
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "task_id",
+              "seqno": 0
+            },
+            {
+              "cid": 9,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "fencing_token",
+              "seqno": 1
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 2
+            }
+          ],
+          "name": "sqlite_autoindex_workflow_task_leases_1",
+          "origin": "u",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        },
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "task_id",
+              "seqno": 0
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 1
+            }
+          ],
+          "name": "uq_workflow_task_active_lease",
+          "origin": "c",
+          "partial": true,
+          "sql": "CREATE UNIQUE INDEX uq_workflow_task_active_lease ON workflow_task_leases(task_id) WHERE status='active'",
+          "unique": true
+        }
+      ],
+      "name": "workflow_task_leases",
+      "primary_key": [
+        "id"
+      ],
+      "sql": "CREATE TABLE workflow_task_leases ( id INTEGER PRIMARY KEY, task_id INTEGER NOT NULL REFERENCES workflow_batches(id) ON DELETE CASCADE, owner_id TEXT NOT NULL CHECK (length(trim(owner_id)) > 0), acquired_at TEXT NOT NULL, heartbeat_at TEXT NOT NULL, expires_at TEXT NOT NULL, released_at TEXT, status TEXT NOT NULL CHECK (status IN ('active','released','stale')), current_stage TEXT NOT NULL, fencing_token INTEGER NOT NULL CHECK (fencing_token > 0), created_at TEXT NOT NULL, updated_at TEXT NOT NULL, UNIQUE(task_id, fencing_token) )"
+    },
+    {
+      "check_constraints": [
+        "CHECK (conflict_type IN ('ambiguous_multiple_tasks'))"
+      ],
+      "columns": [
+        {
+          "cid": 0,
+          "default": null,
+          "name": "id",
+          "not_null": false,
+          "primary_key_position": 1,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 1,
+          "default": null,
+          "name": "legacy_review_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 2,
+          "default": null,
+          "name": "paper_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 3,
+          "default": null,
+          "name": "conflict_type",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 4,
+          "default": null,
+          "name": "task_ids_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 5,
+          "default": null,
+          "name": "created_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "paper_id",
+          "id": 0,
+          "match": "NONE",
+          "on_delete": "CASCADE",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "papers",
+          "to": "id"
+        },
+        {
+          "from": "legacy_review_id",
+          "id": 1,
+          "match": "NONE",
+          "on_delete": "CASCADE",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "reviews",
+          "to": "id"
+        }
+      ],
+      "indexes": [
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "legacy_review_id",
+              "seqno": 0
+            },
+            {
+              "cid": 3,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "conflict_type",
+              "seqno": 1
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 2
+            }
+          ],
+          "name": "sqlite_autoindex_workflow_task_review_migration_conflicts_1",
+          "origin": "u",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        }
+      ],
+      "name": "workflow_task_review_migration_conflicts",
+      "primary_key": [
+        "id"
+      ],
+      "sql": "CREATE TABLE workflow_task_review_migration_conflicts ( id INTEGER PRIMARY KEY, legacy_review_id INTEGER NOT NULL REFERENCES reviews(id) ON DELETE CASCADE, paper_id INTEGER NOT NULL REFERENCES papers(id) ON DELETE CASCADE, conflict_type TEXT NOT NULL CHECK (conflict_type IN ('ambiguous_multiple_tasks')), task_ids_json TEXT NOT NULL, created_at TEXT NOT NULL, UNIQUE(legacy_review_id, conflict_type) )"
+    },
+    {
+      "check_constraints": [
+        "CHECK (review_status IN ('pending','approved','rejected','needs_revision'))",
+        "CHECK (reincluded IN (0,1))",
+        "CHECK (recovery_status IN ('not_applicable','recovered','not_recovered'))",
+        "CHECK (final_decision IN ('include','exclude'))",
+        "CHECK (needs_edit IN (0,1))",
+        "CHECK (source IN ('v05_human','legacy_backfill','human_recovery'))"
+      ],
+      "columns": [
+        {
+          "cid": 0,
+          "default": null,
+          "name": "id",
+          "not_null": false,
+          "primary_key_position": 1,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 1,
+          "default": null,
+          "name": "task_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 2,
+          "default": null,
+          "name": "paper_id",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 3,
+          "default": "'pending'",
+          "name": "review_status",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 4,
+          "default": "0",
+          "name": "reincluded",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 5,
+          "default": "'not_applicable'",
+          "name": "recovery_status",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 6,
+          "default": null,
+          "name": "final_decision",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 7,
+          "default": null,
+          "name": "reviewer",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 8,
+          "default": null,
+          "name": "reviewer_notes",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 9,
+          "default": null,
+          "name": "title_override",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 10,
+          "default": null,
+          "name": "abstract_override",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 11,
+          "default": "0",
+          "name": "needs_edit",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "INTEGER"
+        },
+        {
+          "cid": 12,
+          "default": "'v05_human'",
+          "name": "source",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 13,
+          "default": "'{}'",
+          "name": "provenance_json",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 14,
+          "default": null,
+          "name": "created_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 15,
+          "default": null,
+          "name": "updated_at",
+          "not_null": true,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        },
+        {
+          "cid": 16,
+          "default": null,
+          "name": "reviewed_at",
+          "not_null": false,
+          "primary_key_position": 0,
+          "type": "TEXT"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "paper_id",
+          "id": 0,
+          "match": "NONE",
+          "on_delete": "CASCADE",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "papers",
+          "to": "id"
+        },
+        {
+          "from": "task_id",
+          "id": 1,
+          "match": "NONE",
+          "on_delete": "CASCADE",
+          "on_update": "NO ACTION",
+          "seq": 0,
+          "table": "workflow_batches",
+          "to": "id"
+        }
+      ],
+      "indexes": [
+        {
+          "columns": [
+            {
+              "cid": 2,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "paper_id",
+              "seqno": 0
+            },
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "task_id",
+              "seqno": 1
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 2
+            }
+          ],
+          "name": "idx_workflow_task_reviews_paper",
+          "origin": "c",
+          "partial": false,
+          "sql": "CREATE INDEX idx_workflow_task_reviews_paper ON workflow_task_reviews(paper_id, task_id)",
+          "unique": false
+        },
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "task_id",
+              "seqno": 0
+            },
+            {
+              "cid": 3,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "review_status",
+              "seqno": 1
+            },
+            {
+              "cid": 2,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "paper_id",
+              "seqno": 2
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 3
+            }
+          ],
+          "name": "idx_workflow_task_reviews_task_status",
+          "origin": "c",
+          "partial": false,
+          "sql": "CREATE INDEX idx_workflow_task_reviews_task_status ON workflow_task_reviews(task_id, review_status, paper_id)",
+          "unique": false
+        },
+        {
+          "columns": [
+            {
+              "cid": 1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "task_id",
+              "seqno": 0
+            },
+            {
+              "cid": 2,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 1,
+              "name": "paper_id",
+              "seqno": 1
+            },
+            {
+              "cid": -1,
+              "coll": "BINARY",
+              "desc": 0,
+              "key": 0,
+              "name": null,
+              "seqno": 2
+            }
+          ],
+          "name": "sqlite_autoindex_workflow_task_reviews_1",
+          "origin": "u",
+          "partial": false,
+          "sql": null,
+          "unique": true
+        }
+      ],
+      "name": "workflow_task_reviews",
+      "primary_key": [
+        "id"
+      ],
+      "sql": "CREATE TABLE workflow_task_reviews ( id INTEGER PRIMARY KEY, task_id INTEGER NOT NULL REFERENCES workflow_batches(id) ON DELETE CASCADE, paper_id INTEGER NOT NULL REFERENCES papers(id) ON DELETE CASCADE, review_status TEXT NOT NULL DEFAULT 'pending' CHECK (review_status IN ('pending','approved','rejected','needs_revision')), reincluded INTEGER NOT NULL DEFAULT 0 CHECK (reincluded IN (0,1)), recovery_status TEXT NOT NULL DEFAULT 'not_applicable' CHECK (recovery_status IN ('not_applicable','recovered','not_recovered')), final_decision TEXT CHECK (final_decision IN ('include','exclude')), reviewer TEXT, reviewer_notes TEXT, title_override TEXT, abstract_override TEXT, needs_edit INTEGER NOT NULL DEFAULT 0 CHECK (needs_edit IN (0,1)), source TEXT NOT NULL DEFAULT 'v05_human' CHECK (source IN ('v05_human','legacy_backfill','human_recovery')), provenance_json TEXT NOT NULL DEFAULT '{}', created_at TEXT NOT NULL, updated_at TEXT NOT NULL, reviewed_at TEXT, UNIQUE(task_id, paper_id) )"
+    }
+  ],
+  "triggers": [],
+  "views": []
+}

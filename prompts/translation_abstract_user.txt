@@ -1,0 +1,6 @@
+Translate the following original abstract faithfully and completely into Chinese.
+
+Original abstract:
+{original_abstract}
+
+Return only strict JSON with exactly one non-empty string field: chinese_abstract.

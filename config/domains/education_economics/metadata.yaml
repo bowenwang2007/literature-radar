@@ -1,0 +1,9 @@
+metadata:
+  profile_id: education_economics
+  bundle_version: 0.2.0-phase6d-candidate
+  status: candidate
+  released_at: null
+  hash_algorithm: SHA-256
+  model_version: not-configured-for-production
+  prompt_version: 2026-07-22-phase6d-v1
+  notes: Phase 6D candidate bundle protected by offline screening regression fixtures.

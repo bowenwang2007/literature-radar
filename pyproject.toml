@@ -1,0 +1,92 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "eduecon-radar"
+version = "0.5.0"
+description = "A personal literature radar for economics and social science research"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "httpx>=0.27,<1",
+  "openai>=1.40,<3",
+  "pydantic>=2.7,<3",
+  "PyYAML>=6,<7",
+  "streamlit>=1.59.2,<2",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8,<10",
+  "respx>=0.21,<1",
+  "ruff>=0.6,<1",
+]
+
+[project.scripts]
+eduecon-radar = "eduecon_radar.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/eduecon_radar"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"migrations" = "eduecon_radar/resources/migrations"
+"prompts" = "eduecon_radar/resources/prompts"
+"manifests" = "eduecon_radar/resources/manifests"
+"journals.yaml" = "eduecon_radar/resources/journals.yaml"
+"config/public_papers.json" = "eduecon_radar/resources/config/public_papers.json"
+"config/abstract_sources.yaml" = "eduecon_radar/resources/config/abstract_sources.yaml"
+"config/repec_series.json" = "eduecon_radar/resources/config/repec_series.json"
+"config/journals/catalog.json" = "eduecon_radar/resources/config/journals/catalog.json"
+"config/profiles/behavioral_economics/profile.yaml" = "eduecon_radar/resources/config/profiles/behavioral_economics/profile.yaml"
+"config/profiles/behavioral_economics/prompts/screening_primary_system.txt" = "eduecon_radar/resources/config/profiles/behavioral_economics/prompts/screening_primary_system.txt"
+"config/profiles/behavioral_economics/prompts/screening_primary_user.txt" = "eduecon_radar/resources/config/profiles/behavioral_economics/prompts/screening_primary_user.txt"
+"config/profiles/behavioral_economics/prompts/screening_review_system.txt" = "eduecon_radar/resources/config/profiles/behavioral_economics/prompts/screening_review_system.txt"
+"config/profiles/behavioral_economics/prompts/screening_review_user.txt" = "eduecon_radar/resources/config/profiles/behavioral_economics/prompts/screening_review_user.txt"
+"config/profiles/education_economics/profile.yaml" = "eduecon_radar/resources/config/profiles/education_economics/profile.yaml"
+"config/profiles/education_economics/prompts/screening_primary_system.txt" = "eduecon_radar/resources/config/profiles/education_economics/prompts/screening_primary_system.txt"
+"config/profiles/education_economics/prompts/screening_primary_user.txt" = "eduecon_radar/resources/config/profiles/education_economics/prompts/screening_primary_user.txt"
+"config/profiles/education_economics/prompts/screening_review_system.txt" = "eduecon_radar/resources/config/profiles/education_economics/prompts/screening_review_system.txt"
+"config/profiles/education_economics/prompts/screening_review_user.txt" = "eduecon_radar/resources/config/profiles/education_economics/prompts/screening_review_user.txt"
+"config/profiles/labor_economics/profile.yaml" = "eduecon_radar/resources/config/profiles/labor_economics/profile.yaml"
+"config/profiles/labor_economics/prompts/screening_primary_system.txt" = "eduecon_radar/resources/config/profiles/labor_economics/prompts/screening_primary_system.txt"
+"config/profiles/labor_economics/prompts/screening_primary_user.txt" = "eduecon_radar/resources/config/profiles/labor_economics/prompts/screening_primary_user.txt"
+"config/profiles/labor_economics/prompts/screening_review_system.txt" = "eduecon_radar/resources/config/profiles/labor_economics/prompts/screening_review_system.txt"
+"config/profiles/labor_economics/prompts/screening_review_user.txt" = "eduecon_radar/resources/config/profiles/labor_economics/prompts/screening_review_user.txt"
+"config/profiles/political_economy/profile.yaml" = "eduecon_radar/resources/config/profiles/political_economy/profile.yaml"
+"config/profiles/political_economy/prompts/screening_primary_system.txt" = "eduecon_radar/resources/config/profiles/political_economy/prompts/screening_primary_system.txt"
+"config/profiles/political_economy/prompts/screening_primary_user.txt" = "eduecon_radar/resources/config/profiles/political_economy/prompts/screening_primary_user.txt"
+"config/profiles/political_economy/prompts/screening_review_system.txt" = "eduecon_radar/resources/config/profiles/political_economy/prompts/screening_review_system.txt"
+"config/profiles/political_economy/prompts/screening_review_user.txt" = "eduecon_radar/resources/config/profiles/political_economy/prompts/screening_review_user.txt"
+"config/ai_budget.yaml" = "eduecon_radar/resources/config/ai_budget.yaml"
+"config/jel_sources.yaml" = "eduecon_radar/resources/config/jel_sources.yaml"
+"config/metadata_sources.yaml" = "eduecon_radar/resources/config/metadata_sources.yaml"
+"config/domains/education_economics/candidates.yaml" = "eduecon_radar/resources/config/domains/education_economics/candidates.yaml"
+"config/domains/education_economics/config_versions.yaml" = "eduecon_radar/resources/config/domains/education_economics/config_versions.yaml"
+"config/domains/education_economics/exclusion_contexts.yaml" = "eduecon_radar/resources/config/domains/education_economics/exclusion_contexts.yaml"
+"config/domains/education_economics/journal_priors.yaml" = "eduecon_radar/resources/config/domains/education_economics/journal_priors.yaml"
+"config/domains/education_economics/metadata.yaml" = "eduecon_radar/resources/config/domains/education_economics/metadata.yaml"
+"config/domains/education_economics/ontology.yaml" = "eduecon_radar/resources/config/domains/education_economics/ontology.yaml"
+"config/domains/education_economics/profile.yaml" = "eduecon_radar/resources/config/domains/education_economics/profile.yaml"
+"config/domains/education_economics/scoring.yaml" = "eduecon_radar/resources/config/domains/education_economics/scoring.yaml"
+"config/domains/education_economics/semantic_models.yaml" = "eduecon_radar/resources/config/domains/education_economics/semantic_models.yaml"
+"config/domains/education_economics/subject_codes.yaml" = "eduecon_radar/resources/config/domains/education_economics/subject_codes.yaml"
+"config/domains/education_economics/gold_sets/gold_set_schema.yaml" = "eduecon_radar/resources/config/domains/education_economics/gold_sets/gold_set_schema.yaml"
+"config/domains/education_economics/gold_sets/gold_set_template.csv" = "eduecon_radar/resources/config/domains/education_economics/gold_sets/gold_set_template.csv"
+"config/domains/education_economics/gold_sets/sample_plan_v1.yaml" = "eduecon_radar/resources/config/domains/education_economics/gold_sets/sample_plan_v1.yaml"
+"config/domains/education_economics/prompts/education_economics_fast_semantic_system.txt" = "eduecon_radar/resources/config/domains/education_economics/prompts/education_economics_fast_semantic_system.txt"
+"config/domains/education_economics/prompts/education_economics_fast_semantic_user.txt" = "eduecon_radar/resources/config/domains/education_economics/prompts/education_economics_fast_semantic_user.txt"
+"config/domains/education_economics/prompts/education_economics_strong_review_system.txt" = "eduecon_radar/resources/config/domains/education_economics/prompts/education_economics_strong_review_system.txt"
+"config/domains/education_economics/prompts/education_economics_strong_review_user.txt" = "eduecon_radar/resources/config/domains/education_economics/prompts/education_economics_strong_review_user.txt"
+"config/domains/education_economics/prompts/manifest.yaml" = "eduecon_radar/resources/config/domains/education_economics/prompts/manifest.yaml"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]

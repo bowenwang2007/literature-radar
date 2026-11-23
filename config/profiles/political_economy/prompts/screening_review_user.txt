@@ -1,0 +1,19 @@
+Review the following first-stage screening result for the political-economy
+reading queue.
+
+Paper title: {title}
+Journal: {journal}
+Year: {year}
+
+English abstract:
+{abstract}
+
+First-stage judgment (JSON):
+{primary}
+
+Check specifically whether the first stage named a political actor and a
+political friction, and whether the economic outcome it relies on is really in
+the paper. If it asserted centrality without either, revise or declare
+uncertainty.
+
+Return the strict JSON object described in the system prompt.

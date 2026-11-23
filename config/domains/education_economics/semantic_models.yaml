@@ -1,0 +1,34 @@
+semantic_engine:
+  profile_id: education_economics
+  version: 0.2.0-phase6d-candidate
+  status: test_fixture
+  live_ai_allowed: false
+  fast:
+    provider: deepseek-compatible
+    model: not-enabled
+    prompt_id: education_economics_fast_semantic
+    prompt_version: 2026-07-22-phase6d-v1
+    temperature: 0
+    max_tokens: 1800
+    timeout_seconds: 45
+    enabled: false
+    status: test_fixture
+  strong_review:
+    provider: deepseek-compatible
+    model: not-enabled
+    prompt_id: education_economics_strong_review
+    prompt_version: 2026-07-22-phase6d-v1
+    temperature: 0
+    max_tokens: 1800
+    timeout_seconds: 60
+    enabled: false
+    status: test_fixture
+  escalation:
+    version: phase6d-escalation-v1
+    low_confidence_max: null
+    no_abstract_confidence_cap: null
+    reason_conflict_detection_enabled: true
+  composite:
+    version: phase6d-composite-v1
+    calibration_status: uncalibrated
+    publishable: false

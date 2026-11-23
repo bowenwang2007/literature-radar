@@ -1,0 +1,29 @@
+fixture_status: synthetic_acceptance_material
+papers:
+  - fixture_id: clear_education_economics
+    title: School Finance and Student Achievement
+    abstract: This study estimates how school finance reforms affect student achievement.
+    journal: Fixture Economics Journal
+    keywords: [school finance, student achievement]
+    jel_codes: [I22]
+  - fixture_id: medical_false_friend
+    title: Medical Education in Teaching Hospitals
+    abstract: We study clinical curriculum design for medical residents.
+    journal: Fixture Health Journal
+    keywords: [medical education]
+  - fixture_id: opaque_hidden_topic
+    title: The Long Shadow
+    abstract: We estimate the labor-market returns to school quality and human capital investment.
+    journal: Fixture Economics Journal
+  - fixture_id: no_abstract_domain_journal
+    title: Returns Reconsidered
+    abstract: null
+    journal: Fixture Domain Journal
+  - fixture_id: positive_negative_conflict
+    title: Medical Education Tuition and Labor Market Returns
+    abstract: The paper studies tuition, student debt, and labor-market returns in medical education.
+    journal: Fixture Economics Journal
+  - fixture_id: metadata_sparse
+    title: An Inquiry
+    abstract: null
+    journal: Fixture Economics Journal
