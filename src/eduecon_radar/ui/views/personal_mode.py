@@ -271,13 +271,34 @@ def render(database: Database, settings: Settings) -> None:
                 database, settings, registry, runs, snapshot, profile, profile_registry
             )
     elif not snapshot:
-        st.info("本方向暂无阅读批次。可在论文库选择「全部方向」查找论文并保存判断。")
+        st.info("本方向暂无阅读批次。可以从共用论文库开始，判断会保存在当前方向。")
+        if st.button("浏览全部方向的论文"):
+            st.session_state["library_scope_picker"] = "全部方向"
+            st.session_state["radar_nav"] = "论文库"
+            st.rerun()
     if not snapshot:
         return
     if message := st.session_state.pop("retrieval_notice", None):
         st.info(message)
     if snapshot["run"].get("status") in {"partial", "failed"}:
-        st.warning("部分期刊检索异常，本批可能有遗漏。可在「新建检索」中重试同一范围。")
+        original = (
+            queue.retrieval_request(profile.profile_id, snapshot["run"]["id"]) if queue else None
+        )
+        if original:
+            st.warning("期刊检索未全部完成。可以按原期刊和日期重试，已有论文会自动去重。")
+            if st.button("重试原范围", help="仅检索书目，不调用付费 AI。"):
+                job_id = queue.submit(
+                    profile.profile_id,
+                    [RegistryJournal(**journal) for journal in original["journals"]],
+                    date.fromisoformat(original["since"]),
+                    date.fromisoformat(original["until"]),
+                    False,
+                )
+                st.session_state[f"waiting_search_{profile.profile_id}"] = job_id
+                queue.start(settings)
+                st.rerun()
+        else:
+            st.warning("期刊检索未全部完成，本批可能有遗漏。可在「新建检索」中重试同一范围。")
     if not hosted:
         _render_workbench_status(snapshot, profile, _next_action(snapshot))
     run_id = int(snapshot["run"]["id"])
@@ -437,13 +458,17 @@ def _next_action(snapshot: dict[str, object]) -> NextAction:
         counts.get("needs_retry", 0) or 0
     )
     if counts.get("retrieved") == 0:
+        if (snapshot.get("run") or {}).get("status") in {"partial", "failed"}:
+            return NextAction(
+                "暂未取得论文", "来源未能完成检索。恢复连接后可重试原范围。", "missing",
+            )
         return NextAction("本批没有论文", "可调整期刊或日期重新检索，或查看检索核验。", "info")
     if counts.get("retrieved") and counts.get("completed") == counts["retrieved"]:
         return NextAction("本批已全部审核", "可导出阅读清单，或新建下一次检索。", "complete")
     if pending_review:
         return NextAction(
             f"下一步：审核 {pending_review} 篇待判论文",
-            "逐篇查看中文摘要与 AI 建议，明确记录保留或排除。",
+            "阅读现有资料，保存你的判断与备注。",
             "review",
         )
     if unfinished:

@@ -4,18 +4,16 @@
 
 ```powershell
 py -3.12 -m venv .venv
-.\.venv\Scripts\python.exe -m pip install -e ".[dev]"
-Copy-Item .env.example .env
-.\.venv\Scripts\python.exe -m eduecon_radar.cli migrate-database --profile production --database data/eduecon_radar.db --apply
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
 .\run_web.ps1
 ```
 
-以上迁移命令用于新库。已有研究资料应在应用关闭后先备份数据库、同目录的 `.jobs.sqlite` 与 `.reading.sqlite`，再单独执行升级。启动后从「今日雷达」选择方向，在「关注范围与更新」保存期刊和兴趣词。
+首次打开时点击「创建个人论文库」。稍后再次运行同一启动脚本即可继续阅读。已有研究资料应在应用关闭后先备份数据库、同目录的 `.jobs.sqlite` 与 `.reading.sqlite`，再单独执行升级。启动后从「今日雷达」选择方向，在「关注范围与更新」保存期刊和兴趣词。
 
-检索、人工审核与导出可以直接使用。需要翻译和初筛时，将自己的 DeepSeek 密钥写入本地 `.env`。打开本地服务时任务可续跑，关闭后暂停。
+检索、人工审核与导出可以直接使用。需要翻译和初筛时，复制 `.env.example` 为 `.env` 并填写自己的 DeepSeek 密钥，然后重新启动服务。打开本地服务时任务可续跑，关闭后暂停。
 
 ## 接着上次的工作
 
-- 在工作台选期刊与日期后按「获取论文」。可以关闭自动分析，仅查书目。当前批次的模型请求上限为 24 次，含重试。不同模型、输入长度和输出长度对应的金额会有差异。
+- 在工作台选期刊与日期后按「获取论文」。可以关闭自动分析，仅查书目。某次检索因来源或网络中断时，点「重试原范围」会沿用当时的期刊和日期，只重查书目。当前批次的模型请求上限为 24 次，含重试。不同模型、输入长度和输出长度对应的金额会有差异。
 - 打开「检索记录」找回批次。在「逐篇审核」填写决定和备注，用「保存并下一篇」提交。翻页只切换文章。
 - 在论文库选「全部方向」可以复用同一篇文献。方向之间共享书目与翻译，各自保留书架、判断和备注。

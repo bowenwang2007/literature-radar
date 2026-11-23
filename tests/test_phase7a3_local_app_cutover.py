@@ -44,7 +44,8 @@ def test_run_web_starts_only_the_shipped_local_app() -> None:
     assert "released" not in script.casefold()
     assert "Literature Radar Local App" in script
     assert "http://localhost:8501/" in script
-    assert "$EnvFile" in script
+    assert 'Get-Content' not in script  # The application reads its own credentials.
+    assert '$env:LITERATURE_RADAR_MODE = $PreviousMode' in script
 
 
 def test_shipped_app_has_no_active_pilot_or_legacy_imports() -> None:

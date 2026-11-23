@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 import re
 import sqlite3
 import tempfile
@@ -210,6 +211,16 @@ def baseline_migration_ledger(database: Path, profile: str, *, confirmed: bool) 
             connection.rollback()
             raise
     return verify_migrations(database, profile)
+
+
+def create_personal_database(database: Path) -> None:
+    """Publish a completely initialized new database without replacing another file."""
+    database.parent.mkdir(parents=True, exist_ok=True)
+    with tempfile.TemporaryDirectory(dir=database.parent, prefix=".radar-init-") as work:
+        ready = Path(work) / "ready.sqlite"
+        migrate_database(ready, "production", dry_run=False)
+        # Same-volume link is atomic on NTFS and POSIX, including concurrent first opens.
+        os.link(ready, database)
 
 
 def migrate_database(

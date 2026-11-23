@@ -1,3 +1,2 @@
 # Community Cloud builds the same Python package as the local application.
 .
-streamlit==1.59.2

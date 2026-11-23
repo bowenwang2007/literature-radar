@@ -696,28 +696,23 @@ def _render_paper_card(
         if chinese_title
         else ""
     )
-    badges = "".join(
-        (
-            status_badge_html(
-                "有原始摘要" if paper.get("abstract") else "缺原始摘要",
-                "complete" if paper.get("abstract") else "missing",
-            ),
-            status_badge_html(
-                f"自动：{zh_auto_decision(auto_decision)}",
-                _decision_tone(auto_decision),
-            ),
-            status_badge_html(
-                f"人工：{zh_human_decision(human_decision)}",
-                _human_tone(human_decision),
-            ),
-            status_badge_html(
-                zh_status(processing.get("status")),
-                "complete" if processing.get("status") == "classified" else "pending",
-            ),
-        )
+    abstract_label = "期刊摘要节选" if excerpt else "有原始摘要"
+    badges = status_badge_html(
+        abstract_label if paper.get("abstract") else "暂无摘要",
+        "complete" if paper.get("abstract") else "missing",
     )
-    if excerpt:
-        badges = badges.replace("有原始摘要", "期刊摘要节选")
+    if auto_decision or not hosted:
+        badges += status_badge_html(
+            f"自动：{zh_auto_decision(auto_decision)}", _decision_tone(auto_decision),
+        )
+    badges += status_badge_html(
+        f"人工：{zh_human_decision(human_decision)}", _human_tone(human_decision),
+    )
+    if not hosted:
+        badges += status_badge_html(
+            zh_status(processing.get("status")),
+            "complete" if processing.get("status") == "classified" else "pending",
+        )
     st.markdown(
         "".join(
             (

@@ -72,3 +72,87 @@ def test_default_entry_shares_real_review_without_providers(monkeypatch):
     app.segmented_control(key="edr_primary_view").set_value("论文库").run()
     assert not app.exception
 
+
+def test_first_run_publishes_once_and_keeps_existing_research(tmp_path):
+    from concurrent.futures import ThreadPoolExecutor
+
+    from eduecon_radar.services.migration_integrity import create_personal_database
+
+    db = tmp_path / "my library" / "papers.db"
+
+    def open_new():
+        try:
+            create_personal_database(db)
+        except FileExistsError:
+            return False
+        return True
+
+    with ThreadPoolExecutor(2) as executor:
+        assert sorted(executor.map(lambda _: open_new(), range(2))) == [False, True]
+    with sqlite3.connect(db) as conn:
+        assert conn.execute("SELECT COUNT(*) FROM papers").fetchone()[0] == 0
+    before = hashlib.sha256(db.read_bytes()).digest()
+    assert not open_new()
+    assert hashlib.sha256(db.read_bytes()).digest() == before
+
+
+@pytest.mark.parametrize("failure", [WorkspaceLimit(), OSError("private scratch path")])
+def test_visitor_can_retry_workspace_open(monkeypatch, failure):
+    from streamlit.testing.v1 import AppTest
+
+    from eduecon_radar.ui import hosted_workspace
+
+    monkeypatch.delenv("LITERATURE_RADAR_MODE", raising=False)
+    acquire = hosted_workspace.session_workspace
+    attempts = 0
+
+    def unavailable_once():
+        nonlocal attempts
+        attempts += 1
+        if attempts == 1:
+            raise failure
+        return acquire()
+
+    monkeypatch.setattr(hosted_workspace, "session_workspace", unavailable_once)
+    app = AppTest.from_file(str(ENTRY), default_timeout=30).run()
+    assert not app.exception
+    assert all("private scratch path" not in x.value for x in app.error)
+    next(b for b in app.button if b.label == "重试").click().run()
+    assert not app.error and not app.exception
+    assert app.segmented_control(key="edr_primary_view").value == "今日雷达"
+
+
+def test_browser_static_image_is_served_with_compression(tmp_path):
+    """AppTest does not fetch browser assets through the Streamlit HTTP middleware."""
+    import socket
+    import subprocess
+    import sys
+    import time
+
+    import httpx
+
+    with socket.socket() as probe:
+        probe.bind(("127.0.0.1", 0))
+        port = probe.getsockname()[1]
+    process = subprocess.Popen(
+        [sys.executable, "-m", "streamlit", "run", str(ENTRY), "--server.headless=true",
+         "--server.address=127.0.0.1", f"--server.port={port}"],
+        cwd=tmp_path, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT,
+    )
+    try:
+        with httpx.Client(base_url=f"http://127.0.0.1:{port}", trust_env=False) as client:
+            deadline = time.monotonic() + 45
+            while True:
+                assert process.poll() is None, "Streamlit exited before it served the page"
+                try:
+                    response = client.get("/favicon.png", headers={"Accept-Encoding": "gzip"})
+                    break
+                except httpx.ConnectError:
+                    if time.monotonic() >= deadline:
+                        raise
+                    time.sleep(0.1)
+            assert response.status_code == 200
+            assert response.content.startswith(b"\x89PNG\r\n\x1a\n")
+    finally:
+        process.terminate()
+        process.wait(timeout=15)

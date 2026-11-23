@@ -9,11 +9,21 @@ Windows 和 Streamlit Community Cloud 使用同一个入口 `src/eduecon_radar/u
 
 ## Windows
 
-按[本地运行说明](local.md)安装后运行 `.\run_web.ps1`。脚本在当前进程显式选择 `LITERATURE_RADAR_MODE=local`，并把服务绑定到 localhost。直接运行 Streamlit 而不设置模式时，使用临时工作区。
+按[本地运行说明](local.md)安装后运行 `.\run_web.ps1`。脚本以 `LITERATURE_RADAR_MODE=local` 启动服务并绑定到 localhost。应用进程自行读取本地配置。直接运行 Streamlit 而不设置模式时，使用临时工作区。
+
+## Linux
+
+在装有 Python 3.12 与 venv 的机器上，从仓库根目录启动同一个工作台。以下命令在环回地址打开访客工作区。
+
+```sh
+python3.12 -m venv .venv
+.venv/bin/python -m pip install -r requirements.txt
+.venv/bin/python -m streamlit run src/eduecon_radar/ui/app.py --server.address 127.0.0.1
+```
 
 ## Streamlit Community Cloud
 
-选定项目仓库和分支，将 **Main file path** 填为 `src/eduecon_radar/ui/app.py`，Python 选择 **3.12**，设置为允许所有人访问。仓库根目录的 `requirements.txt` 安装项目及 Streamlit。**Secrets 留空**。无需上传数据库、个人文件或访问密钥。
+选定项目仓库和分支，将 **Main file path** 填为 `src/eduecon_radar/ui/app.py`，Python 选择 **3.12**，设置为允许所有人访问。仓库根目录的 `requirements.txt` 安装项目及 Streamlit。**Secrets 留空**。无需上传数据库、个人文件或访问密钥。正式发布时，先在无登录的浏览器窗口验证阅读和下载，再将平台分配的实际地址放到 README 首屏。
 
 默认环境无论是否发现同名环境变量或本机数据库，都只使用 `config/public_papers.json` 构建种子库。服务进程最多同时保留 32 份访客工作区，每条会话备注上限为 1,000 个字符。会话结束或服务重启后，临时资料可被回收。免费托管的首次唤醒时间取决于平台。[平台部署说明](https://docs.streamlit.io/deploy/streamlit-community-cloud/deploy-your-app/deploy)
 

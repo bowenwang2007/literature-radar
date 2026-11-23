@@ -15,6 +15,12 @@ def test_windows_style_sqlite_path_is_supported(tmp_path, monkeypatch):
     assert settings.database_path == (tmp_path / "data" / "custom.db").resolve()
 
 
+def test_windows_dotenv_first_line_with_bom(tmp_path, monkeypatch):
+    monkeypatch.setattr("os.environ", {})
+    (tmp_path / ".env").write_text("DATABASE_URL=sqlite:///notes.db\n", encoding="utf-8-sig")
+    assert Settings.load(tmp_path).database_path == (tmp_path / "notes.db").resolve()
+
+
 def test_default_ui_version_is_v05(tmp_path, monkeypatch):
     monkeypatch.delenv("EDUECON_UI_VERSION", raising=False)
     assert Settings.load(tmp_path).ui_version == "v05"

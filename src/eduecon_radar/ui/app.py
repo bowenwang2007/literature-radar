@@ -1,6 +1,9 @@
 from __future__ import annotations
 
+import logging
 import os
+import sqlite3
+from contextlib import suppress
 from pathlib import Path
 
 import streamlit as st
@@ -46,7 +49,13 @@ def main() -> None:
         try:
             _, _, DB = session_workspace()
         except WorkspaceLimit:
-            st.info("当前阅读会话已满，请稍后重新打开。")
+            st.info("当前阅读会话已满。稍后有空位时即可进入。")
+            st.button("重试")
+            return
+        except (OSError, sqlite3.Error):
+            logging.getLogger(__name__).exception("Could not initialize hosted workspace")
+            st.error("暂时无法打开阅读工作区，请稍后重试。")
+            st.button("重试")
             return
         SETTINGS = HostedSettings()
     elif mode == "local":
@@ -56,7 +65,21 @@ def main() -> None:
         try:
             SETTINGS = Settings.load(ROOT)
             if not SETTINGS.database_path.is_file():
-                st.error(f"数据库不存在：{SETTINGS.database_path}。请先使用 CLI 显式初始化数据库。")
+                path = SETTINGS.database_path
+                st.header("打开个人论文库")
+                st.caption(f"本机保存位置 · `{path}`")
+                if any(Path(str(path) + suffix).exists() for suffix in (
+                    ".reading.sqlite", ".jobs.sqlite", "-wal", "-shm", "-journal",
+                )):
+                    st.warning("发现已有历史文件。请先恢复原数据库，或在 .env 中确认库的位置。")
+                    return
+                st.write("首次使用可以创建空库。已有论文库请在 .env 中确认保存位置。")
+                if st.button("创建个人论文库", type="primary"):
+                    from eduecon_radar.services.migration_integrity import create_personal_database
+
+                    with suppress(FileExistsError):  # Another tab may finish setup first.
+                        create_personal_database(path)
+                    st.rerun()
                 return
             DB = Database(SETTINGS.database_path)
         except Exception as exc:
@@ -68,7 +91,12 @@ def main() -> None:
     try:
         _render_local_routes()
     except Exception as exc:
-        st.error(f"页面加载失败：{type(exc).__name__}: {str(exc)[:800]}")
+        if mode == "hosted":
+            logging.getLogger(__name__).exception("Could not render hosted workspace")
+            st.error("暂时无法读取工作区。请重试，或重新打开开始新的阅读会话。")
+            st.button("重试")
+        else:
+            st.error(f"页面加载失败：{type(exc).__name__}: {str(exc)[:800]}")
 
 
 if __name__ == "__main__":

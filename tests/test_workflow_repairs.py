@@ -94,3 +94,20 @@ def test_markdown_preserves_long_notes_and_abstracts():
     note = "中文研究笔记" * 100 + "END"
     result = _rows_to_markdown([{"备注": note, "摘要": "part | one\r\npart two"}])
     assert note in result and "part \\| one part two" in result
+
+
+def test_incomplete_search_can_recover_its_original_scope(tmp_path):
+    from eduecon_radar.ui.views.personal_mode import _next_action
+
+    profile = "education_economics"
+    registry = load_profile_registry().profile(profile).registry()
+    journal = registry.by_key("economics_of_education_review")
+    queue = SearchQueue(Database(tmp_path / "library.db"))
+    jid = queue.submit(profile, [journal], date(2025, 1, 1), date(2025, 1, 7), True)
+    queue.update(jid, phase="done", run_id=12)
+    request = queue.retrieval_request(profile, 12)
+    assert [entry["journal_key"] for entry in request["journals"]] == [journal.journal_key]
+    assert (request["since"], request["until"]) == ("2025-01-01", "2025-01-07")
+    assert queue.retrieval_request("labor_economics", 12) is None
+    hint = _next_action({"run": {"status": "partial"}, "counts": {"retrieved": 0}})
+    assert "暂未取得论文" in hint.headline

@@ -115,6 +115,15 @@ class SearchQueue:
             _wake.set()
             return cursor.lastrowid
 
+    def retrieval_request(self, profile_id, run_id):
+        """Retrieve the journals and dates actually submitted, including custom journals."""
+        with closing(self.connect()) as conn:
+            row = conn.execute(
+                "SELECT request FROM jobs WHERE profile=? AND run_id=? ORDER BY id DESC LIMIT 1",
+                (profile_id, run_id),
+            ).fetchone()
+        return json.loads(row["request"]) if row else None
+
     def latest(self, profile):
         if not self.path.exists():
             return None

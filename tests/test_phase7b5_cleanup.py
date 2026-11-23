@@ -241,7 +241,8 @@ def test_run_web_prints_real_paths_and_rejects_second_instance() -> None:
     assert "Entry: $App" in script
     assert "http://localhost:8501/" in script
     assert "Get-NetTCPConnection" in script
-    assert "旧进程" in script
+    assert "继续阅读" in script
+    assert "Stop-Process" not in script
     for forbidden in ("legacy", "pilot", "release", "lease", "task"):
         assert forbidden not in script.casefold(), forbidden
 

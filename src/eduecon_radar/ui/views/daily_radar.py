@@ -112,7 +112,7 @@ def render(database, settings, profile, queue, journals, defaults):
     st.header("今日雷达")
     if hosted:
         topics = []
-        st.caption("书目来自公开期刊。决定、备注和书架仅保留在本次会话；可在论文库导出。")
+        st.caption("从公开期刊选入四篇论文。刷新或离开后，本次决定、备注和书架可能重置，可先导出。")
     else:
         topics = _watch_controls(database, queue, settings, profile, journals, defaults)
     resume = desk.get("resume/" + pid)
@@ -192,10 +192,13 @@ def render(database, settings, profile, queue, journals, defaults):
                 selected = [(paper, []) for paper in saved]
                 st.caption(f"本方向的待审论文已处理完。你曾标为相关的 {total} 篇论文可随时重读。")
         if not revisiting:
-            st.caption(notes[section])
+            st.caption("按发表日期排列，点击题名阅读。" if hosted else notes[section])
         if not selected:
             st.info("这个范围内暂时没有待审论文。")
-            if st.button("前往文献工作台"):
+            if hosted and st.button("浏览全部方向的论文"):
+                st.session_state["library_scope_picker"] = "全部方向"
+                _view("论文库")
+            if not hosted and st.button("前往文献工作台"):
                 _view("文献工作台")
     for paper, hits in selected[:size]:
         with st.container(border=True, key=f"radar_card_{paper['id']}"):
