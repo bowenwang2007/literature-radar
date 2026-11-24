@@ -1,11 +1,11 @@
 # Literature Radar
 
+[🚀在线体验/ Live Demo](https://literature-radar.streamlit.app/) · [工作原理与真实验收](docs/design.md) · [本地运行](docs/local.md) · [部署与维护](docs/maintain.md)
+
 **从发现论文，到做出自己的阅读判断。**  
 *A local-first, profile-aware literature discovery and review workspace.*
 
 Literature Radar 是一个面向经济学及相关研究方向的开源文献工作台。它把**期刊追踪、书目检索、摘要补全、AI 辅助初筛、人工审核和文献导出**连成一条可持续使用的流程。目标很简单：少花时间重复寻找和整理论文，把决定「什么值得读」的权利留给研究者。
-
-**在线体验：待 Streamlit Community Cloud 部署完成后添加链接** · [工作原理与真实验收](docs/design.md) · [本地运行](docs/local.md) · [部署说明](docs/maintain.md)
 
 ![Literature Radar 的海雾蓝工作台：论文信息、摘要与阅读线索](docs/workspace.jpg)
 
@@ -56,7 +56,7 @@ Literature Radar 是一个面向经济学及相关研究方向的开源文献工
 
 已有的真实验收包括：Windows 全新安装后的期刊检索、人工审核与重启恢复；Ubuntu 24.04 全新安装后的浏览器阅读、备注和 RIS 下载；两个匿名访客会话之间的决定与书架隔离；真实公开摘要获取以及 DeepSeek 翻译、初筛的端到端试验。验收范围和未覆盖条件见 [工作原理与真实验收](docs/design.md)。
 
-**已知限制：** 文献检索和摘要覆盖受外部来源影响；AI 初筛基于已获得的题名和摘要，不代表全文理解，也不等于经过人工校准的准确率；本地程序关闭时不会继续后台处理。公开在线地址将在实际部署并完成公网验收后添加。
+**已知限制：** 文献检索和摘要覆盖受外部来源影响；AI 初筛基于已获得的题名和摘要，不代表全文理解，也不等于经过人工校准的准确率；本地程序关闭时不会继续后台处理。
 
 ## 文档与许可证
 
